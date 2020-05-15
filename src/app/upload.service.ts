@@ -1,12 +1,15 @@
-// import { Injectable } from "@angular/core";
-// import { ActivatedRoute, Router } from '@angular/router';
-// import { Http, Headers, Response, Request, RequestMethod, URLSearchParams, RequestOptions } from "@angular/http";
+ import { Injectable } from "@angular/core";
+ import { ActivatedRoute, Router } from '@angular/router';
+ //import { Http, Headers, Response, Request, RequestMethod, URLSearchParams, RequestOptions } from "@angular/http";
 // // import {Observable} from 'rxjs/Rx';
 // // import { Constants } from './constants';
 // declare var $: any;
 
-// @Injectable()
-// export class UplaodService {
+ @Injectable()
+ export class UploadService {
+	 constructor(){}
+	 
+ }
 //   requestUrl: string;
 //   responseData: any;
 //   handleError: any;
