@@ -1,0 +1,114 @@
+
+mat-sidenav-container, mat-sidenav-content, mat-sidenav {
+    height: 100%;
+}
+ 
+mat-sidenav {
+    width: 250px;
+}
+ 
+main {
+    padding: 00px;
+}
+.outlet{
+  //background: #f2f2f2;
+  background-color:#f0f5f5;
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.spacer {
+    flex: 1 1 auto;
+  }
+
+.name{
+  
+    // padding-left: -5px;
+    width:100%;
+  font-size: 30px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto ;
+    text-align: center;
+  
+}
+
+
+.example-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #eee;
+}
+
+
+.sidenav{
+  width:15%;
+  background-image: -moz-radial-gradient(white,#eee)
+}
+
+.but{
+  // margin-left: auto;
+  // margin-right: auto;
+  width:100%;
+  height:50px;
+  // margin-bottom: 5px;
+  display: block;
+  font-size: 22px;
+}

@@ -1,0 +1,8 @@
+<div *ngIf='reset'>
+<input type="password" placeholder="New Password" [(ngModel)]='passw'>
+<br>
+<input type='password' placeholder="Confirm password" [(ngModel)]='cnfpassw'>
+<br>
+<p *ngIf='passw!=cnfpassw'>Passwords do not match</p>
+<button mat-raised-button (click)='save()'>Save</button>
+</div>

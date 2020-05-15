@@ -1,0 +1,71 @@
+/*
+*
+* ==========================================
+* FOR DEMO PURPOSES
+* ==========================================
+*
+*/
+.font{
+  font-size: 15px;
+  text-decoration: none;
+  font-weight: normal;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-bottom: 10px;
+}
+
+
+.social-link {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    border-radius: 50%;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+  }
+  
+  .social-link:hover,
+  .social-link:focus {
+    background: #ddd;
+    text-decoration: none;
+    color: #555;
+  }
+  .form mat-form-field{
+    padding: 5px;
+    margin: 5px;
+    width: 235px;
+  }
+  .form textarea{
+    height: 150px;
+    width: 720px;
+    background-color:  #f0f5f5;
+    font-family: monospace;
+
+  }
+  .form textarea:active{
+    background-color: white;
+  }
+  .form textarea:hover{
+    background-color: white;
+  }
+  .btnsend{
+    margin-top: 23px;
+    height: 50px;
+    width: 180px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 0;
+    font-size: 17px;
+  }
+  .btnsend:hover{
+    color: lightseagreen;
+  }
+  .btn:hover{
+    color: lightseagreen;
+  }
+  .desc mat-form-field{
+    width: 68%;
+  }
+  

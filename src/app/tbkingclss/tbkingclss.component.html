@@ -1,0 +1,258 @@
+<div ><h2>Schedule a Class</h2>
+   
+    <div *ngIf="trnrdtls">
+        <h1>{{trnrdtls.tid}}</h1>
+        <h1>{{trnrdtls.level}}</h1>
+        <h1>{{trnrdtls.rating}}</h1>
+        <h1>{{trnrdtls.type}}</h1>
+    </div>
+
+
+
+
+ 
+
+
+       <!--  <p>Rating less than or equal to 3.5 will bring you here , <br>
+        So you have to take free classes untill you earn more than 3.5 rating</p>
+<div *ngIf='typ1' style="width:300px;display: inline-block;">
+        <div *ngFor="let item of typ1 | keyvalue" style='display: inline-block;width:300px;'>
+            <button mat-raised-button (click)='datesfun(item.value)'>{{item.key}}</button>
+                
+                </div>
+       <div *ngFor='let dat of dates' style='display: inline-block;vertical-align:top'>
+<button mat-button >{{dat}}</button>
+       </div>
+     -->
+
+<!--
+
+     <div *ngIf="typ==1" >
+
+       <mat-form-field>
+        <mat-label>Day and Date</mat-label>
+        <mat-select (selectionChange)="selected($event)">
+          <mat-option *ngFor="let item of typ1 | keyvalue" [value]="item.value" >
+            {{item.key}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+
+      <mat-form-field>
+        <mat-label>Timings in 24 HR format</mat-label>
+        <mat-select (selectionChange)="selectdate($event.value)">
+          <mat-option *ngFor="let item of dates" [value]="item" >
+            {{item}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <h1>{{tmngs%12}}{{date}}</h1>
+
+
+</div>
+    </div>
+
+
+    <div *ngIf="typ==2">
+        
+        <p>Rating gretaer than 3.5 , <br>
+            You can book class hours when <b>they</b> are free or
+        <br> Buy a classroom for yourself and book when ever you want.</p>
+
+        <br>
+
+        <mat-form-field *ngIf='typ2'>
+            <mat-label>Day and Date</mat-label>
+            <mat-select (selectionChange)="selected2($event)">
+              <mat-option *ngFor="let item of typ2.data | keyvalue" [value]="item.value" >
+                {{item.value}}--{{item.key}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field *ngIf='hours2'>
+            <mat-label>Class hours that are free</mat-label>
+            <mat-select (selectionChange)="selected2time($event)">
+              <mat-option *ngFor="let item of hours2.available_hours " [value]="item" >
+              {{item}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+    </div>
+
+    
+
+    <div *ngIf="typ==3"><p>Welcome, <br>
+        Just pick the date and hour that you want to host the class.</p>
+    <br>
+    <mat-form-field *ngIf='typ3'>
+        <mat-label>Day and Date</mat-label>
+        <mat-select (selectionChange)="selected3($event)">
+          <mat-option *ngFor="let item of typ3.data | keyvalue" [value]="item.value" >
+            {{item.value[0]}}--{{item.key}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+      <mat-form-field *ngIf='typ3'>
+        <mat-label>Time</mat-label>
+        <mat-select (selectionChange)="selectedtme3($event)">
+          <mat-option *ngFor="let item of hours3" [value]="item" >
+            {{item}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+<div>
+<br>
+<p>Day</p>
+
+<br> 
+
+
+<br>
+<br>
+
+-->
+<!-- <label>Subject</label>
+<br><input placeholder="Subject" [(ngModel)]='sub'> <label>Topic</label>
+<br>
+<input placeholder="topic" [(ngModel)]='tpc'>
+<br>
+<br>
+<label>Language you will be teaching in</label><br>
+<input placeholder="English" [(ngModel)]='lang'>
+<br>
+<br>
+<textarea rows="7" cols="40" [(ngModel)]='dcp'>Description</textarea>
+<br>
+<br>
+</div>
+<button (click)='bookclass()'>Save</button>
+
+/////////////////////////// -->
+
+
+
+<!-- 
+    <p >
+     Free pass:<br>
+        You can schedule 3 hours of class per day.<br>
+        You are allowed to schedule your class 14 hours before.<br>
+        You will be shown only class hours that are free.<br>
+    
+    Day Pass:<br>
+        You can schedule 6 hours of class per day.<br>
+        Your silver pass will be valid for 1 day.<br>
+        You can schedule class at any time of the day.<br>
+        <button mat-raised-button>100</button><br>
+        
+    Silver Pass:<br>
+        You can schedule 6 hours of class per day.<br>
+        Your silver pass will be valid till 5 days.<br>
+        You can schedule class at any time of the day.<br>
+        <button mat-raised-button>300</button><br>
+
+     Gold pass:<br>
+        You can schedule 6 hours of class per day.<br>
+        Your gold pass will be valid till 15 days.<br>
+        You can schedule your class at any time.<br>
+        <button>700.Rs</button><br>
+
+    Platinum pass:<br>
+        You can schedule 10 hours of class per day.<br>
+        Your gold pass will be valid till 30 days.<br>
+        You can schedule your class at any time.<br>
+        <button>700.Rs</button>
+</p>
+
+</div>
+<div>
+<mat-card style="width:100px;float:right">
+    Average Rating:4.5
+</mat-card>
+
+<mat-card style="width:100px;float:right">
+        Last Class Rating:4.5
+    </mat-card>
+</div>
+-->
+<!-- fxLayout="row" fxLayoutAlign="center start" -->
+ 
+<mat-card fxLayout="column" fxLayoutAlign="center center">
+<form class="example-form" >
+    <mat-form-field   style="width: 50%;" appearance="outline" *ngIf="typ==1">
+        <mat-label>Day and Date</mat-label>
+        <mat-select placeholder="Select"   (selectionChange)="selected($event)" >
+          <mat-option  *ngFor="let item of typ1 | keyvalue" [value]="item.value" > {{item.key}}</mat-option >
+        </mat-select>
+      </mat-form-field>
+      
+      <mat-form-field style="width: 50%;" appearance="outline" *ngIf="typ==1"> 
+          <mat-label>Timings in 24 HR format</mat-label>
+          <mat-select placeholder="Select"  (selectionChange)="selectdate($event.value)">
+            <mat-option *ngFor="let item of dates" [value]="item">{{item}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        
+        <mat-form-field   style="width: 50%;" appearance="outline" *ngIf="typ2">
+          <mat-label>Day and Date</mat-label>
+          <mat-select placeholder="Select"   (selectionChange)="selected2($event)" >
+            <mat-option  *ngFor="let item of typ2.data | keyvalue" [value]="item.value" > {{item.value}}--{{item.key}}</mat-option >
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field style="width: 50%;" appearance="outline" *ngIf='hours2'> 
+          <mat-label>Class hours that are free</mat-label>
+          <mat-select placeholder="Time"  (selectionChange)="selected2time($event)">
+            <mat-option *ngFor="let item of hours2.available_hours " [value]="item">{{item}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field style="width: 50%;" appearance="outline" *ngIf='typ3'>
+          <mat-label>Day and Date</mat-label>
+          <mat-select  placeholder="Date" (selectionChange)="selected3($event)">
+            <mat-option *ngFor="let item of typ3.data | keyvalue" [value]="item.value" >
+              {{item.value[0]}}--{{item.key}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+
+        <mat-form-field *ngIf='typ3'  style="width: 50%;" appearance="outline">
+          <mat-label>Time</mat-label>
+          <mat-select (selectionChange)="selectedtme3($event)">
+            <mat-option *ngFor="let item of hours3" [value]="item" >
+              {{item}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      
+        
+       
+        
+    <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Subject</mat-label>
+      <input matInput placeholder="Subject"   name='subject' [(ngModel)]='sub' >
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>topic</mat-label>
+        <input matInput placeholder="topic" value="topic" [(ngModel)]='tpc' name='topic'>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Language you will be teaching in</mat-label>
+          <input matInput placeholder="Language you will be teaching in" value="English" [(ngModel)]='lang' name='language'>
+        </mat-form-field>
+  
+    <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Description</mat-label>
+      <textarea matInput placeholder="Description" [(ngModel)]='dcp' name='description'></textarea>
+    </mat-form-field>
+  </form>
+  <button  style="width: 20%;" color="primary" mat-raised-button (click)='bookclass()'>Save</button>
+
+  <!-- <button mat-raised-button (click)='print()'>SignUp</button> -->
+</mat-card>

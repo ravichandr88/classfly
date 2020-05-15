@@ -1,0 +1,250 @@
+<!--
+<button mat-raised-button color="primary" (click)="onCreateFeed()">Feedback</button>
+
+
+<mat-card class="mat">
+    <!--	<a mat-list-item routerLink="#">
+                <span class="nav-caption">60.RS per hour</span>
+             </a>->
+    
+             <h2 class="h2">
+                Please provide your feedback<br> 
+                below the Classes!
+            </h2>
+             <hr>
+        <div *ngIf='inresp'>
+        <div class="scrollmenu" >
+            <mat-card class="card" *ngFor='let item of inresp[1]'  style="width:230px;">
+                <div class="single_course">
+                <div class="course_head overlay">
+                <img class="img-fluid w-100" src="assets/img/courses/spring.png" alt="">
+                <div class="authr_meta">
+                    <img src="assets/img/anix.png" alt="">
+                    <span>
+                        {{item.name}}||
+                        <img src="assets/img/f-icons/star.png" alt="">
+                        <img src="assets/img/f-icons/star.png" alt="">
+                        <img src="assets/img/f-icons/star.png" alt="">
+                        <img src="assets/img/f-icons/star.png" alt="">
+                        <img src="assets/img/f-icons/star.png" alt="">
+                    </span>
+                    
+                </div>
+                
+                </div>
+            
+                <h6 class="alignb">{{item.subject}}||{{item.topic}}||Seats:{{item.number}}</h6>
+                <div class="a">	   
+                        <h6 class="align">{{item.lang}}||<a style="color: blue;" (click)="onCreateDesc()">Description</a></h6>
+                        <h6 class="align">Date:{{item.date}}||Time: {{item.time}}</h6>
+                        
+            
+                </div>
+                <button class="left" mat-raised-button (click)="onCreateFeed()">Feedback</button>
+                </div>
+        </mat-card>
+            <br>
+            <mat-card class="card" *ngFor='let item of resp[0]'  style="width:230px;">
+                <div class="single_course">
+                <div class="course_head overlay">
+                <img class="img-fluid w-100" src="assets/img/courses/hiber.png" alt="">
+                <div class="authr_meta">
+                    <img src="assets/img/anix.png" alt="">
+                    <span>
+                        {{item.name}}||
+                        <img src="assets/img/f-icons/star.png" alt="">
+                        <img src="assets/img/f-icons/star.png" alt="">
+                        <img src="assets/img/f-icons/star.png" alt="">
+                        <img src="assets/img/f-icons/star.png" alt="">
+                        <img src="assets/img/f-icons/star.png" alt="">
+                    </span>
+                    
+                </div>
+                
+                </div>
+            
+                <h6 class="alignb">{{item.subject}}||{{item.topic}}||Seats:{{item.number}}</h6>
+                <div class="a">	   
+                        <h6 class="align">{{item.lang}}||<a style="color: blue;" (click)="onCreateDesc()">Description</a></h6>
+                        <h6 class="align">Date:{{item.date}}||Time: {{item.time}}</h6>
+                        
+            
+                </div>
+                <button class="left" mat-raised-button (click)="onCreateFeed()">Feedback</button>
+                </div>
+        </mat-card>
+        </div>
+        
+
+    -->
+
+
+
+    <mat-card class="mat">
+        <!--	<a mat-list-item routerLink="#">
+                    <span class="nav-caption">60.RS per hour</span>
+                 </a>-->
+        
+                 <h2 class="h2">
+                    Please provide your feedback below <br> 
+                    the attended classes!
+                </h2>
+                 <hr>
+                 <div *ngIf='inresp'>
+                        <div class="scrollmenu">
+
+                     <!--Start First card-->
+                            <mat-card class="card" card *ngFor='let item of inresp[1]' style="width:230px;">
+                                    <div class="single_course">
+                                            <div class="course_head overlay">
+                                            <img class="img-fluid w-100" src="assets/img/courses/spring.png" alt="">
+                                            <div class="authr_meta">
+                                                <img src="assets/img/anix.png" alt="">
+                                                <span>
+                                                        {{item.trnr}}||
+                                                        <img src="assets/img/f-icons/star.png" alt="">
+                                                        <img src="assets/img/f-icons/star.png" alt="">
+                                                        <img src="assets/img/f-icons/star.png" alt="">
+                                                        <img src="assets/img/f-icons/star.png" alt="">
+                                                        <img src="assets/img/f-icons/star.png" alt="">
+                                                    </span>
+                                            </div>
+                                            </div>
+                                            <h6 class="alignb">{{item.subject}}||{{item.topic}}||<a style="color: blue;" (click)="onCreateDesc()">Description</a></h6>
+                                            <button class="left" mat-raised-button (click)="onCreateFeed(item.id)">Feedback</button>
+
+                                  
+                                        </div>
+
+                            </mat-card>
+            <!--End First card-->
+                        <!--start second card-->
+
+                                <mat-card class="card" card *ngFor='let item of inresp[2]' style="width:230px;">
+                                        <div class="single_course">
+                                                <div class="course_head overlay">
+                                                <img class="img-fluid w-100" src="assets/img/courses/spring.png" alt="">
+                                                <div class="authr_meta">
+                                                    <img src="assets/img/anix.png" alt="">
+                                                    <span>
+                                                            {{item.trnr}}||
+                                                            <img src="assets/img/f-icons/star.png" alt="">
+                                                            <img src="assets/img/f-icons/star.png" alt="">
+                                                            <img src="assets/img/f-icons/star.png" alt="">
+                                                            <img src="assets/img/f-icons/star.png" alt="">
+                                                            <img src="assets/img/f-icons/star.png" alt="">
+                                                        </span>
+                                                </div>
+                                                </div>
+                                                <h6 class="alignb">{{item.subject}}||{{item.topic}}||<a style="color: blue;" (click)="onCreateDesc()">Description</a></h6>
+                                                <button class="left" mat-raised-button (click)="onCreateFeed(item.id)">Feedback</button>
+
+                                      
+                                            </div>
+
+                                </mat-card>
+                        <!--End Second card-->
+
+
+
+                        </div>
+
+                 </div>
+    </mat-card>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!--
+
+<div fxLayout="row" fxLayout.xs="column" >
+
+<div fxFlex="80" *ngIf='inresp'>
+ 
+<h2>You cannot acces CLassFLy without feedback</h2>
+
+
+<div class="scrollmenu">
+
+                <mat-card *ngFor='let item of inresp[1]' >
+                        <h1>Trainer: {{item.trnr}}</h1>
+                        <h2>Subject:{{item.subject}}</h2>
+                        <h2>Topic: {{item.topic}}</h2>
+                        <h3 *ngIf='rate != 0'>Rating:{{rate}}</h3>
+                        <div>
+                            <button  mat-raised-button style='min-width: 50px;' (click)='rating(1)'>1</button><button mat-raised-button style='min-width: 50px;' (click)='rating(2)'>2</button>
+                            <button mat-raised-button style='min-width: 50px;' (click)='rating(3)'>3</button><button mat-raised-button style='min-width: 50px;' (click)='rating(4)'>4</button>
+                            <button mat-raised-button style='min-width: 50px;' (click)='rating(5)'>5</button>
+                            <br>
+                            <textarea rows='10' cols="20" placeholder="Feedback" [(ngModel)]='fdbck'></textarea>
+                            <br>
+                            <button mat-raised-button  >Send</button>
+                        </div>
+                    </mat-card>
+                    <mat-card *ngFor='let item of inresp[2]' >
+                            <h2>Trainer: {{item.trnr}}</h2>
+                            <h3>Subject:{{item.subject}}</h3>
+                            <h3>Topic: {{item.topic}}</h3>
+                            <h4 *ngIf='rate != 0'>Rating:{{rate}}</h4>
+                            <div  fxLayout="row" fxLayoutAlign="center center">
+                                    <!-- style='min-width: 10px;text-align: center;' ->
+                                <button  mat-raised-button style='min-width: 50px;' (click)='rating(1)'>1</button><button mat-raised-button  style='min-width: 50px;' (click)='rating(2)'>2</button>
+                                <button  mat-raised-button  style='min-width: 50px;' (click)='rating(3)'>3</button><button mat-raised-button  style='min-width: 50px;' (click)='rating(4)'>4</button>
+                                <button mat-raised-button  style='min-width: 50px;' (click)='rating(5)'>5</button>
+                            </div>
+                                <br>
+                                <textarea rows='10' cols="35" placeholder="Feedback" [(ngModel)]='fdbck'></textarea>
+                                <br>
+                                <button mat-raised-button  (click)='save(item.id)'>Send</button>
+                            
+                            </mat-card>
+        </div>
+</div>
+-->
+<!-- </div> -->
+    
+<!-- 
+<div *ngIf='inresp'>
+    <mat-card *ngFor='let item of inresp[1]'>
+        <h1>Trainer: {{item.trnr}}</h1>
+        <h2>Subject:{{item.subject}}</h2>
+        <h2>Topic: {{item.topic}}</h2>
+        <h3 *ngIf='rate != 0'>Rating:{{rate}}</h3>
+        <div>
+            <button mat-raised-button (click)='rating(1)'>1</button><button mat-raised-button (click)='rating(2)'>2</button>
+            <button mat-raised-button (click)='rating(3)'>3</button><button mat-raised-button (click)='rating(4)'>4</button>
+            <button mat-raised-button (click)='rating(5)'>5</button>
+            <br>
+            <textarea rows='10' cols="20" placeholder="Feedback" [(ngModel)]='fdbck'></textarea>
+            <br>
+            <button mat-raised-button  >Send</button>
+        </div>
+    </mat-card>
+    <mat-card *ngFor='let item of inresp[2]' style="width:50%">
+        <h1>Trainer: {{item.trnr}}</h1>
+        <h2>Subject:{{item.subject}}</h2>
+        <h2>Topic: {{item.topic}}</h2>
+        <h3 *ngIf='rate != 0'>Rating:{{rate}}</h3>
+        <div>
+            <button mat-raised-button (click)='rating(1)'>1</button><button mat-raised-button (click)='rating(2)'>2</button>
+            <button mat-raised-button (click)='rating(3)'>3</button><button mat-raised-button (click)='rating(4)'>4</button>
+            <button mat-raised-button (click)='rating(5)'>5</button>
+            <br>
+            <textarea rows='10' cols="35" placeholder="Feedback" [(ngModel)]='fdbck'></textarea>
+            <br>
+            <button mat-raised-button  (click)='save(item.id)'>Send</button>
+        </div>
+        </mat-card>
+
+</div>
+ -->

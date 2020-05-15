@@ -1,0 +1,14 @@
+
+<div fxLayout="column"  fxLayoutAlign="center center">
+    <mat-card fxLayout="column" fxLayoutAlign="center stretch">
+<h3>Enter your email</h3>
+<mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Email" type='email' [(ngModel)]='email'>
+    </mat-form-field>
+                          
+
+<br>
+<button mat-raised-button color="primary" (click)="verify()">Send Recovery Link</button>
+</mat-card>  
+</div>

@@ -1,0 +1,159 @@
+<!--<mat-card *ngIf="response">
+       
+       UserName:<h2>{{response.username}}</h2>
+        FirstName:<h2>{{response.first_name}}</h2>
+           Email:<h2>{{response.email}}</h2>
+
+    
+</mat-card>-->
+<!--
+<section class="home_banner_area">
+		<div class="banner_inner">
+			<div class="container">
+
+<div fxLayout="column" fxLayoutAlign="center center">
+<mat-card fxLayout="column" fxLayoutAlign="center stretch">
+        
+        
+
+    <form [formGroup]="myForm" >
+            <br>
+            <br>
+            <h3 class="align"> Become a trainer </h3>
+            <br>
+            <br><br>
+    
+    
+                <mat-form-field  class='fun' appearance="outline">
+                        <mat-label>Linkedin url</mat-label>
+                    <input matInput placeholder="Linkedin Url" type="text" formControlName="linkedinurl">
+                </mat-form-field>
+                <h6 *ngIf= 'submitted && f.linkedinurl.errors'>Linkedin url is required</h6>
+                <br>
+                <!- <p>{{f.username.value}}</p> ->
+    
+    
+                <mat-form-field class='fun' appearance="outline">
+                        <mat-label>Github Url</mat-label>
+                    <input matInput placeholder="Github Url" type="text" formControlName="githuburl">
+                </mat-form-field>
+                <div *ngIf="submitted && f.githuburl.errors" class="invalid-feedback">
+                <h6 *ngIf="f.githuburl.errors.required">Email is required</h6>
+                </div>
+                <br>
+                <mat-form-field class='fun' appearance="outline">
+                        <mat-label>Phone Number</mat-label>
+                    <input matInput placeholder="Phone Number" type="text" formControlName="phonenum">
+                
+            </mat-form-field>
+            <div *ngIf="submitted && f.phonenum.errors" class="invalid-feedback">
+            <h6 *ngIf="f.phonenum.errors.required">Email is required</h6>
+            </div>
+            <div class="md-form">
+                <textarea type="text" id="form8" class="md-textarea form-control" rows="4"></textarea>
+                <label data-error="wrong" data-success="right" for="form8">Write somthing about You</label>
+              </div>
+       
+                
+              
+    
+        </form>
+  
+        <br>
+        <div fxLayoutAlign="center stretch">
+        <button color="primary" class="funb" mat-raised-button (click)='print()'>Sign Up</button>
+    </div>
+    <br>
+    <br>
+    <h2 class="align"> Need An Account? <a href="signup" class="dis-block txt3 hov1 p-r-30 p-t-10 p-b-10 p-l-30">
+            Sign Up
+            <i class="fa fa-long-arrow-right m-l-5"></i>
+        </a></h2>
+        <br><br>
+      </mat-card>
+      
+</div>
+</div>
+</div>
+</section>
+-->
+
+
+
+
+<div *ngIf='user' fxLayout="column"  fxLayoutAlign="center center">
+    <div class="card" fxLayout="column" fxLayoutAlign="center stretch" style="width: 800px;">
+     
+    <form [formGroup]='myForm'>
+            <br>
+            <h2 class="h2">Become a trainer</h2>
+            <hr>
+
+            <!-- <a href="/" class="link">       
+                <img  src="imgurl" alt="">
+                Click here to get your profile
+               </a> <br><br> -->
+
+<ul>
+        <li>
+
+     <div class="text_area">
+            <mat-form-field>
+                    <input matInput placeholder="Linkedin profile url" [(ngModel)]='linkurl' formControlName='linkurl'>
+                     </mat-form-field>
+                  <br>
+                  <p>{{linkerr}}</p>
+                  <mat-form-field>
+                    
+                    <input matInput placeholder="Profile Image url (Optional)" [(ngModel)]='imgurl' formControlName='imgurl' name='imgurl'>
+                  </mat-form-field>
+                  <mat-form-field>
+                  <input matInput placeholder="Company Name" [(ngModel)]='company' formControlName='company'>
+                  
+                </mat-form-field>
+                <p>{{comperr}}</p>
+                  <mat-form-field>
+                  <input matInput placeholder="Designation" [(ngModel)]='designation' formControlName='designation'>
+                  
+                </mat-form-field>
+                <p>{{desigerr}}</p>
+
+        <textarea rows="4" cols="30" name="message" [(ngModel)]='dscp'    formControlName='dscp'>
+        </textarea>
+        <!--<p>{{dscp.length}}</p>-->
+        <p>{{dscperr}}</p>
+        <textarea rows="3" cols="30" [(ngModel)]='techkeys'    formControlName='techkeys' placeholder="Technical keywords separated by comma. e.g Python,Java,Data Science.">
+        </textarea>    
+        <p>{{keyerr}}</p>
+        <textarea rows="2" cols="30" [(ngModel)]='langs'    formControlName='langs' placeholder="Languages that you can teach. e.g English, Hindi, Tamil.">
+            </textarea>     
+            <p>{{langerr}}</p>
+      </div>
+      <!-- <button class="funb" mat-raised-button (click)='openAc()'>Account Details</button> -->
+              <button class="funb"  mat-raised-button (click)='print()'  color='primary'>Next</button>
+   
+    </li>
+    <br>
+    <li>
+                <!-- <a href="/profile"><h6 class="details">Profile from Linkedin</h6></a> -->
+    <hr>
+            <div class="grid-container2">
+                    <div class="grid-item2">
+                            <a href="/profile">
+                                <img  src="{{imgurl}}" style="padding-left: 8px;padding-bottom: 8px;" width="100" height="100">
+                             </a>
+                    </div>
+
+                    <div class="grid-item2">
+                        <!-- <div class="grid-item4"><small ><input matInput placeholder="Company Name"></small></div> -->
+                        <!-- <div class="grid-item4"><small><input matInput placeholder="Designation"></small></div> -->
+                        <div class="grid-item4"><small></small></div>
+                    </div>
+            </div>
+</li>
+</ul>
+
+</form>
+    </div></div>
+
+

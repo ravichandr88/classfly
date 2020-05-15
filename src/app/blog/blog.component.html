@@ -1,0 +1,24 @@
+
+<form [formGroup]="bForm">
+    <button mat-raised-button (click)='print()'>Submit</button>
+<mat-card class='card'>
+  <mat-form-field class="full-width">
+    <input matInput placeholder="Blog Title, maximum of 100 characters" formControlName='title'>
+  </mat-form-field>
+  <h6 *ngIf='submited && f.title.errors'>Please fill the feild</h6>
+  <h6 *ngIf='lonerr'>The title is too lengthy, should be less than 100 characters </h6>
+</mat-card>
+<br>
+<mat-card class='card'>
+    <h6 *ngIf='shorterr'> The document is too small to submit, minimum 500 charactes</h6>
+  <mat-form-field class="full-width-content"  style='width: 100%'>
+    <textarea rows='20' matInput placeholder="Blog Content, mnimum of 500 Characters" class="content" formControlName='content'></textarea>
+  </mat-form-field>
+  <h6 *ngIf='submited && f.content.errors'>Please fill the feild</h6>
+  <h6 *ngIf='shorterr'> The document is too small to subnmit, minimum 500 charactes</h6>
+  </mat-card>
+  
+  
+</form>
+<br>
+

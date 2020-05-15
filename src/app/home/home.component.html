@@ -1,0 +1,689 @@
+
+	<!--================  Start Video and v card =================-->
+	<br>
+
+	<ul>
+		<mat-card class="flex5">
+			<li>    
+				<!-- <iframe height=";" width="100%" src="https://www.youtube.com/embed/W9fLzQRsZmI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+				<!-- <iframe width="100%" height="300px" src="https://www.youtube.com/embed/cKhVupvyhKk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+				<!-- <iframe width="100%" height="300px"src="https://drive.google.com/file/d/1Sv3YiapexP5rFFnCV0zxNFwJHxGDbi1n/preview" ></iframe> -->
+				<video id="video" width="100%" height="300px" controls oncontextmenu="return false;" controlsList="nodownload">
+					<source src="https://drive.google.com/uc?export=download&id=1Sv3YiapexP5rFFnCV0zxNFwJHxGDbi1n" type='video/mp4'> </video>
+					
+					</li> 
+		</mat-card>
+
+		<div class="flex6">
+			<li>
+				<img class="vimg" src="assets/img/vcard.jpeg" alt="">
+				<div class="bottom-right">
+					(Beta Version) Live Interactive <br> 
+					Session With Working Professionals</div>
+
+			  
+			</li>
+		</div>
+
+	</ul>
+	<br>
+	<br>
+
+	<!--================End Video and v card =================-->
+
+
+
+		<div class="csscard">
+	
+	<div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center"  fxLayoutGap="20px" style="padding: 0px;">
+		
+	
+		<mat-form-field appearance="outline">
+			<mat-label>Subject</mat-label> 
+	<input matInput placeholder="Subject" style="margin-left: 10px" [(ngModel)]='sub'>
+	</mat-form-field>
+	<mat-form-field appearance="outline">
+			<mat-label>Topic</mat-label>
+	<input matInput placeholder="Topic" style="margin-left: 10px" [(ngModel)]='tpc'>
+	</mat-form-field>
+	<mat-form-field  appearance="outline">
+			<mat-label>Language</mat-label>
+	<input class="input" matInput placeholder="Language" style="margin-left: 10px" [(ngModel)]='lang'>
+	</mat-form-field>
+	<div class="example-button-row" >
+	<button  color="primary" class="btn" mat-raised-button (click)='search()'>Search</button>
+	</div>
+	
+	</div>
+<!---
+	<br>
+	<br>
+	
+
+	<h2 class="h2">
+			We Rank the Best <br>
+			Courses on the Web
+		</h2>
+		<p class="p"> 
+			In the history of modern astronomy, there is probably no one greater leap forward than the building and launch
+			of
+			the space telescope known as the Hubble.
+		</p>-->
+
+	<!--<h4 class="h4">UpComing Classes</h4>-->
+
+	</div>
+	<mat-card class="mat">
+<!--	<a mat-list-item routerLink="#">
+			<span class="nav-caption">60.RS per hour</span>
+		 </a>-->
+
+		 <!-- <h2 class="h2">
+			Live Interactive Session With<br> 
+			Working Professionals
+		</h2> -->
+		 <hr>
+	<div *ngIf='resp'>
+		<h4>{{mssg}}</h4>
+	<div class="scrollmenu" >
+		<mat-card class="card" *ngFor='let item of resp[1]'  style="width:230px;">
+			<div class="single_course">
+			<div class="course_head overlay">
+			<img class="img-fluid w-100" src="assets/img/courses/spring.png" alt="">
+			<div class="authr_meta">
+				<img src="assets/img/butterfly1.png" style='border-radius: 50%;' alt="">
+				<span>
+					{{item.name}}||
+					<img src="assets/img/f-icons/star.png" alt="">
+					<img src="assets/img/f-icons/star.png" alt="">
+					<img src="assets/img/f-icons/star.png" alt="">
+					<img src="assets/img/f-icons/star.png" alt="">
+					<img src="assets/img/f-icons/star.png" alt="">
+				</span>
+			</div>
+			
+			</div>
+		
+			<h6 class="alignb">{{item.subject}}||{{item.topic}}||Seats:{{item.number}}</h6>
+			<div class="a" (click)="onCreateDesc(item.id,item.lvl)">	   
+					<h6 class="align">{{item.lang}}||<a style="color: blue;">Description</a></h6>
+					<h6 class="align">Date:{{item.date}}||Time: {{item.time}}</h6>
+					
+		
+			</div>
+			<button *ngIf='item.price != 0' class="left" mat-raised-button (click)='book(item.id,item.lvl)'>{{item.price}} coins</button>
+			<button *ngIf='item.price == 0' class="left" mat-raised-button (click)='book(item.id,item.lvl)'>FREE</button>
+			
+		</div>
+	</mat-card>
+		<br>
+		<mat-card class="card" *ngFor='let item of resp[0]'  style="width:230px;">
+			<div class="single_course">
+			<div class="course_head overlay">
+			<img class="img-fluid w-100" src="assets/img/courses/hiber.png" alt="">
+			<div class="authr_meta">
+				<img src="assets/img/butterfly1.png" style='border-radius: 50%;'alt="">
+				<span>
+					{{item.name}}||
+					<img src="assets/img/f-icons/star.png" alt="">
+					<img src="assets/img/f-icons/star.png" alt="">
+					<img src="assets/img/f-icons/star.png" alt="">
+					<img src="assets/img/f-icons/star.png" alt="">
+					<img src="assets/img/f-icons/star.png" alt="">
+				</span>
+				
+			</div>
+			
+			</div>
+		
+			<h6 class="alignb">{{item.subject}}||{{item.topic}}||Seats:{{item.number}}</h6>
+			<div class="a" style="cursor: pointer" (click)="onCreateDesc(item.id,item.lvl)">	   
+					<h6 class="align" style="cursor: pointer">{{item.lang}}||<a style="color: blue;" >Description</a></h6>
+					<h6 class="align">Date:{{item.date}}||Time: {{item.time}}</h6>
+					
+		
+			</div>
+			<button *ngIf='item.price != 0' class="left" mat-raised-button (click)='book(item.id,item.lvl)'>{{item.price}} coins</button>
+			<button *ngIf='item.price == 0' class="left" mat-raised-button (click)='book(item.id,item.lvl)'>FREE</button>
+				
+		</div>
+	</mat-card>
+	</div>
+	
+
+<!---	<a mat-list-item routerLink="#">
+			<span class="nav-caption">20.Rs per hour</span>
+		 </a>-->
+	<!--	 <div class="scrollmenu" >
+				<mat-card class="card" *ngFor='let item of resp[0]'  style="width:230px;">
+						<div class="single_course">
+						<div class="course_head overlay">
+						<img class="img-fluid w-100" src="assets/img/courses/hiber.png" alt="">
+						<div class="authr_meta">
+							<img src="assets/img/anix.png" alt="">
+							<span>
+								{{item.name}}||
+								<img src="assets/img/f-icons/star.png" alt="">
+								<img src="assets/img/f-icons/star.png" alt="">
+								<img src="assets/img/f-icons/star.png" alt="">
+								<img src="assets/img/f-icons/star.png" alt="">
+								<img src="assets/img/f-icons/star.png" alt="">
+							</span>
+							
+						</div>
+						
+						</div>
+					
+						<h6 class="alignb">{{item.subject}}||{{item.topic}}||Seats:{{item.number}}</h6>
+						<div class="a">	   
+								<h6 class="align">{{item.lang}}||<a href="#">Description</a></h6>
+								<h6 class="align">Date:{{item.date}}||Time: {{item.time}}</h6>
+								
+					
+						</div>
+						<button class="left" mat-raised-button (click)='book(item.id,1)'>Book</button>
+						</div>
+				</mat-card>
+			</div>-->
+	
+	</div>
+	</mat-card>
+	
+
+<!--================ Classes Card Area End =================-->
+
+
+	<div class="popular_courses lite_bg">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-6">
+					<div class="main_title">
+						<h2>Popular Courses</h2>
+						<p>We are trying to provide live and interactive training for all younger generation.</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<!-- single course -->
+				<div class="col-lg-3 col-md-6">
+					<div class="single_course">
+						<div class="course_head overlay">
+							<img class="img-fluid w-100" src="assets/img/courses/ml.png" alt="">
+							<div class="authr_meta">
+								<img src="assets/img/butterfly1.png" style='border-radius: 50%;' alt="">
+								<!-- <span>Anix A.A</span> -->
+							</div>
+						</div>
+						<div class="course_content">
+							<h4>
+								<a href="course-details.html">Learn Machine Learning</a>
+							</h4>
+							<p>Learn how ML's exciting technology powers everything from self-driving cars to shopping. Machine Learning isn't just for data scientists</p>
+							<!--<div class="course_meta d-flex justify-content-between">
+								<div>
+									<span class="meta_info">
+										<a href="#"><i class="lnr lnr-user"></i>355</a>
+									</span>
+									<span class="meta_info">
+										<a href="#">
+											<i class="lnr lnr-bubble"></i>35
+										</a>
+									</span>
+								</div>
+								<div>
+									<span class="price">$150</span>
+								</div>
+							</div>-->
+						</div>
+					</div>
+				</div>
+				<!-- single course -->
+				<div class="col-lg-3 col-md-6">
+					<div class="single_course">
+						<div class="course_head overlay">
+							<img class="img-fluid w-100" src="assets/img/courses/python.jpg" alt="">
+							<div class="authr_meta">
+								<img src="assets/img/butterfly1.png" style='border-radius: 50%;' alt="">
+								<!-- <span>Anix A.A</span> -->
+							</div>
+						</div>
+						<div class="course_content">
+							<h4>
+								<a href="course-details.html">Python Programming</a>
+							</h4>
+							<p>With a 27% year-over year-growth rate, Python stands alone as a tag that is both large and growing programming language rapidly.</p>
+							<!--<div class="course_meta d-flex justify-content-between">
+								<div>
+									<span class="meta_info">
+										<a href="#">
+											<i class="lnr lnr-user"></i>355
+										</a>
+									</span>
+									<span class="meta_info"><a href="#">
+											<i class="lnr lnr-bubble"></i>35
+										</a></span>
+								</div>
+								<div>
+									<span class="price df_color1">$150</span>
+								</div>
+							</div>-->
+						</div>
+					</div>
+				</div>
+				<!-- single course -->
+				<div class="col-lg-3 col-md-6">
+					<div class="single_course">
+						<div class="course_head overlay">
+							<img class="img-fluid w-100" src="assets/img/courses/django.png" alt="">
+							<div class="authr_meta">
+								<img src="assets/img/butterfly1.png" style='border-radius: 50%;' alt="">
+								<!-- <span>Anix A.A</span> -->
+							</div>
+						</div>
+						<div class="course_content">
+							<h4>
+								<a href="course-details.html">Django Framework</a>
+							</h4>
+							<p>No.1 Python WebFramework.As of 2018, over half (58%) of Python developers declared that Django was their favorite web framework to build backend services.</p>
+							<!--<div class="course_meta d-flex justify-content-between">
+								<div>
+									<span class="meta_info">
+										<a href="#">
+											<i class="lnr lnr-user"></i>355
+										</a>
+									</span>
+									<span class="meta_info"><a href="#">
+											<i class="lnr lnr-bubble"></i>35
+										</a></span>
+								</div>
+								<div>
+									<span class="price">$150</span>
+								</div>
+							</div>-->
+						</div>
+					</div>
+				</div>
+				<!-- single course -->
+				<div class="col-lg-3 col-md-6">
+					<div class="single_course">
+						<div class="course_head overlay">
+							<img class="img-fluid w-100" src="assets/img/courses/angular.png" alt="">
+							<div class="authr_meta">
+								<img src="assets/img/butterfly1.png" style='border-radius: 50%;' alt="">
+								<!-- <span>Anix A.A</span> -->
+							</div>
+						</div>
+						<div class="course_content">
+							<h4>
+								<a href="course-details.html">Angular Framework</a>
+							</h4>
+							<p>Built by Google. Speed up your web development with Angular cli framework which is open-source.</p>
+							<!--<div class="course_meta d-flex justify-content-between">
+								<div>
+									<span class="meta_info">
+										<a href="#">
+											<i class="lnr lnr-user"></i>355
+										</a>
+									</span>
+									<span class="meta_info"><a href="#">
+											<i class="lnr lnr-bubble"></i>35
+										</a></span>
+								</div>
+								<div>
+									<span class="price df_color2">$150</span>
+								</div>
+							</div>-->
+						</div>
+					</div>
+				</div>
+
+				<br>
+<!--Next row of caurses-->
+				<div class="col-lg-3 col-md-6">
+						<div class="single_course">
+							<div class="course_head overlay">
+								<img class="img-fluid w-100" src="assets/img/courses/web.jpg" alt="">
+								<div class="authr_meta">
+									<img src="assets/img/butterfly1.png" style='border-radius: 50%;' alt="">
+									<!-- <span>Anix A.A</span> -->
+								</div>
+							</div>
+							<div class="course_content">
+								<h4>
+									<a href="course-details.html">Web Development</a>
+								</h4>
+								<p>Online courses for building websites from scratch using popular tools and languages like HTML, CSS, Python, JavaScript, and more.</p>
+								<!--<div class="course_meta d-flex justify-content-between">
+									<div>
+										<span class="meta_info">
+											<a href="#"><i class="lnr lnr-user"></i>355</a>
+										</span>
+										<span class="meta_info">
+											<a href="#">
+												<i class="lnr lnr-bubble"></i>35
+											</a>
+										</span>
+									</div>
+									<div>
+										<span class="price">$150</span>
+									</div>
+								</div>-->
+							</div>
+						</div>
+					</div>
+
+					<!-- single course -->
+				<div class="col-lg-3 col-md-6">
+						<div class="single_course">
+							<div class="course_head overlay">
+								<img class="img-fluid w-100" src="assets/img/courses/sql.png" alt="">
+								<div class="authr_meta">
+									<img src="assets/img/butterfly1.png" style='border-radius: 50%;' alt="">
+									<!-- <span>Anix A.A</span> -->
+								</div>
+							</div>
+							<div class="course_content">
+								<h4>
+									<a href="course-details.html">Learn SQL</a>
+								</h4>
+								<p>SQL is a standard language for storing, manipulating and retrieving data in databases. Our SQL tutorial will teach you how to use SQL in: MySQL.</p>
+								<!--<div class="course_meta d-flex justify-content-between">
+									<div>
+										<span class="meta_info">
+											<a href="#">
+												<i class="lnr lnr-user"></i>355
+											</a>
+										</span>
+										<span class="meta_info"><a href="#">
+												<i class="lnr lnr-bubble"></i>35
+											</a></span>
+									</div>
+									<div>
+										<span class="price df_color1">$150</span>
+									</div>
+								</div>-->
+							</div>
+						</div>
+					</div>
+					<!-- single course -->
+					<div class="col-lg-3 col-md-6">
+						<div class="single_course">
+							<div class="course_head overlay">
+								<img class="img-fluid w-100" src="assets/img/courses/java.png" alt="">
+								<div class="authr_meta">
+									<img src="assets/img/butterfly1.png" style='border-radius: 50%;' alt="">
+									<!-- <span>Anix A.A</span> -->
+								</div>
+							</div>
+							<div class="course_content">
+								<h4>
+									<a href="course-details.html">Learn Java</a>
+								</h4>
+								<p>Java is a general-purpose programming language that is class-based, object-oriented, and designed to have as few implementation dependencies as possible.</p>
+								<!--<div class="course_meta d-flex justify-content-between">
+									<div>
+										<span class="meta_info">
+											<a href="#">
+												<i class="lnr lnr-user"></i>355
+											</a>
+										</span>
+										<span class="meta_info"><a href="#">
+												<i class="lnr lnr-bubble"></i>35
+											</a></span>
+									</div>
+									<div>
+										<span class="price">$150</span>
+									</div>
+								</div>-->
+							</div>
+						</div>
+					</div>
+					<!-- single course -->
+					<div class="col-lg-3 col-md-6">
+						<div class="single_course">
+							<div class="course_head overlay">
+								<img class="img-fluid w-100" src="assets/img/courses/cpp.png" alt="">
+								<div class="authr_meta">
+									<img src="assets/img/butterfly1.png" style='border-radius: 50%;' alt="">
+									<!-- <span>Anix A.A</span> -->
+								</div>
+							</div>
+							<div class="course_content">
+								<h4>
+									<a href="course-details.html">Learn C++</a>
+								</h4>
+								<p>C++ is a high-level, general-purpose programming language created by Bjarne Stroustrup as an extension of the C programming language, or "C with Classes"</p>
+								<!--<div class="course_meta d-flex justify-content-between">
+									<div>
+										<span class="meta_info">
+											<a href="#">
+												<i class="lnr lnr-user"></i>355
+											</a>
+										</span>
+										<span class="meta_info"><a href="#">
+												<i class="lnr lnr-bubble"></i>35
+											</a></span>
+									</div>
+									<div>
+										<span class="price df_color2">$150</span>
+									</div>
+								</div>-->
+							</div>
+						</div>
+					</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+	
+	<!--================ End Popular Courses Area =================-->
+
+	<!--================ Start Fact Area =================-->
+	<div class="fact_area overlay">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-6">
+					<div class="main_title">
+						<h2>Facts that Make us Unique</h2>
+						<p>There is a moment in the life of any aspiring astronomer that it is time to buy that first telescope. It’s
+							exciting to think about setting up your own viewing station.</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<!-- single features -->
+				<div class="col-lg-4 col-md-6">
+					<div class="single_fact">
+						<div class="f_icon">
+							<img src="assets/img/f-icons/icon1.png" alt="">
+						</div>
+						<h4>Expert Mentors</h4>
+						<p>We attract Mentors from industries, So that students can be exposed to real time problems and solutions.
+							Even Mentors will be encouraged by the feedback of students and motivated to learn more in detial.
+						</p>
+					</div>
+				</div>
+				<!-- single features -->
+				<div class="col-lg-4 col-md-6">
+					<div class="single_fact">
+						<div class="f_icon">
+							<img src="assets/img/f-icons/icon2.png" alt="">
+						</div>
+						<h4>500+ Courses</h4>
+						<p>Targeting to train a person from technological and cultulral perspective. Having knowledge isn't enough. One should know how to present himself/herself to the world.</p>
+					</div>
+				</div>
+				<!-- single features -->
+				<div class="col-lg-4 col-md-6">
+					<div class="single_fact">
+						<div class="f_icon">
+							<img src="assets/img/f-icons/icon3.png" alt="">
+						</div>
+						<h4>Student Mentoring</h4>
+						<p>Mentoring the students who have only attended classes, but don't know where to use. We have mentoring classes to help students talk to other students to learn and teach.</p>
+					</div>
+				</div>
+				<!-- single features -->
+				<div class="col-lg-4 col-md-6">
+					<div class="single_fact">
+						<div class="f_icon">
+							<img src="assets/img/f-icons/icon4.png" alt="">
+						</div>
+						<h4>Lifetime Access</h4>
+						<p>You will have lifetime access to our study materials.Free videos are always available in our YouTube channel .And all videos once you buy them.</p>
+					</div>
+				</div>
+				<!-- single features -->
+				<div class="col-lg-4 col-md-6">
+					<div class="single_fact">
+						<div class="f_icon">
+							<img src="assets/img/f-icons/icon5.png" alt="">
+						</div>
+						<h4>Source File Included</h4>
+						<p>Our git repository will have all the code to learn and practise coding.</p>
+					</div>
+				</div>
+				<!-- single features -->
+				<div class="col-lg-4 col-md-6">
+					<div class="single_fact">
+						<div class="f_icon">
+							<img src="assets/img/f-icons/icon6.png" alt="">
+						</div>
+						<h4>Live Support</h4>
+						<p>We are here for you. You can contact us at any time and we are happy to help you.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--================ End Fact Area =================-->
+
+
+
+
+	<!--================ Start Events Area =================-->
+	<!-- <div class="events_area">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-6">
+					<div class="main_title">
+						<h2>Upcoming Events</h2>
+						<p>There is a moment in the life of any aspiring astronomer that it is time to buy that first telescope. It’s
+							exciting to think about setting up your own viewing station.</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="row">
+						<div class="col-lg-12 col-sm-12">
+							<div class="single_event">
+								<div class="row align-items-center">
+									<div class="col-lg-6 col-md-5">
+										<div class="event_thumb">
+											<img src="assets/img/event1.png" alt="">
+										</div>
+									</div>
+									<div class="col-lg-6 col-md-7">
+										<div class="event_details">
+											<p>25th February, 2019</p>
+											<h4>
+												<a href="#">The Universe Through A Child S Eyes</a>
+											</h4>
+											<p>Lorem ipsum dolor sit amet consec tetur adipisicing elit, sed do eiusmod tempor incididunt labore dolor
+												sit amet consec tetur adipisicing elit sed.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="row">
+						<div class="col-lg-12 col-sm-12">
+							<div class="single_event">
+								<div class="row align-items-center">
+									<div class="col-lg-6 col-md-5">
+										<div class="event_thumb">
+											<img src="assets/img/event2.png" alt="">
+										</div>
+									</div>
+									<div class="col-lg-5 col-md-7">
+										<div class="event_details">
+											<p>25th February, 2019</p>
+											<h4>
+												<a href="#">The Universe Through A Child S Eyes</a>
+											</h4>
+											<p>Lorem ipsum dolor sit amet consec tetur adipisicing elit, sed do eiusmod tempor incididunt labore dolor
+												sit amet consec tetur adipisicing elit sed.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> -->
+	<!--================ End Events Area =================-->
+
+
+		<!--================ Start footer Area  =================
+<footer class="footer-area section_gap">
+		<div class="container">
+				
+			<div class="row">
+				<div class="col-lg-2 col-md-6 single-footer-widget">
+					<h4>About Us</h4>
+					<ul>
+						<li><a href="#">Online Classes</a></li><br>
+						<li><a href="#">Free Classes</a></li><br>
+						<li><a href="#">Certificates</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-2 col-md-6 single-footer-widget">
+					<h4>Contact</h4>
+					<ul>
+						<li><a href="#">+91 809 5988 717</a></li><br>
+						<li><a href="#">+91 89 04264 800</a></li><br>
+						<li><a href="#">classfly@gmail.com</a></li>
+						
+					</ul>
+				</div>
+				<div class="col-lg-2 col-md-6 single-footer-widget">
+					<h4>Features</h4>
+					<ul>
+						
+						<li><a href="#">Brand Assets</a></li><br>
+						<li><a href="#">Investor Relations</a></li><br>
+						<li><a href="#">Terms of Service</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-2 col-md-6 single-footer-widget">
+					<h4>Resources</h4>
+					<ul>
+						<li><a href="#">Guides</a></li><br>
+						<li><a href="#">Research</a></li><br>
+						<li><a href="#">Experts</a></li>
+						
+					</ul>
+				</div>
+				<div class="col-lg-4 col-md-6 single-footer-widget">
+					<h4>Newsletter</h4>
+					<p>You can trust us. we only send promo offers,</p>
+					<div class="form-wrap" id="mc_embed_signup">
+						
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</footer>
+	<!--================ End footer Area  =================-->

@@ -1,0 +1,105 @@
+<div fxLayout="column"  fxLayoutAlign="center center">
+    <br>
+	<div class="card" fxLayout="column" fxLayoutAlign="center stretch" style="width: 700px;">
+	  
+	<form>
+			<br>
+			<h2 class="h2">Add Bank Account Details</h2>
+
+            <hr>
+            <p>If any details are not correct, you wont receive money. Becareful</p>
+            <div class="example-container">
+                <mat-form-field>
+                  <input matInput placeholder="IFSC" [(ngModel)]='data.ifsc' name='ifsc'>
+                </mat-form-field>
+                <p>{{ifscerr}}</p>
+                <mat-form-field>
+                    <input matInput placeholder="Account number"  [(ngModel)]='data.accno' name='accno'>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input matInput placeholder="Confirm account number"  [(ngModel)]='data.accno2' name='accno2'>
+                  </mat-form-field>
+                  <p>{{accerr}}</p>
+                  <mat-form-field>
+                    <input matInput placeholder="Account holder name" [(ngModel)]='data.name' name='name'>
+                  </mat-form-field>
+                  <p>{{usererr}}</p> 
+                  <mat-form-field>
+                    <input matInput placeholder="UPI (Optional)" [(ngModel)]='data.UPI' name='upi'>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <input matInput placeholder="Phone number" [(ngModel)]='data.phone' name='phone'>
+                    <mat-hint>You will notified once the money transfer to the account</mat-hint>
+                  </mat-form-field>
+                  </div>
+                  <br>
+	<div>
+        <button class="confirm_btn" mat-raised-button (click)='close()' color="primary">Confirm</button>
+
+		<span><img style="width: 70px; padding-left:43px"  src="assets/img/securep.png" alt=""></span> 
+		<span><img style="width: 140px; padding-left:13px"  src="assets/img/payment.png" alt=""></span> 
+
+</div>
+<br>
+    </form>
+	</div>
+  </div>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+
+  <div fxLayout="column"  fxLayoutAlign="center center">
+      <br>
+    <div class="card" fxLayout="column" fxLayoutAlign="center stretch" style="width: 700px;">
+      
+    <form>
+        <br>
+        <h2 class="h2">Provide your career</h2>
+  
+              <hr>
+              <div class="example-container">
+                  <mat-form-field>
+                    <input matInput placeholder="IFSC">
+                  </mat-form-field>
+                  <mat-form-field>
+                      <input matInput placeholder="Account number">
+                    </mat-form-field>
+                    <mat-form-field>
+                      <input matInput placeholder="Confirm account number">
+                    </mat-form-field>
+                    <mat-form-field>
+                      <input matInput placeholder="Account holder name">
+                    </mat-form-field>
+                    <mat-form-field>
+                      <input matInput placeholder="Phone number">
+                      <mat-hint>You will notified once the money transfer to the account</mat-hint>
+                    </mat-form-field>
+                    </div>
+                    <br>
+    <div>
+          <button class="confirm_btn" mat-raised-button color="primary">Confirm</button>
+  
+      <span><img style="width: 70px; padding-left:43px"  src="assets/img/securep.png" alt=""></span> 
+      <span><img style="width: 140px; padding-left:13px"  src="assets/img/payment.png" alt=""></span> 
+  
+  </div>
+  <br>
+      </form>
+    </div>
+    </div> -->

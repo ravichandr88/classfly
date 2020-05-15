@@ -1,0 +1,190 @@
+<!--<div *ngIf='details'>
+    <div *ngFor='let item of details'>
+        <mat-card>
+            <h2>{{item.name}}</h2>
+            <h2>{{item.price}}</h2>
+            <h3>Validity:{{item.days}} days</h3>
+            <p>Every pass will allow you to book only 6 hours of training per day</p>
+            <button mat-raised-button (click)='buy(item.id)'>Buy</button>
+        </mat-card>
+        <br>
+    </div>
+</div>-->
+
+
+
+<!-- 
+<div fxLayout="column"  fxLayout.xs="column" fxLayoutAlign="center center" >
+    <div class="card" fxLayout="column" fxLayoutAlign="center stretch" >
+        <div class="header">
+            <h6> Plans & Pricing</h6>
+        </div>
+            <ul>
+                <mat-card *ngFor='let item of details' class="flex5">
+                    <li>      
+                        <h5>{{item.name}}</h5><hr>
+               
+                        <h6> &#x20b9;{{item.price}}/<h4>{{item.days}} days</h4></h6><br>
+                         <h4><h4 style="font-size:30px ;">6 hours/</h4>Day</h4><br>
+                         <span class="alink" (click)="onCreateDesc()">Know more</span><br>
+                          Would you like to select the plan? <br>
+                        <button mat-raised-button class="link5" (click)='buy(item.id)'>Select</button>
+                    </li>
+                 </mat-card>
+            </ul>
+            <br>
+            <br>
+    </div>
+</div>
+
+
+ -->
+
+
+
+ <!--
+<div *ngIf='resp'>
+    
+    <div *ngFor='let i of l'>
+        MON
+        <input type="time" [(ngModel)]=d.MON[i]>
+       <p>{{item}}</p>
+    </div>
+
+    <div *ngFor='let i of l'>
+            TUE
+            <input type="time" [(ngModel)]=d.TUE[i]>
+           <p>{{item}}</p>
+        </div>
+
+        <div *ngFor='let i of l'>
+                WED
+                <input type="time" [(ngModel)]=d.WED[i]>
+               <p>{{item}}</p>
+            </div>
+            <div *ngFor='let i of l'>
+                    THU
+                    <input type="time" [(ngModel)]=d.THU[i]>
+                   <p>{{item}}</p>
+                </div>
+
+                <div *ngFor='let i of l'>
+                        FRI
+                        <input type="time" [(ngModel)]=d.FRI[i]>
+                       <p>{{item}}</p>
+                    </div>
+
+                    <div *ngFor='let i of l'>
+                            SAT
+                            <input type="time" [(ngModel)]=d.SAT[i]>
+                           <p>{{item}}</p>
+                        </div>
+
+                        <div *ngFor='let i of l'>
+                                SUN
+                                <input type="time" [(ngModel)]=d.SUN[i]>
+                               <p>{{item}}</p>
+                            </div>
+     <button (click)='hug()'>hug</button>
+</div>
+-->
+
+
+<!--<div *ngIf='details'>
+    <div *ngFor='let item of details'>
+        <mat-card>
+            <h2>{{item.name}}</h2>
+            <h2>{{item.price}}</h2>
+            <h3>Validity:{{item.days}} days</h3>
+            <p>Every pass will allow you to book only 6 hours of training per day</p>
+            <button mat-raised-button (click)='buy(item.id)'>Buy</button>
+        </mat-card>
+        <br>
+    </div>
+</div>-->
+
+
+
+<!-- 
+<div fxLayout="column"  fxLayout.xs="column" fxLayoutAlign="center center" >
+    <div class="card" fxLayout="column" fxLayoutAlign="center stretch" >
+        <div class="header">
+            <h6> Plans & Pricing</h6>
+        </div>
+            <ul>
+                <mat-card *ngFor='let item of details' class="flex5">
+                    <li>      
+                        <h5>{{item.name}}</h5><hr>
+               
+                        <h6> &#x20b9;{{item.price}}/<h4>{{item.days}} days</h4></h6><br>
+                         <h4><h4 style="font-size:30px ;">6 hours/</h4>Day</h4><br>
+                         <span class="alink" (click)="onCreateDesc()">Know more</span><br>
+                          Would you like to select the plan? <br>
+                        <button mat-raised-button class="link5" (click)='buy(item.id)'>Select</button>
+                    </li>
+                 </mat-card>
+            </ul>
+            <br>
+            <br>
+    </div>
+</div>
+
+
+ -->
+
+
+ <ul class="list-group" *ngIf='resp'>
+    
+    <li class="list-group-item list-group-item-success" *ngFor='let i of l'>
+        MON
+        <input type="time" [(ngModel)]=d.MON[i]>
+       <p>{{item}}</p>
+    </li>
+
+    <li class="list-group-item list-group-item-dark" *ngFor='let i of l'>
+            TUE
+            <input type="time" [(ngModel)]=d.TUE[i]>
+           <p>{{item}}</p>
+    </li>
+
+        <li  class="list-group-item list-group-item-warning" *ngFor='let i of l'>
+                WED
+                <input type="time" [(ngModel)]=d.WED[i]>
+               <p>{{item}}</p>
+        </li>
+            <li  class="list-group-item list-group-item-danger" *ngFor='let i of l'>
+                    THU
+                    <input type="time" [(ngModel)]=d.THU[i]>
+                   <p>{{item}}</p>
+            </li>
+
+                <li class="list-group-item list-group-item-primary" *ngFor='let i of l'>
+                        FRI
+                        <input type="time" [(ngModel)]=d.FRI[i]>
+                       <p>{{item}}</p>
+                </li>
+
+                    <li class="list-group-item list-group-item-secondary" *ngFor='let i of l'>
+                            SAT
+                            <input type="time" [(ngModel)]=d.SAT[i]>
+                           <p>{{item}}</p>
+                    </li>
+
+                        <li class="list-group-item list-group-item-info"*ngFor='let i of l'>
+                                SUN
+                                <input type="time" [(ngModel)]=d.SUN[i]>
+                               <p>{{item}}</p>
+                        </li>
+
+ </ul>
+ <div class="block">
+    <button class="block" (click)='hug()'>Submit</button>
+ </div>
+
+
+
+
+
+
+
+

@@ -1,0 +1,74 @@
+<br>
+<!-- <p class="search">
+    <mat-form-field appearance="outline">
+      <mat-label>Subject</mat-label>
+      <input matInput placeholder="Subject">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Topic</mat-label>
+        <input matInput placeholder="Topic">
+      </mat-form-field>
+      <button mat-raised-button color="primary">Search</button>
+
+  </p> -->
+<mat-tab-group>
+<mat-tab label="Daily Classes" *ngIf='dclasses'> 
+<ul><li class="flex5" *ngFor='let dclass of dclasses'>
+<div class="card">
+    <div class="card-image"></div>
+    <div class="card-text">
+      <span class="date">Trainer: {{dclass.name}}</span>
+      <h4>{{dclass.subject}}</h4>
+      <p>{{dclass.dscp}}</p>
+    </div>
+    <div class="card-stats">
+      <div class="stat" (click)='buydailyc(dclass.id)'>
+        <div class="value">30<sup>$</sup></div>
+        <div class="type">Buy</div>
+      </div>
+      <div class="stat border">
+        <div class="value">{{dclass.time.slice(1,5)}}</div>
+        <div class="type">Time</div>
+      </div>
+      <div class="stat">
+        <div class="value">{{dclass.topic}}</div>
+        <div class="type">Description</div>
+      </div>
+    </div>
+  </div>
+</li>
+ 
+    </ul>
+    <br>
+    </mat-tab>
+    <mat-tab label="Mentoring Classes" *ngIf='mclasses'> 
+        <ul><li class="flex5" *ngFor='let mclass of mclasses.data'>
+            <div class="card">
+                <div class="card-image card3"></div>
+                <div class="card-text card3">
+                  <span class="date">Trainer:{{mclass.trnr}}</span>
+                  <h4>{{mclass.subject}}<br>{{mclass.topic}}</h4>
+                  <p>{{mclass.dcp}}<br>Duration 120 minutes.</p>                
+              </div>
+                <div class="card-stats card3" (click)='buy(mclass.id)'>
+                  <div class="stat">
+                    <div class="value">30<sup>$</sup></div>
+                    <div class="type">Buy</div>
+                  </div>
+                  <div class="stat border">
+                    <div class="value">{{mclass.time.slice(0,5)}}</div>
+                    <div class="type">Time</div>
+                  </div>
+                  <div class="stat">
+                    <div class="value">{{mclass.tpc}}</div>
+                    <div class="type">Descripton</div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            
+                </ul>
+                <br>
+</mat-tab>
+    </mat-tab-group>

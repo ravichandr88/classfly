@@ -1,0 +1,41 @@
+<!-- <div class="container">
+  <div class="row">
+      <div class="col-md-6 offset-md-3">
+          <h3>Choose File</h3>
+          <form (ngSubmit)="onSubmit()">
+              <div class="form-group">
+                <input type='file' (change)="fileChanged($event)" placeholder="Upload File">
+
+              </div>
+              <div class="form-group">
+                  <button class="btn btn-primary">Submit</button>
+              </div>
+          </form>
+      </div>
+  </div>
+</div>
+ -->
+
+
+
+ <h1>Upload the Artilce you want to publish</h1>
+<div>
+  <div *ngIf="response && imageURL">
+    <img [src]='imageURL' />
+  </div>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <mat-form-field style='width:100%'>
+                <textarea matInput placeholder="Title of the Artilce" name='title' formControlName='title'> </textarea>
+            </mat-form-field><br>
+
+    <input type="file" name="profile" (change)="onChange($event)" formControlName='profile'/>
+
+    <br>
+   
+    <br>
+    <button mat-raised-button type="submit">Submit</button>
+
+  </form>
+</div>
+

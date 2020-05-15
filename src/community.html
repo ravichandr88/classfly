@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> Classfly</title>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165421960-1"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="66089437958-9qai3nufijclobprh164n62hfcparv6i.apps.googleusercontent.com">
+   <!-- 674495236518-8bh1ogvntbv938iq2s88r1lsc7o0ru25.apps.googleusercontent.com -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165421960-1');
+</script>
+
+
+    <link rel="shortcut icon" href="//www.classfly.in/cassets/images/fav.jpg">
+    <link rel="stylesheet" href="//www.classfly.in/cassets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//www.classfly.in/cassets/css/fontawsom-all.min.css">
+    <link rel="stylesheet" href="//www.classfly.in/cassets/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="//www.classfly.in/cassets/css/style.css" />
+	<link rel="stylesheet" type="text/css" href="//www.classfly.in/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		
+		
+		
+		
+			<meta name="google-signin-scope" content="profile email">
+   
+    
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="66089437958-9qai3nufijclobprh164n62hfcparv6i.apps.googleusercontent.com"> 
+ 
+  
+  
+  
+  <script>
+      function onSignIn(googleUser) {
+        // Useful data for your client-side scripts:
+        var profile = googleUser.getBasicProfile();
+       // console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+       // console.log('Full Name: ' + profile.getName());
+        //console.log('Given Name: ' + profile.getGivenName());
+       // console.log('Family Name: ' + profile.getFamilyName());
+       // console.log("Image URL: " + profile.getImageUrl());
+       // console.log("Email: " + profile.getEmail());
+
+        // The ID token you need to pass to your backend:
+        var id_token = googleUser.getAuthResponse().id_token;
+        //console.log("ID Token: " + id_token);
+        
+        document.cookie = 'key='+profile.getEmail();
+        document.getElementById("go").innerHTML = "";
+        document.getElementById("gotl").innerHTML = "Logged In";
+        
+      }
+    </script>
+
+<script>
+
+  
+  //function to read cookie names
+		function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+		
+	 
+//function to change the related videos are clicked
+		$(document).ready(function(){
+		
+		$(document).delegate('.contri-bghy', 'click', function()
+{
+      
+      
+      
+      //check if the user has logged in or not
+      if(readCookie('key')==null)
+{alert('Please login using Google');
+ return;
+}
+      if(readCookie('saved')==null)
+      {
+	  var maild = {'email':readCookie('key')};
+	  //console.log(maild);
+         $.post("https://datafly.herokuapp.com/save",maild, function(data, status){
+		 if(data['code']==200)
+		 {
+           document.cookie = 'saved=true';
+		   }
+  });
+      }
+ //console.log($(this).attr('id'));
+ var id = $(this).attr('id');
+ $(this).remove();
+ var i = $("iframe").attr('id');
+//console.log(i)
+ 
+ //console.log(h[id]);
+ document.getElementById("lst").innerHTML = document.getElementById("lst").innerHTML + '<div class="contri-bghy"  id="'+i+'" >'+
+                            '<div class="image">'+
+                                '<img src="assets/images/classfly.png" alt="">'+
+                            '</div>'+
+                            '<div class="detail" >'+
+                               ' <h6>'+ h[i][1]+'</h6>'+
+                               
+                                '<span>'+ h[i][2]+'</span>'+
+                           ' </div>'+
+                        '</div>'; 
+						
+
+
+document.getElementById("v1").innerHTML= '<iframe id="'+id+'"  width="548" height="409"   src="https://drive.google.com/file/d/'+h[id][0]+'/preview" allowfullscreen></iframe> '+'<h2>'+h[id][1]+'</h2>';
+				
+ 
+});
+
+
+
+	
+	
+	
+
+
+  
+  
+		var l1 = '<iframe src="https://drive.google.com/file/d/';
+		var l2 = '/preview" width="640" height="480"></iframe>';
+		var h=[["1T-muwRwzXV5q6tQu1yZ2Ob5hVNaHJGR4","Vector Integration | Part 4 | Line Integral-2","03:08"],
+
+["1SsandgzqYzc6KZR-t0Mo08XTgy7dmgT_","Vector Integration | Part 5 | Surface & Volume Integrals","04:57"],
+
+["1N1XJFagtdtfnjFuoo_S3U4EM1Uw49GLN","Vector Integration | Part 6 |Green’s Theorem","02:24"],
+
+["1yDxyYl6_8raVyu44Q8JZKVt3HnPMVqxb","Vector Integration | Part 7| Stokes and Divergence Theorems","02:17"],
+
+["14K6vz_iDlJKBAmSbDMZCxoB4oPP_5Zrk","Vector Integration | Part 1 |Meaning of integration | Light issue solved","04:07"],
+
+["1R16rYy3TcOa4-EQ4N5cB6haKboEPifx9","Vector Integration | Part 2 | Basic idea of Integration | Light issue solved","02:28"],
+
+["18WFmaPMgJh1MTH1k7a7eLhoB4XLEpzHE","Vector Integration | Part 3 | Line Integral-1 | light issue solved","06:04"]];
+				
+		
+				
+		
+		
+	document.getElementById("gotl").innerHTML = "Login for more";
+		//name="'+i+'"
+		for(var i=1;i<h.length;i++)
+				{
+				document.getElementById("lst").innerHTML = document.getElementById("lst").innerHTML + '<div class="contri-bghy"  id="'+i+'" >'+
+                            '<div class="image">'+
+                                '<img src="assets/images/classfly.png" alt="">'+
+                            '</div>'+
+                            '<div class="detail" >'+
+                               ' <h6>'+ h[i][1]+'</h6>'+
+                               
+                                '<span>'+ h[i][2]+'</span>'+
+                           ' </div>'+
+                        '</div>'; 
+				}
+				
+				
+				document.getElementById("v1").innerHTML= '<iframe id="0" width="548" height="409"  src="https://drive.google.com/file/d/'+h[0][0]+'/preview"  allowfullscreen></iframe>'+'<h2>'+h[0][1]+'</h2>';
+				
+				
+				
+				
+					
+				
+				
+				
+});
+	/*	var l1 = '<iframe src="https://drive.google.com/file/d/';
+		var l2 = '/preview" width="640" height="480"></iframe>';
+		var h=[['1HPYsH6-Sr_kJN0IO3DaPm8hDJ_JKKk1g','Vector Integration | Part 1 | Meaning of Integration','03:00'],
+				['1mx26_hN61Z7e2S3teZRzqfQ-xa4QcQsj','Vecor Integration | Part 2 | Idea of Integration','02:40'],
+				['14ccAuSG1W4isEmoPPFNYzbxHDznr3-xp','Vector Integration | Part 3 | Line Integral 1','05:22'],
+				['1T-muwRwzXV5q6tQu1yZ2Ob5hVNaHJGR4','Vector Integration | Part 4 | Line Integral 2','03:18'],
+				]
+				
+		
+				
+		var change=function(){
+		console.log(h.length);
+		
+		document.getElementById("lst").innerHTML = "<p>Good to go</p>"; 
+		for(var i=1;i<h.length;i++)
+				{
+				document.getElementById("lst").innerHTML = document.getElementById("lst").innerHTML + '<div class="contri-bghy">'+
+                            '<div class="image">'+
+                                '<img src="assets/images/video/b1.jpg" alt="">'+
+                            '</div>'+
+                            '<div class="detail" >'+
+                               ' <h6>'+ h[i][1]+'</h6>'+
+                               
+                                '<span>'+ h[i][2]+'</span>'+
+                           ' </div>'+
+                        '</div>'; 
+				}
+				
+				}*/
+		</script>
+		
+	
+		
+
+</head>
+
+<body>
+  
+  <!--####################### Header Starts Here ###################-->
+      <header class="continer-fluid ">
+
+          <div id="menu-jk" class="header-bottom">
+              <div class="container">
+                  <div class="row nav-row">
+                      <div class="col-md-3 logo">
+                         <img src="assets/images/classfly.png" alt="">
+                      </div>
+                      <div class="col-md-9 nav-col">
+                        <nav class="navbar navbar-expand-lg navbar-light">
+                            
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                              <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarNav">
+                              <ul class="navbar-nav">
+                                <li class="nav-item active">
+                                  <a class="nav-link" href="home.html">Home </a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="about_us.html">About Us</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="signup.html">SignUp</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="single.html">Videos</a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a class="nav-link" href="#">Blog</a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a class="nav-link" href="contact_us.html">Contact US</a>
+                                  </li>
+                              </ul>
+                            </div>
+                          </nav>   
+                    </div>
+                  </div>
+              </div>
+          </div>
+      </header>
+  
+       <!--  ************************* Page Title Starts Here ************************** -->
+		<!--	<div class="top">
+				<div class="search-container">
+					<form action="single.html">
+						<input type="text" placeholder="Search..." name="search">
+							<button type="submit"><i class="fa fa-search"></i></button>
+					</form>
+				</div>
+			</div> -->
+
+			
+
+      <!--####################### Video Blog Starts Here ###################-->
+    
+
+      <div class="container-fluid video-blog">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="row no-margin video-cover">
+				            
+                          <div id="v1"></div>
+                          </div>
+             
+                           
+  <!--                <div class="g-signin2" data-onsuccess="onSignIn"></div> -->
+                  </div>
+				            <div class="col-md-4">
+                        <div class="row no-margin video-title">
+                            <h6><i class="fas fa-book-open" style='color:blue'></i> Related Videos</h6>
+                      
+                      </div>
+
+                      <div id="go"> <div class="g-signin2" data-onsuccess="onSignIn"></div>  </div>
+                      <h2 id="gotl"></h2>
+						<div id='lst'>
+              
+						</div>
+                       
+                                 
+                                                    
+                       
+                    </div>
+                </div>
+            </div>
+        </div>   
+
+
+   <!--####################### Footer Starts Here ###################-->
+    <div class="copy">
+            <div class="container">
+                <a href="https://www.smarteyeapps.com/">2020 &copy; All Rights Reserved | Designed and Developed by Classfly</a>
+                
+                <span>
+                <a href=""><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/groups/10411920/"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://in.pinterest.com/prabnr/pins/"><i class="fab fa-pinterest-p"></i></a>
+                <a href="https://twitter.com/prabinraja89"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.facebook.com/freewebtemplatesbysmarteye"><i class="fab fa-facebook-f"></i></a>
+        </span>
+            </div>
+
+        </div>
+</body><!--
+<script src="cassets/js/jquery-3.2.1.min.js"></script>
+<script src="cassets/js/popper.min.js"></script>
+<script src="cassets/js/bootstrap.min.js"></script>
+<script src="cassets/plugins/scroll-fixed/jquery-scrolltofixed-min.js"></script>
+<script src="cassets/js/script.js"></script>-->
+
+
+</html>

@@ -1,0 +1,222 @@
+
+
+
+
+
+
+
+
+
+
+<mat-nav-list>
+      <div class="header">
+  <!-- <a mat-list-item routerLink="/home" (click)="onSidenavClose()">
+      <mat-icon>home</mat-icon> <span class="nav-caption">Home</span>
+  </a>
+  <a mat-list-item routerLink="/owner" (click)="onSidenavClose()">
+      <mat-icon>assignment_ind</mat-icon> <span class="nav-caption">Owner Actions</span>   
+  </a>
+  <a mat-list-item routerLink="#" (click)="onSidenavClose()">
+      <mat-icon>account_balance</mat-icon><span class="nav-caption">Account Actions</span>
+  </a> -->
+
+   
+   
+
+   <div class="grid-container" >
+         <div class="grid-item"  (click)='home()'>
+            <img src="assets/img/butterfly.png" style="padding-left: 8px;padding-bottom: 8px;" width="90" height="90">
+        </div>
+         <div class="grid-item">
+         
+            <div class="grid-item">
+            <h6 style="color: green;" *ngIf='user'>{{username}}</h6></div>   
+         <!--   <div class="grid-item"  *ngIf='user && followers!=0'><small>Followers:{{followers}}</small></div>-->
+            <div class="grid-item" *ngIf='user'><small>Coins : {{coins}}$</small></div>
+         
+         </div> 
+       
+       </div>
+  <mat-divider></mat-divider>
+  <mat-divider></mat-divider>
+
+
+
+
+  <a mat-list-item routerLink="/" (click)="onSidenavClose()">
+   <img src="assets/img/f-icons/search.png" alt="">
+    <span class="nav-caption">Book Class</span>
+ </a>  
+
+ <a mat-list-item routerLink="/buy" *ngIf='tid' (click)="onSidenavClose()">
+   <img src="assets/img/f-icons/search.png" alt="">
+    <span class="nav-caption">Schedule Class</span>
+ </a>  
+
+
+ <a mat-list-item routerLink="/daily" (click)="onSidenavClose()" >
+   <img src="assets/img/f-icons/profile.png" alt="">
+    <span class="nav-caption">Daily Classes</span>
+ </a>
+ <a mat-list-item  (click)="onSidenavClose()" (click)="openrecord()">
+   <img src="assets/img/f-icons/search.png" alt="">
+    <span class="nav-caption">Recorded Class</span>
+ </a>  
+
+
+  <a mat-list-item *ngIf="!user"  (click)="onSidenavClose()" (click)="onCreateSignUp()">
+
+         <img src="assets/img/f-icons/signup.png" alt="">
+   
+   <span class="nav-caption">Sign Up</span>
+</a>
+
+
+ 
+<a mat-list-item *ngIf="!user"  (click)="onSidenavClose()" (click)="onCreateLogin()">
+   <img src="assets/img/f-icons/login.png" alt="">
+    <span class="nav-caption">Login</span>
+ </a>
+
+ <a mat-list-item *ngIf="user"  routerLink="/dash" (click)="onSidenavClose()" >
+   <img src="assets/img/f-icons/login.png" alt="">
+    <span class="nav-caption">Dashboard</span>
+ </a>
+
+
+ <a mat-list-item  *ngIf='!tid'  (click)="onSidenavClose()" (click)='opentrainersignup()'>
+   <img src="assets/img/f-icons/profile.png" alt="">
+    <span class="nav-caption">Become Trainer</span>
+ </a>
+
+<!--  
+ <a mat-list-item *ngIf='tid' routerLink="/scheduleclass" (click)="onSidenavClose()">
+   <img src="assets/img/f-icons/schedule.png" alt="">
+    <span class="nav-caption">Schedule Class</span>
+ </a> -->
+
+
+
+
+ <a mat-list-item *ngIf='user' routerLink="" (click)="onSidenavClose()" (click)="onCreateCoin()">
+   <img src="assets/img/f-icons/coin.png" alt="">
+    <span class="nav-caption">Buy Coins</span>
+ </a>
+ 
+<!-- 
+ <a mat-list-item routerLink="" (click)="onSidenavClose()" (click)="onCreateReport()">
+   <img src="assets/img/f-icons/profile.png" alt="">
+    <span class="nav-caption">Report</span>
+ </a> -->
+
+<!-- 
+ <a mat-list-item *ngIf='tid' routerLink="/buyclassroom" (click)="onSidenavClose()">
+   <img src="assets/img/f-icons/profile.png" alt="">
+    <span class="nav-caption">BuyClassRooms</span>
+ </a> -->
+
+
+ <a mat-list-item *ngIf='user' routerLink="/" (click)="logout()">
+   <img src="assets/img/f-icons/logout.png" alt="">
+    <span class="nav-caption">Logout</span>
+ </a>
+
+ 
+ <!--<a mat-list-item routerLink="/profile" (click)="onSidenavClose()">
+   <img src="assets/img/f-icons/profile.png" alt="">
+    <span class="nav-caption">Profile</span>
+ </a>-->
+
+ <a mat-list-item routerLink="" (click)="onCreateHelp()" (click)="onSidenavClose()">
+   <img src="assets/img/f-icons/help.png" alt="">
+    <span class="nav-caption">Help</span>
+ </a>
+
+ <a mat-list-item routerLink="" (click)="onCreateContactUs()" (click)="onSidenavClose()">
+   <img src="assets/img/f-icons/contact.png" alt="">
+    <span class="nav-caption">Contact Us</span>
+ </a>
+
+ 
+ <a mat-list-item routerLink="/about" (click)="onSidenavClose()">
+   <img src="assets/img/f-icons/search.png" alt="">
+    <span class="nav-caption">About Us</span>
+ </a>  
+ <hr>
+<a (click)='open("https://www.facebook.com/ClassFly-101045287981711/")'><img style="width: 40px; padding-left:13px"  src="assets/img/facebook.png" alt=""></a> 
+<a href=""><img style="width: 40px; padding-left:13px"  src="assets/img/instagram.png" alt=""></a> 
+<a (click)='open("https://www.linkedin.com/company/34624822/")'><img style="width: 40px; padding-left:13px"  src="assets/img/linked.png" alt=""></a>
+<a href=""><img style="width: 40px; padding-left:13px"  src="assets/img/whatsapp.png" alt=""></a>
+<a href=""><img style="width: 40px; padding-left:13px"  src="assets/img/twitter.png" alt=""></a>
+<br>
+<hr>
+
+ </div>
+</mat-nav-list>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+
+            <mat-sidenav mode="side" opened class='sidenav'>
+               <button *ngIf="!user" mat-button class='but' routerLink='/signup'><b>Signup</b></button>
+               <mat-divider></mat-divider>
+               <button *ngIf="!user" mat-button class='but' routerLink='/login'><b>Login</b></button>
+               <mat-divider></mat-divider>
+               <button mat-button class='but' routerLink='/trainersignup'><b>Become Trainer </b></button>
+               <mat-divider></mat-divider>
+               <button mat-button class='but' routerLink='/trainerbooking'><b> Schedule Class </b></button>
+               <mat-divider></mat-divider>
+               <button mat-button class='but' routerLink='/search'><b> Search Class</b></button>
+               <mat-divider></mat-divider>
+               <button mat-button  class='but' *ngIf='user' routerLink='/payment' ><b> Buy Coins </b></button>
+               <mat-divider></mat-divider>
+               <button mat-button  class='but' routerLink='/complaint' ><b> Complaint </b></button>
+               <mat-divider></mat-divider>
+               <button mat-button  class='but' *ngIf='tid' routerLink='/BuyclsrmComponent' ><b> BuyClassRooms </b></button>
+               <mat-divider></mat-divider>
+               <button mat-button  color="warn" *ngIf='user' (click)='logout()' class='but'><b> Logout </b></button>
+               
+               
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               <mat-divider></mat-divider>
+               <button mat-button  class='but' routerLink=''><b> Write Blog </b></button>
+               <mat-divider></mat-divider>
+               <button mat-button  class='but' routerLink=''><b>Publish Article</b></button>
+               <mat-divider></mat-divider>
+               <button mat-button class='but' routerLink=''><b>Profile</b></button>
+
+
+
+            </mat-sidenav> -->
+    
+ 

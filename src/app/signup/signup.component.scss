@@ -1,0 +1,91 @@
+.card{
+    margin-right: auto;
+    margin-left: auto;
+    // background-color: ;
+    //box-shadow: 10px 10px 5px grey;
+    border-radius: 15px;
+    
+} 
+
+.fun{
+    width:70%;
+    left:13px;
+    height: 20%;
+}
+.align{
+    text-align:center;
+    color:#0080ff;
+    text-decoration: none;
+}
+.funb{
+    width:15%;
+    height: 45px;
+    left:13px;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+}
+.funb:hover{
+    background-color: lightseagreen;
+  }
+.fun5{
+    width:70%;
+color:red;
+margin: -20px;
+//text-align: justify;
+font-size: 12px;
+font-family: Arial, Helvetica, sans-serif;
+font-weight: normal;
+margin-left: 13px;
+margin-top: -10px;
+
+}
+.h {
+    text-decoration: none;
+    color:#0080ff;
+    font-size: 18px;
+}
+.align5{
+    text-align:center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 13px;
+}
+.align5 color{
+    color: blue;
+}
+.cfun{
+    left:457%;
+    align-items: center;
+   
+
+}
+.mat-card{
+    //background-color: rgba(255, 255, 255, 0.8);
+  }
+  .h2 {
+    margin-top: 0px;
+    text-align: center;
+    font-size: 19px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+  }
+  .error {
+    margin-top: 0px;
+    text-align: left;
+    font-size: 19px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+  }
+  .sign {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 13px;
+    padding-left: 13px;
+  }
+
+  mat-form-field { /* Changes the input styling to just about nothing so that button styling can take over */
+    font-size: 13px;
+  }
+  
+

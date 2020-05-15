@@ -1,0 +1,63 @@
+<div fxLayout="column"  fxLayoutAlign="center center">
+    <div class="card" fxLayout="column" fxLayoutAlign="center stretch" style="width: 600px;">
+        <br>
+        <h2 class="h2">Fill the details below</h2>
+        <hr>                  
+        <form> 
+            <div class="matdrop" *ngIf='resp'>
+                <mat-form-field>
+                    <mat-label>Date</mat-label>
+                    <mat-select placeholder="Select"   (selectionChange)="selected($event)" >
+                        <mat-option  *ngFor="let item of resp | keyvalue" [value]="item.value" > {{item.key}}</mat-option >
+                      </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Time</mat-label>
+                    <mat-select placeholder="Select"  (selectionChange)="selectdate($event.value)">
+                        <mat-option *ngFor="let item of times" [value]="item">{{item}}</mat-option>
+                      </mat-select>
+                </mat-form-field>
+             
+
+                <mat-form-field appearance="outline">
+                        <mat-label>Subject</mat-label>
+                      <input matInput placeholder="Subject"   name='subject' [(ngModel)]='sub' >
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>topic</mat-label>
+                        <input matInput placeholder="topic" value="topic" [(ngModel)]='tpc' name='topic'>
+                      </mat-form-field>
+
+            </div>
+            <div class="img">
+                    <mat-form-field appearance="outline">
+                            <mat-label>Image url for class</mat-label>
+                            <input matInput placeholder="topic" value="img" [(ngModel)]='img' name='images'>
+                          </mat-form-field>
+                          <img  src="{{img}}" alt="">
+
+            </div>
+            <div class="desc">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Description about the class</mat-label>
+                      <textarea matInput placeholder="Description" [(ngModel)]='dcp' name='description'></textarea>
+                    </mat-form-field>
+                </div>
+                <div class="lastdiv">
+
+                        <mat-form-field>
+                            <mat-label>Language</mat-label>
+                            <mat-select (selectionChange)="selectlang($event)">
+                                  <mat-option *ngFor="let language of languages" [value]="language"  >{{language}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <button style="width: 20%; height: 40px;" mat-raised-button color="primary" (click)='book()'>Book</button>
+
+                        
+    
+            </div>
+            
+        </form>
+    </div>
+</div>

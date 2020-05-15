@@ -1,0 +1,195 @@
+// .tform {
+//     min-width: 150px;
+//     max-width: 500px;
+//     width: 100%;
+//   }
+  
+.fun{
+  width:70%;
+  align-items: center;
+  left:17%;
+}
+.align{
+  text-align:center;
+}
+.funb{
+  width:30%;
+  height: 50px;
+  
+  left:22%;
+}
+.func{
+  width:52%;
+  align-items: center;
+  left:47%;
+}
+.mt{
+  width:62%;
+}
+.mat-card{
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+
+//new css for trainer signup
+
+.fun{
+  width:80%;
+  left:13px;
+
+}
+.align{
+  text-align:center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-size: 80%;
+}
+.alignf{
+text-align:center;
+}
+mat-form-field { /* Changes the input styling to just about nothing so that button styling can take over */
+font-size: 13px;
+}
+
+.forgotpass{
+margin-left: 13px;
+font-family: Arial, Helvetica, sans-serif;
+font-weight: normal;
+font-size: 80%;
+
+}
+
+.funb{
+  width:17%;
+  height: 40px;
+  left:13px;
+ font-family: Arial, Helvetica, sans-serif;
+ font-weight: normal;
+ 
+
+}
+.funb:hover{
+background-color: lightseagreen;
+}
+.func{
+  width:52%;
+  text-align:right ;
+  left:47%;
+}
+.func a{
+text-align: right;
+}
+.func:hover{
+background-color: white;
+}
+.mat-card{
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.card{
+  border-radius: 15px;
+  //box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  //opacity: 0.9;
+
+
+
+}
+.h2 {
+  margin-top: 0px;
+  text-align: center;
+  font-size: 23px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+}
+
+.text_area textarea{
+  width:95%;
+  margin-left: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-size: 75%;
+
+}
+.text_area mat-form-field{
+  width:97%;
+  padding-left:12px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-size: 75%;
+
+}
+
+.link{
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-size: 80%;
+}
+.link img{
+  width: 80px; 
+  padding-left:13px
+}
+.grid-container {
+  display: grid;
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  grid-gap: 0px 0px;
+  grid-template-columns: auto auto;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  flex-wrap: wrap-reverse;
+
+  padding: 0px;
+}
+
+.grid-item {
+  padding: 4px;
+  font-size: 15px;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  flex-wrap: wrap-reverse;
+}
+.grid-container2 {
+  display: grid;
+  background-color: white;
+  grid-gap: 0px 0px;
+  grid-template-columns: auto auto;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+
+  padding: 0px;
+}
+
+.grid-item2 {
+  padding: 4px;
+  font-size: 15px;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+}
+.grid-item4 {
+  padding: 1px;
+  font-size: 15px;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+}
+.details{
+  padding-left: 6%;
+  font-size: 15px;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+
+}
+
+//list css
+
+ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap-reverse;
+}

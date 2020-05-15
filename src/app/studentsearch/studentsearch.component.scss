@@ -1,0 +1,64 @@
+.csscard {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
+    transition: 0.3s;
+    width: 100%;
+    background-color: #f0f5f5;;
+    //position: fixed;;
+  }
+  mat-form-field { /* Changes the input styling to just about nothing so that button styling can take over */
+    font-size: 15px;
+  }
+  .btn{
+    margin-top: -25px; 
+    padding: 14px 55px;
+    height: 60px;
+    text-decoration: none;
+    font-weight: 0;
+    font-style: normal;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 19px;
+
+  }
+  .mat{
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 9px;
+
+  }
+  ul{
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap:wrap;
+}
+ul li mat-card{
+    font-size:46%;
+    padding-left: 15px;;   
+    //font-family: Arial, Helvetica, sans-serif;
+    font-weight:0.005px;
+    font-family: monospace;
+    color: white;
+}
+.flex5{
+    flex-basis: 32%;
+}
+
+.flex5 mat-card h5{
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: normal;
+  font-family: Arial, Helvetica, sans-serif;
+  color:green;
+  padding-bottom: 5px;
+}
+.flex5 mat-card h6{
+  padding-top: 4px;
+  font-size: 12px;
+  text-decoration: none;
+  font-weight: normal;
+  font-family: Arial, Helvetica, sans-serif;
+}
+  //card
+    
