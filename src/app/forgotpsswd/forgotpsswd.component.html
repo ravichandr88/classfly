@@ -1,0 +1,14 @@
+
+<div class="pass" fxLayout="column"  fxLayoutAlign="center center">
+    <mat-card fxLayout="column" fxLayoutAlign="center stretch" class="card">
+        <h2 class="h2">Find Your Account</h2>
+        <hr class="new1">
+        <h6 class="h6"> Please enter your email address to search for your account. </h6> 
+        <mat-form-field class="example-full-width">
+            <mat-label>Email address...</mat-label>
+            <input matInput placeholder="Email" type='email' [(ngModel)]='email'>
+        </mat-form-field>
+
+            <button class="rec-but" mat-raised-button color="primary" (click)="verify()">Send</button>
+    </mat-card>  
+</div>

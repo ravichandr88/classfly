@@ -1,0 +1,98 @@
+
+<div fxLayout="column"  fxLayoutAlign="center center">
+        <div class="card" fxLayout="column" fxLayoutAlign="center stretch" style="width: 500px;">
+            <br>
+            <h2 class="h2">Feedback!</h2>
+            <p>{{cmnt}}</p>
+            <!--<h6 class="h6">Please provide your feedback below.</h6>-->
+            <hr> 
+            <!--<mat-radio-group aria-label="Select an option">
+                    <mat-radio-button value="1">Option 1</mat-radio-button>
+                    <mat-radio-button value="2">Option 2</mat-radio-button>
+                  </mat-radio-group>-->
+                <div>
+                <label class="label">Communication?</label>
+                <p>
+                    <label class="radio-inline">
+                    <input type="radio" name="comm" id="radio_experience" value="poor" (click)='comm(1)'>
+                    Poor
+                    </label>
+
+                    <label class="radio-inline">
+                    <input type="radio" name="comm" id="radio_experience" value="fair" (click)='comm(2)'>
+                    Fair
+                    </label>
+
+                    <label class="radio-inline">
+                    <input type="radio" name="comm" id="radio_experience" value="good" (click)='comm(3)'>
+                    Good
+                    </label>
+                    <label class="radio-inline">
+                            <input type="radio" name="comm" id="radio_experience" value="excelent" (click)='comm(4)'>
+                            Excelent
+                    </label>
+                </p>
+            </div>
+            <div>
+                    <label class="label">Content Preparation?</label>
+                    <p>
+                        <label class="radio-inline">
+                        <input type="radio" name="cont" id="radio_experience" value="poor" (click)='feed(1)'>
+                        Poor
+                        </label>
+    
+                        <label class="radio-inline">
+                        <input type="radio" name="cont" id="radio_experience" value="fair" (click)='feed(2)'>
+                        Fair
+                        </label>
+    
+                        <label class="radio-inline">
+                        <input type="radio" name="cont" id="radio_experience" value="good" (click)='feed(3)' >
+                        Good
+                        </label>
+                        <label class="radio-inline">
+                                <input type="radio" name="cont" id="radio_experience" value="excelent" (click)='feed(4)'>
+                                Excelent
+                        </label>
+                    </p>
+                </div>
+                <div>
+                        <label class="label">Time Management?</label>
+                        <p>
+                            <label class="radio-inline">
+                            <input type="radio" name="time" id="radio_experience" value="poor" (click)='tmng(1)'>
+                            Poor
+                            </label>
+        
+                            <label class="radio-inline">
+                            <input type="radio" name="time" id="radio_experience" value="fair" (click)='tmng(2)'>
+                            Fair
+                            </label>
+        
+                            <label class="radio-inline">
+                            <input type="radio" name="time" id="radio_experience" value="good" (click)='tmng(3)'>
+                            Good
+                            </label>
+                            <label class="radio-inline">
+                                    <input type="radio" name="time" id="radio_experience" value="excelent" (click)='tmng(4)'>
+                                    Excelent
+                            </label>
+                        </p>
+                    </div>
+
+                <div class="labela">
+                    <label>Overall Satisfaction?</label>
+               </div>
+               <div class="container">
+                    <div class="comment">
+                            <textarea class="textinput" placeholder="Type here" [(ngModel)]='commnts' ></textarea>
+                    </div>
+                </div> 
+
+
+            <div>
+                <button class="btn" mat-raised-button (click)='print()' color='primary'>Post</button>
+        </div>
+<br>
+</div> 
+</div>

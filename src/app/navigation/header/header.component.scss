@@ -1,0 +1,157 @@
+a {
+    text-decoration: none;
+    color:#333;;
+    font-size: 15px;
+}
+ 
+a:hover, a:active{
+    color: blue;
+}
+ 
+.navigation-items{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+ 
+mat-toolbar{
+    border-radius: 3px;
+    
+}
+ 
+@media(max-width: 100%){
+    mat-toolbar{
+        border-radius: 0px;
+    }
+}
+.header{
+background-color:white;
+border: 1px solid white;
+margin: 0px auto;
+//position: fixed;
+
+}
+.header-cont{
+    //position: fixed;
+    width: 100%;
+    top: 0px;
+    border-radius: 15px;
+    //box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    //opacity: 0.4;
+
+}
+span {
+    font-size: 15px;
+  }
+
+
+// new css
+
+
+a {
+    text-decoration: none;
+    color: #333;;
+}
+ 
+a:hover, a:active{
+    color: blue;
+}
+ 
+.navigation-items{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+ 
+mat-toolbar{
+    border-radius: 3px;
+    
+}
+ 
+@media(max-width: 100%){
+    mat-toolbar{
+        border-radius: 0px;
+    }
+}
+.login{
+    background-color: powderblue;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+}
+.login:hover{
+  background-color: paleturquoise;
+  color: blue;
+}
+.sign{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+}
+.sign:hover{
+    background-color:lightgray;
+    color: blue;
+    
+}
+.stpost{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    background: -webkit-linear-gradient(90deg, #00aee0 0%, #00fedc 100%);   
+    background: -moz-linear-gradient(90deg, #00aee0 0%, #00fedc 100%);
+    background: -ms-linear-gradient(90deg, #00aee0 0%, #00fedc 100%);
+    background: -o-linear-gradient(90deg, #00aee0 0%, #00fedc 100%);
+    background: linear-gradient(90deg, #00aee0 0%, #00fedc 100%); 
+}
+.stpost:hover{
+    background-color:lightgray;
+    color: blue;
+    
+}
+.alink { 
+    cursor:pointer; 
+    font-family: Arial, Helvetica, sans-serif;
+ 
+    }
+
+
+
+
+    //Signup css
+    .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        right: 0%;
+        background-color:black;
+        overflow: hidden;
+        transition: 0.7s;
+        padding-top: 35px;
+        border-radius: 15px;
+        border: 3px solid whitesmoke;
+        box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+       //opacity: 0.9;
+       }
+       .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+      }
+      
+      .sidenav a:hover {
+        color: #f1f1f1;
+      }
+      
+      .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+      
+  
+  
+

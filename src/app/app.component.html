@@ -1,0 +1,201 @@
+<!-- <div class="wrapper">
+    <div class="sidebar" data-color="danger" data-background-color="white" data-image="./assets/img/sidebar-1.jpg">
+        <app-sidebar></app-sidebar>
+    </div>
+  <div class="main-panel">
+        <app-nevbar></app-nevbar>
+        <router-outlet></router-outlet>
+    
+    </div>
+</div> -->
+
+
+<!-- <mat-drawer-container class="example-container">
+    <mat-drawer mode="side" opened>Drawer content</mat-drawer>
+    <mat-drawer-content>Main content</mat-drawer-content>
+  </mat-drawer-container>
+ -->
+
+ 
+ 
+    <mat-sidenav-container *ngIf='!laptop'>
+            
+           
+       
+ <mat-sidenav  #sidenav role="navigatio">
+  <app-sidenav-list (sidenavClose)="sidenav.close()"></app-sidenav-list>
+</mat-sidenav> 
+
+
+      <mat-sidenav-content> 
+        <app-header (sidenavToggle)="sidenav.toggle()"></app-header>
+        <main><span id="siteseal"><script async type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=JeqDIDBhMBv9fYeKdsusAsqYPAW8Ghkjae8kWblqLJzIZ2oimQtUuvQbpTaW"></script></span>
+
+          <router-outlet></router-outlet>
+        </main>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+
+
+
+
+
+    <mat-sidenav-container *ngIf='laptop'>
+            
+            <mat-sidenav  #sidenav mode="side"  opened="true" >
+                    <app-sidenav-list (sidenavClose)="sidenav.close()" ></app-sidenav-list>
+                  </mat-sidenav>
+       
+ 
+      <mat-sidenav-content> 
+        <app-header (sidenavToggle)="sidenav.toggle()"></app-header>
+        <main class="outlet">
+       
+          <router-outlet></router-outlet>
+        </main>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+        <mat-sidenav-container class="example-container" > -->
+
+            
+            <!-- <mat-sidenav mode="side" opened class='sidenav'>
+               <button *ngIf="!user" mat-button class='but' routerLink='/signup'><b>Signup</b></button>
+               <mat-divider></mat-divider>
+               <button *ngIf="!user" mat-button class='but' routerLink='/login'><b>Login</b></button>
+               <mat-divider></mat-divider>
+               <button mat-button class='but' routerLink='/trainersignup'><b>Become Trainer </b></button>
+               <mat-divider></mat-divider>
+               <button mat-button class='but' routerLink='/trainerbooking'><b> Schedule Class </b></button>
+               <mat-divider></mat-divider>
+               <button mat-button class='but' routerLink='/search'><b> Search Class</b></button>
+               <mat-divider></mat-divider>
+               <button mat-button  class='but' *ngIf='user' routerLink='/payment' ><b> Buy Coins </b></button>
+               <mat-divider></mat-divider>
+               <button mat-button  class='but' routerLink='/complaint' ><b> Complaint </b></button>
+               <mat-divider></mat-divider>
+               <button mat-button  class='but' *ngIf='tid' routerLink='/BuyclsrmComponent' ><b> BuyClassRooms </b></button>
+               <mat-divider></mat-divider>
+               <button mat-button  color="warn" *ngIf='user' (click)='logout()' class='but'><b> Logout </b></button>
+               
+               
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               <mat-divider></mat-divider>
+               <button mat-button  class='but' routerLink=''><b> Write Blog </b></button>
+               <mat-divider></mat-divider>
+               <button mat-button  class='but' routerLink=''><b>Publish Article</b></button>
+               <mat-divider></mat-divider>
+               <button mat-button class='but' routerLink=''><b>Profile</b></button>
+
+
+
+            </mat-sidenav> -->
+            <!-- <mat-sidenav-content>
+               
+<mat-toolbar> -->
+        <!-- <mat-toolbar-row style='background-color: white;'> -->
+        
+                <!-- <a> <img routerLink='/' src='../assets/img/logo.png' style='width:250px;height: 60px'></a> -->
+            
+        
+        
+<!--         
+                <h2 class='name'>DataFly</h2>
+        
+                <span class="spacer"></span>
+                
+                
+          
+                    </mat-toolbar-row>
+                </mat-toolbar>
+        
+                
+            <br>
+           
+        
+            <router-outlet >   
+                </router-outlet>
+            </mat-sidenav-content>
+          </mat-sidenav-container> -->
+
+

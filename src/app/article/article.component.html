@@ -1,0 +1,82 @@
+<!-- <button mat-raised-button (click)='back()' *ngIf='blogI'>Back</button>
+
+<div *ngIf='blogsT'>
+<mat-grid-list cols="3" rowHeight="1:1" class='grid'>
+
+    <mat-grid-tile *ngFor='let blog of blogs'>
+      <mat-card (click)='blogId(blog.id)' style="width:70%;height:80%;background-color:#f2f2f2;box-shadow: 10px 10px 5px grey;">
+        <mat-card-header  style="background-color:#cccccc"> 
+          <mat-card-title >{{blog.title.substring(0,45)}}..</mat-card-title>
+          <mat-card-subtitle>By: {{blog.author}}</mat-card-subtitle>
+        </mat-card-header>
+        
+       <br>
+      <mat-card-content [innerHtml]='blog.content'  style='background-color:white;color:grey;word-wrap: break-word'>
+      <!-- <p style='' >
+        </p> -- >
+      </mat-card-content>
+
+      <mat-card-footer style="background-color:#e8e8e8">
+        Uploaded on:{{blog.created_on}}
+      </mat-card-footer>
+    </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+</div>
+
+
+
+
+
+
+<mat-card class='blogcard' *ngIf='blogI'>
+  <mat-card-header>
+    <mat-card-title>{{blog.title}}</mat-card-title>
+    <mat-card-subtitle>Author: {{blog.author}}</mat-card-subtitle>
+    <mat-card-subtitle>Uploaded on: {{blog.created_on}}</mat-card-subtitle>
+  </mat-card-header>
+  <br>
+  <mat-divider></mat-divider>
+  <br>
+     <mat-card-content>
+        <p style='word-wrap: break-word' [innerHtml]='blog.content'>{{content}} </p>
+      </mat-card-content>
+      <mat-divider></mat-divider>
+       <br>
+       <br>
+    <mat-card-footer>
+        <mat-form-field style='width:100%'>
+            <textarea rows='3' matInput type="text" placeholder="Comment" [(ngModel)]='comment'></textarea>
+          </mat-form-field>
+            <br>
+            <br>
+            <button mat-raised-button (click)='add_comment()' color='primary'>Comment</button>
+    </mat-card-footer>
+  </mat-card>
+
+  <br>
+  <br>
+  <br>
+  <div *ngIf='blogI'>
+    
+<!-- 
+  <div *ngFor='let bl of blog.comments'>
+      <mat-card style='width:80%;margin-left: auto;margin-right: auto;display:block; color:#545454'>
+   <mat-card-header><h2 >User: {{bl.user}} </h2></mat-card-header>
+     <mat-card-content>  </mat-card-content>
+  <mat-card-footer </mat-card-footer>
+</mat-card> -- >
+<h2>Comments</h2>
+<mat-card>
+<mat-list role="list" *ngFor='let bl of blog.comments'>
+    <mat-list-item role="listitem"><h4 >User: {{bl.user}} </h4></mat-list-item>
+    <br>
+    <mat-list-item role="listitem"><h3 [innerHtml]='bl.comment' ></h3> </mat-list-item>
+    <mat-list-item role="listitem" style='text-align: right; margin-right: 10px'>{{bl.added_on}}</mat-list-item>
+    <mat-divider></mat-divider>
+  </mat-list>
+</mat-card>
+<!--   
+</div> -- >
+</div> -->

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title> ClassFly</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="cassets/css/style.css" />
+	<link rel="stylesheet" type="text/css" href="cassets/css/passreset.css" />
+</head>
+<body>
+  <!--####################### Header Starts Here ###################-->
+      <header class="continer-fluid ">
+
+          <div id="menu-jk" class="header-bottom">
+              <div class="container">
+                  <div class="row nav-row">
+                      <div class="col-md-3 logo">
+                         <img src="assets/img/clogo1.jpeg" alt="">
+                      </div>
+                      
+                  </div>
+              </div>
+          </div>
+      </header>
+  <div class="pass">
+    <div class="card">
+        <h2 class="h2">Choose a new password</h2>
+        <hr class="new1">
+        <h6 class="h6"> 
+			Create a new password that is at least 6 characters long. 
+            A strong password has a combination of letters, digits and punctuation marks. </h6> 
+        <div *ngIf='reset'>
+			<div class="container">
+				<label for="uname"><b>Create new password</label><br>
+					<input type="password" placeholder="New password" [(ngModel)]='passw' name="uname" required>
+					<br>
+				<label for="uname"><b>Confirm password</label><br>
+					<input type="password" placeholder="Confirm password" [(ngModel)]='cnfpassw' name="uname" required>
+					<br>
+				<!--<p class="p-match" *ngIf='passw!=cnfpassw'>Passwords do not match</p><br>-->
+				<div class="btnn">
+					<button class="button" style="vertical-align:middle"(click)='save()'>Create</button>
+				</div>
+			</div>
+
+        </div>
+    </div>  
+</div>
+</body>
+<script src="cassets/js/jquery-3.2.1.min.js"></script>
+<script src="cassets/js/popper.min.js"></script>
+<script src="cassets/js/bootstrap.min.js"></script>
+<script src="cassets/plugins/scroll-fixed/jquery-scrolltofixed-min.js"></script>
+<script src="cassets/js/script.js"></script>
+</html>

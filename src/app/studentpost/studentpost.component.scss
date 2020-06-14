@@ -1,0 +1,54 @@
+.card{
+    border-radius: 15px;
+    //box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    //opacity: 0.9;
+
+
+
+  }
+  .h2 {
+    margin-top: 9px;
+    text-align: center;
+    font-size: 23px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+  }
+  .fun{
+    width:40%;
+    left:13px;
+
+}
+.matdrop mat-form-field{
+  padding-left: 13px; 
+  width: 47%;
+}
+.desc mat-form-field{
+  padding-left: 13px; 
+  width: 94%;
+}
+.img mat-form-field{
+  padding-left: 13px; 
+  width: 70%;
+}
+.img img{
+padding-left:13px;
+width: 60px; 
+}
+.lastdiv mat-form-field{
+  padding-left:13px;
+  width: 71%; 
+  margin-bottom: 5px;
+  }
+
+  .lastdiv button{
+    margin-left: 18px;
+    }
+    mat-form-field { /* Changes the input styling to just about nothing so that button styling can take over */
+      font-size: 12px;
+    }
+    .h6{
+        font-size:10px;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: normal;
+      }

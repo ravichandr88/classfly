@@ -1,0 +1,241 @@
+// .tform {
+//     min-width: 150px;
+//     max-width: 500px;
+//     width: 100%;
+//   }
+.area{
+  padding-top: 20px;
+}
+.card{
+  border-radius: 15px;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  //opacity: 0.9;
+  padding-top: 5px;
+  width: 900px;
+  padding-bottom: 40px;
+}
+  
+
+
+.h2 {
+  margin-top: 0px;
+  text-align: center;
+  font-size: 23px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+}
+.h21 {
+  margin-top: 0px;
+  text-align: center;
+  font-size: 23px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  padding-bottom: 7px;
+}
+
+
+
+
+.example-form {
+padding-bottom: 20px;
+}
+
+.example-full-width {
+  width: 92%;
+  padding: 20px;
+  padding-bottom: 0px;
+}
+.example-half-width {
+  width: 360px;
+  padding: 20px;
+  padding-bottom: 0px;
+}
+.funb{
+  width:150px;
+  left: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  padding: 7px;
+  font-size: 18px;
+
+}
+.funb:hover{
+background-color: lightseagreen;
+}
+
+mat-form-field { /* Changes the input styling to just about nothing so that button styling can take over */
+  font-size: 13px;
+}
+p{
+  color:red;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  padding-left: 29px;
+  font-size: 10px;
+
+}
+.err-color{
+  color:red;
+}
+.err-color1{
+  color:red;
+}
+
+.example-h2 {
+  margin: 10px;
+}
+
+.example-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+.example-margin {
+  margin: 0 10px;
+}
+//Css for DP selection
+.example{ 
+  border: 4px solid #eee;
+   margin-bottom:30px;
+  }
+.example-preview{ 
+  padding: 1.5rem; 
+}
+.example > pre{ 
+  border-top: 4px solid #eee;
+  margin:0; 
+}
+.no-html{ 
+  display: none;
+ }
+.highlihgt-grid .row + .row{
+   margin-top: 1rem;
+  }
+.highlihgt-grid [class^="col-"]{
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    background-color: rgba(86,61,124,.15);
+    border: 1px solid rgba(86,61,124,.2);
+}
+.img-fluid{
+width: 70%;
+}
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+// Vars and Reset
+// 
+$theme:       #454cad;
+$dark-text:   #5f6982;
+.hidden{
+  border-radius: 50%;
+}
+h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 26px;
+  line-height: 1;
+  color: $theme;
+  margin-bottom: 0;
+  text-align: center;
+}
+p {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  color: $dark-text;
+}
+// Upload  css
+// 
+.uploader {
+  display: block;
+  clear: both;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 600px;
+
+  label {
+    float: left;
+    clear: both;
+    width: 100%;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    background: #fff;
+    border-radius: 7px;
+    border: 3px solid #eee;
+    transition: all .2s ease;
+    user-select: none;
+
+    &:hover {
+      border-color: $theme;
+    }
+    &.hover {
+      border: 3px solid $theme;
+      box-shadow: inset 0 0 0 6px #eee;
+      
+      #start {
+        i.fa {
+          transform: scale(0.8);
+          opacity: 0.3;
+        }
+      }
+    }
+  }
+
+  #start {
+    float: left;
+    clear: both;
+    width: 100%;
+    &.hidden {
+      display: none;
+    }
+    i.fa {
+      font-size: 50px;
+      margin-bottom: 1rem;
+      transition: all .2s ease-in-out;
+    }
+  }
+
+  
+ // input[type="file"] {
+   // display: none;
+  //}
+
+
+  .btn {
+    display: inline-block;
+    margin: .5rem .5rem 1rem .5rem;
+    clear: both;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: initial;
+    border: none;
+    border-radius: .2rem;
+    outline: none;
+    padding: 0 1rem;
+    height: 36px;
+    line-height: 36px;
+    color: #fff;
+    transition: all 0.2s ease-in-out;
+    box-sizing: border-box;
+    background: $theme;
+    border-color: $theme;
+    cursor: pointer;
+  }
+}
+section {
+  display: table;
+  margin: 8px;
+}
+
+.example-label {
+  display: table-cell;
+  font-size: 14px;
+  margin-left: 8px;
+  width: 120px;
+}
+
+
+// css for 2nd form 

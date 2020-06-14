@@ -1,0 +1,9 @@
+<div>
+    <mat-card *ngFor='let art of artlst'>
+        <mat-card-header>{{art.user}}</mat-card-header>
+        <mat-card-content>{{art.title}}</mat-card-content>
+        <a mat-button href='art.url'>{{art.url}}</a>
+        <mat-card-footer>{{art.uploaded_on.slice(15)}}</mat-card-footer>
+    </mat-card>
+    <br>
+</div>

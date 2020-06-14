@@ -1,0 +1,99 @@
+<mat-card style='width:60%;margin-left: auto; margin-right: auto' *ngIf='profileform'>
+<form [formGroup]='pform'>
+   
+    <mat-form-field class='fun'>
+        <input matInput formControlName='firstName' placeholder="First Name *" type='text'>
+    </mat-form-field>
+    <h6 *ngIf= 'submitted && f.firstName.errors'>First Name is required</h6>
+
+    <mat-form-field class='fun'>
+        <input matInput formControlName='lastName' placeholder="Last Name" type='text'>
+    </mat-form-field>
+
+    <mat-form-field class='fun'>
+        <input matInput formControlName='contactNumber' placeholder="Contact Number" value='+91' type="text">
+    </mat-form-field>
+    <div *ngIf= 'submitted && f.contactNumber.errors'>
+        <h6 *ngIf='f.contactNumber.errors.required'>Please enter Contact Number</h6>
+        <h6 *ngIf='f.contactNumber.errors.minlength'>Phone number should be 10 digits, along with country code</h6>
+    </div>
+    <br>
+
+    <mat-form-field class='fun'>
+        <input matInput formControlName='alternateEmail' placeholder="Alternate Email  ">
+    </mat-form-field>
+    <div *ngIf='submitted && f.alternateEmail.errors'>
+        <h6 *ngIf='f.alternateEmail.errors.email'>Please enter a valid email</h6>
+        <h6 *ngIf='f.alternateEmail.errors.required'>Please enter an alternate email</h6>
+    </div>
+
+    <mat-form-field class='fun'>
+        <textarea matInput type="text" rows='4' formControlName='educationQualification' placeholder="Education Qualification"></textarea>
+    </mat-form-field>
+    <h6 *ngIf='submitted && f.educationQualification.errors'>Please enter your education qualification</h6>
+
+    <mat-form-field class='fun'>
+        <input matInput type='number' formControlName='workExperience' placeholder="Work Experience in Years.Months" value='0.1' step=0.01 >
+    </mat-form-field>
+    <h6 *ngIf='submitted && f.workExperience.errors'>Please Enter your work experience</h6>
+
+
+    <!-- <mat-form-field>
+            employmentType
+    </mat-form-field> -->
+    
+    <mat-form-field>
+            <mat-label>EmploymentType</mat-label>
+            <mat-select formControlName='employmentType'>
+              <mat-option *ngFor='let typ of empTypes' [value]="typ.value">
+              {{typ.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+    <mat-form-field class='fun'>
+           <input  matInput type='text' placeholder="CurrentDesignation" formControlName='currentDesignation' >
+    </mat-form-field>
+    <h6 *ngIf = 'submitted && f.currentDesignation.errors'>Please enter your current designation</h6>
+
+    <mat-form-field class='fun'>
+        <input  matInput type='text' formControlName='currentOrganisation' placeholder="Current Organisation">
+    </mat-form-field>
+    <h6 *ngIf = 'submitted && f.currentOrganisation.errors'>Please enter your current organisation</h6>
+
+    <mat-form-field class='fun'>
+        <input matInput type='text' formControlName='industrySegment' placeholder="Industry Segment">
+    </mat-form-field>
+    <h6 *ngIf='submitted && f.industrySegment.errors'>Please fill the Industry Segment</h6>
+
+    <mat-form-field class='fun'>
+        <input  matInput type='text' formControlName='placeOfEmployment' placeholder="Place Of Employmnet __Sate,City__">
+    </mat-form-field>
+    <h6 *ngIf='submitted && f.placeOfEmployment.errors'>Please fill in the state and city of current organisation</h6>
+
+    <mat-form-field class='fun'>
+        <textarea  matInput formControlName='futureCareerAspiration' rows='8' placeholder="Future Career Aspiration" ></textarea>
+    </mat-form-field>
+    <h6 *ngIf='submitted && f.futureCareerAspiration.errors'>Please write about your future aspiration,</h6>
+<button mat-raised-button color='primary' (click)='print()'>Submit</button>
+
+</form>
+
+</mat-card>
+
+<mat-card *ngIf='profile' style='width:60%;margin-left: auto; margin-right: auto'>
+<h3>Name: {{profiledata.firstName}} {{profiledata.lastName}}</h3>
+<h3>Contact Number: {{profiledata.contactNumber}}</h3>
+<h3>Alternate Email: {{profile.alternateEmail}}</h3>
+<h3>Education Qualification:</h3>
+<h3 [innerHtml]='profiledata.educationQualification'> </h3>
+<h3>Work Experience: {{profiledata.workExperience}} Years and Months</h3>
+<h3>Employment Type: {{profiledata.employmentType}}</h3>
+<h3>Current Designation: {{profiledata.currentDesignation}}</h3>
+<h3>Current Organisation: {{profiledata.currentOrganisation}}</h3>
+<h3>Industry Segment: {{profiledata.industrySegment}}</h3>
+<h3>Place Of Employment: {{profiledata.placeOfEmployment}}</h3>
+<h3 [innerHtml]='"Future Career Aspiration:<br>" + profiledata.futureCareerAspiration'></h3>
+</mat-card>
+
+
+

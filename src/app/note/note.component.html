@@ -1,0 +1,45 @@
+<!-- 
+<br>
+<mat-card style='width:min-content;margin: auto'>
+ 
+  <div *ngIf='notelist'>
+    <div *ngFor="let j of notelist">
+    <mat-card  style="white-space:pre-wrap; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif"><p>{{j.note}}</p> <mat-divider></mat-divider><p style="font-size: 10px">{{j.time}}</p></mat-card>
+    <br><br>
+  </div>
+    
+  </div>
+  <br>
+  <mat-card *ngIf='note'>
+    <div [innerHTML]='note' style="white-space:pre-wrap; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif"></div>
+  </mat-card>
+<br>
+  <p>Put your code between tag $code$ and $code$</p>
+  <textarea (keydown.control.FORWARD_SLASH)="cntrl()" (keypress)="keyPress($event)" [(ngModel)]='note' rows=20 cols=80 placeholder="Write title,  code and description"></textarea>
+  <br>
+
+  <button mat-raised-button (click)='add()'>Submit</button>
+</mat-card> -->
+
+    <!-- <mat-divider></mat-divider> 
+
+<mat-card style="width:70%">
+  <div *ngFor='let i of getlen(plst)' >
+  
+      <img *ngIf='plst[i][0]' src="assets/img/edit.jpg" style="position: absolute;left:0;width: 25px;height: 25px"   (click)="change(i)"  />
+      <img *ngIf="plst[i][0]==false"  src="assets/img/save.png" style="position: absolute;left:0;width: 25px;height: 25px"   (click)="change(i)"  />
+<br>
+      <p *ngIf="plst[i][0]" [innerHTML]='plst[i][1]'  style="white-space:pre-wrap;display: inline;position:relative;"></p>
+      <textarea *ngIf='plst[i][0] == false' id="textarea" [(ngModel)]='plst[i][1]' (keyup)='autogrow()' style="resize: none; width:100%" [innerHTML]="plst[i][1]"></textarea>
+</div>
+  <textarea   id="textarea" [(ngModel)]='note' (keyup)='autogrow()' style="resize: none; width:100%"></textarea>
+   
+  <br>
+  <button mat-button (click)="code()">Code</button>
+  <button mat-button>Comments</button>
+
+</mat-card>
+
+
+
+   -->

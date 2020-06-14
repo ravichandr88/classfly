@@ -1,0 +1,402 @@
+
+        <h2 class="title">Welcome to your dashboard !</h2>
+        <hr>
+        
+<!-- <p class="search">
+    <mat-form-field appearance="outline">
+      <mat-label>Subject</mat-label>
+      <input matInput placeholder="Subject">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Topic</mat-label>
+        <input matInput placeholder="Topic">
+      </mat-form-field>
+      <button mat-raised-button color="primary">Search</button>
+
+  </p> -->
+<mat-tab-group>
+        <mat-tab label="Attnded classes" *ngIf='resp?.clasatnd[0].length > 0 || resp?.clasatnd[1].length > 0'> 
+                <mat-card class="mat" >
+                        <h2 class="head">Classes you Attended.</h2>
+                         <hr>
+                                <ul>        <li class="card" *ngFor='let item of resp?.clasatnd[0]'  style="width:230px; height:240px">
+                                                <div class="single_course">
+                                                        <div class="course_head overlay">
+                                                                <img class="img-fluid w-100" src="assets/img/courses/spring.png" alt="">
+                                                                <div class="authr_meta">
+                                                                        <img src="assets/img/butterfly1.png" alt="">
+                                                                        <span>
+                                                                                {{item.trainer}}||{{item.rating}}
+                                                                                <img src="assets/img/f-icons/star.png" alt="">
+                                                                                <img src="assets/img/f-icons/star.png" alt="">
+                                                                                <img src="assets/img/f-icons/star.png" alt="">
+                                                                                <img src="assets/img/f-icons/star.png" alt="">
+                                                                                <img src="assets/img/f-icons/star.png" alt="">
+                                                                        </span>
+                                                                 </div>
+                                                        </div>
+                                                        <h6 class="alignb">{{item.subject}}||{{item.topic}}||{{item.lang}}</h6>
+                                                        <div class="a">	   
+                                                                <h6 class="align">Students:{{item.stdnts}} ||<a style="color: blue;" (click)="onCreateDesc(item.id,item.lvl)">Description</a></h6>
+                                                                <h6 class="align">Date-Time:{{item.datetime}}</h6>
+                                                        </div>
+                                                </div>
+                                        </li>
+                   
+                                        <li class="card" *ngFor='let item of resp?.clasatnd[1]' style="width:230px; height:240px">
+                                                <div class="single_course">
+                                                        <div class="course_head overlay">
+                                                                <img class="img-fluid w-100" src="assets/img/courses/spring.png" alt="">
+                                                                <div class="authr_meta">
+                                                                        <img src="assets/img/butterfly1.png" alt="">
+                                                                        <span>
+                                                                                {{item.name}}||{{item.rating}}
+                                                                                <img src="assets/img/f-icons/star.png" alt="">
+                                                                                <img src="assets/img/f-icons/star.png" alt="">
+                                                                                <img src="assets/img/f-icons/star.png" alt="">
+                                                                                <img src="assets/img/f-icons/star.png" alt="">
+                                                                                <img src="assets/img/f-icons/star.png" alt="">
+                                                                        </span>
+                                                                 </div>
+                                                        </div>
+                                                        <h6 class="alignb">{{item.subject}}||{{item.topic}}||{{item.lang}}</h6>
+                                                        <div class="a">	   
+                                                                <h6 class="align">Students:{{item.stdnts}}||<a style="color: blue;" (click)="onCreateDesc(item.id,item.lvl)">Description</a></h6>
+                                                                <h6 class="align">Date-Time:{{item.datetime}}</h6>
+                                                        </div>
+                                                </div>
+                                        </li>
+                                        </ul>
+       
+                </mat-card>
+
+            
+</mat-tab>
+<mat-tab label="Today's Classes"  *ngIf='resp?.curntdayatnd[0].length > 0 || resp?.curntdayatnd[1].length > 0'> 
+        <mat-card class="mat">
+                <h2 class="head">Classes to attend today.<h5 class="head">(Meeting Link will be shown 15 minutes before the class starts)</h5></h2>
+
+         <hr>
+                <ul>
+                        <li class="card" *ngFor='let item of resp?.curntdayatnd[0]'  style="width:230px; height:240px">
+                                <div class="single_course">
+                                        <div class="course_head overlay">
+                                                <img class="img-fluid w-100" src="assets/img/courses/spring.png" alt="">
+                                                <div class="authr_meta">
+                                                        <img src="assets/img/butterfly1.png" alt="">
+                                                        <span>
+                                                                {{item.trainer}}||{{item.rating}}
+                                                                <img src="assets/img/f-icons/star.png" alt="">
+                                                                <img src="assets/img/f-icons/star.png" alt="">
+                                                                <img src="assets/img/f-icons/star.png" alt="">
+                                                                <img src="assets/img/f-icons/star.png" alt="">
+                                                                <img src="assets/img/f-icons/star.png" alt="">
+                                                        </span>
+                                                 </div>
+                                        </div>
+                                        <h6 class="alignb">{{item.subject}}||{{item.topic}}||{{item.lang}}</h6>
+                                        <div class="a">	   
+                                                <h6 class="align">Time:{{item.time}} ||<a style="color: blue;" (click)="onCreateDesc(item.id,item.lvl)">Description</a></h6>
+                                               <br> <button class="left" *ngIf='item.meetinglink != ""' mat-raised-button (click)="open(item.meetinglink)">Join Class</button>
+                                                <!-- <h6 class='alignb' *ngIf='item.meetinglink == ""'>Meeting Link</h6> -->
+                                        </div>
+                                </div>
+                        </li>
+                        <li class="card" *ngFor='let item of resp?.curntdayatnd[1]' style="width:230px; height:240px">
+                                <div class="single_course">
+                                        <div class="course_head overlay">
+                                                <img class="img-fluid w-100" src="assets/img/courses/spring.png" alt="">
+                                                <div class="authr_meta">
+                                                        <img src="assets/img/butterfly1.png" alt="">
+                                                        <span>
+                                                                {{item.trainer}}||{{item.rating}}
+                                                                <img src="assets/img/f-icons/star.png" alt="">
+                                                                <img src="assets/img/f-icons/star.png" alt="">
+                                                                <img src="assets/img/f-icons/star.png" alt="">
+                                                                <img src="assets/img/f-icons/star.png" alt="">
+                                                                <img src="assets/img/f-icons/star.png" alt="">
+                                                        </span>
+                                                 </div>
+                                        </div>
+                                        <h6 class="alignb">{{item.subject}}||{{item.topic}}||{{item.lang}}</h6>
+                                        <div class="a">	   
+                                                <h6 class="align">Time:{{item.time}}||<a style="color: blue;" (click)="onCreateDesc(item.id,item.lvl)">Description</a></h6>
+                                                <br><button class="left" *ngIf='item.meetinglink != ""' mat-raised-button (click)="open(item.meetinglink)">Join Meeting</button>
+                                                <!-- <h6 class='alignb' *ngIf='item.meetinglink == ""'>Meeting Link </h6> -->
+                                        </div>
+                                </div>
+                        </li>
+        </ul>
+</mat-card>
+
+    <br>
+    </mat-tab>
+    <mat-tab label="Upcoming Booked classes" *ngIf='resp?.clastoatnd[0].length > 0 || resp?.clastoatnd[1].length > 0'> 
+        <mat-card class="mat">
+                <h2 class="head"> Classes to attend from tomorrow.</h2>
+                 <hr>
+                        <ul>
+                                <li class="card" *ngFor='let item of resp?.clastoatnd[0]'  style="width:230px;height:240px">
+                                        <div class="single_course">
+                                                <div class="course_head overlay">
+                                                        <img class="img-fluid w-100" src="assets/img/courses/spring.png" alt="">
+                                                        <div class="authr_meta">
+                                                                <img src="assets/img/butterfly1.png" alt="">
+                                                                <span>
+                                                                        {{item.trainer}}||{{item.rating}}
+                                                                        <img src="assets/img/f-icons/star.png" alt="">
+                                                                        <img src="assets/img/f-icons/star.png" alt="">
+                                                                        <img src="assets/img/f-icons/star.png" alt="">
+                                                                        <img src="assets/img/f-icons/star.png" alt="">
+                                                                        <img src="assets/img/f-icons/star.png" alt="">
+                                                                </span>
+                                                         </div>
+                                                </div>
+                                                <h6 class="alignb">{{item.subject}}||{{item.topic}}||{{item.lang}}</h6>
+                                                <div class="a">	   
+                                                        <h6 class="align">Students:{{item.stdnts}} ||<a style="color: blue;" (click)="onCreateDesc(item.id,item.lvl)">Description</a></h6>
+                                                        <h6 class="align">Date-Time:{{item.datetime}}</h6>
+                                                </div>
+                                                <!-- <button class="left" mat-raised-button routerLink="{{item.link}}">Link</button> -->
+                                        </div>
+                                </li>
+                                <li class="card" *ngFor='let item of resp?.clastoatnd[1]'  style="width:230px;height:240px">
+                                        <div class="single_course">
+                                                <div class="course_head overlay">
+                                                        <img class="img-fluid w-100" src="assets/img/courses/spring.png" alt="">
+                                                        <div class="authr_meta">
+                                                                <img src="assets/img/butterfly1.png" alt="">
+                                                                <span>
+                                                                        {{item.trainer}}||{{item.rating}}
+                                                                        <img src="assets/img/f-icons/star.png" alt="">
+                                                                        <img src="assets/img/f-icons/star.png" alt="">
+                                                                        <img src="assets/img/f-icons/star.png" alt="">
+                                                                        <img src="assets/img/f-icons/star.png" alt="">
+                                                                        <img src="assets/img/f-icons/star.png" alt="">
+                                                                </span>
+                                                         </div>
+                                                </div>
+                                                <h6 class="alignb">{{item.subject}}||{{item.topic}}||{{item.lang}}</h6>
+                                                <div class="a">	   
+                                                        <h6 class="align">Students:{{item.stdnts}}||<a style="color: blue;" (click)="onCreateDesc(item.id,item.lvl)">Description</a></h6>
+                                                        <h6 class="align">Date-Time:{{item.datetime}}</h6>
+                                                </div>
+                                                <!-- <button class="left" mat-raised-button routerLink="{{item.link}}">Link</button> -->
+                                        </div>
+                                </li>
+                </ul>
+        </mat-card>
+</mat-tab>
+<!-- 
+<mat-tab label="Responded Trainers"> 
+        <mat-card class="mat">
+                <h2 style="font-size: 25px; padding-left: 47px;" class="display-4 font-weight-light">Response form the trainer</h2>
+                <hr>
+        
+                    <ul>
+                        <div>
+        
+                        <li class="flex5" *ngFor='let item of resp'>
+                            <mat-card style="margin-bottom: 6px; background-color: white;">
+                                <h5>{{resp.tname}}</h5>
+                                <mat-divider></mat-divider>
+                                    <h6>{{resp.sub}}Training</h6>
+                                    <h6>Topic: {{resp.tpc}}</h6>
+                                    <h6>Language:  {{resp.lang}}</h6>
+                                    <h6>{{resp.date}}||{{resp.time}}</h6>
+                                    <a style="font-size: large; text-decoration: underline; padding-left: 150px;" href="">Book $</a>
+        
+                            </mat-card>                
+                        </li>
+                        </div>
+                    </ul>
+            </mat-card>     
+        
+        <br>
+</mat-tab>
+-->
+<mat-tab label="Classes took (History)"  *ngIf='resp?.clastook[0].length > 0 || resp?.clastook[1].length > 0'> 
+        <mat-card class="mat">
+                <h2 class="head">Classes you took.</h2>
+                 <hr>
+                        <ul>
+                                <li class="card" *ngFor='let item of resp?.clastook[0]'  style="width:230px; height:240px">
+                                        <div class="single_course">
+                                                <div class="course_head overlay">
+                                                        <img class="img-fluid w-100" src="assets/img/courses/spring.png" alt="">
+                                                        <div class="authr_meta">
+                                                                <img src="assets/img/butterfly1.png" alt="">
+                                                                <span>
+                                                                        {{item.trainer}}||{{item.rating}}
+                                                                        <img src="assets/img/f-icons/star.png" alt="">
+                                                                        <img src="assets/img/f-icons/star.png" alt="">
+                                                                        <img src="assets/img/f-icons/star.png" alt="">
+                                                                        <img src="assets/img/f-icons/star.png" alt="">
+                                                                        <img src="assets/img/f-icons/star.png" alt="">
+                                                                </span>
+                                                         </div>
+                                                </div>
+                                                <h6 class="alignb">{{item.subject}}||{{item.topic}}||{{item.lang}}</h6>
+                                                <div class="a">	   
+                                                        <h6 class="align">Students:{{item.stdnts}} ||<a style="color: blue;" (click)="onCreateDesc(item.id,item.lvl)">Description</a></h6>
+                                                        <h6 class="align">Date-Time:{{item.datetime}}</h6>
+                                                </div>
+                                        </div>
+                                </li>
+                                <li class="card" *ngFor='let item of resp?.clastook[1]' style="width:230px; height:240px">
+                                        <div class="single_course">
+                                                <div class="course_head overlay">
+                                                        <img class="img-fluid w-100" src="assets/img/courses/spring.png" alt="">
+                                                        <div class="authr_meta">
+                                                                <img src="assets/img/butterfly1.png" alt="">
+                                                                <span>
+                                                                        {{item.name}}||{{item.rating}}
+                                                                        <img src="assets/img/f-icons/star.png" alt="">
+                                                                        <img src="assets/img/f-icons/star.png" alt="">
+                                                                        <img src="assets/img/f-icons/star.png" alt="">
+                                                                        <img src="assets/img/f-icons/star.png" alt="">
+                                                                        <img src="assets/img/f-icons/star.png" alt="">
+                                                                </span>
+                                                         </div>
+                                                </div>
+                                                <h6 class="alignb">{{item.subject}}||{{item.topic}}||{{item.lang}}</h6>
+                                                <div class="a">	   
+                                                        <h6 class="align">Students:{{item.stdnts}}||<a style="color: blue;" (click)="onCreateDesc(item.id,item.lvl)">Description</a></h6>
+                                                        <h6 class="align">Date-Time:{{item.datetime}}</h6>
+                                                </div>
+                                        </div>
+                                </li>
+                </ul>
+        </mat-card>
+            
+</mat-tab>
+<mat-tab label="Start Class Today" *ngIf='resp?.curntdaytke[0].length > 0 || resp?.curntdaytke[1].length > 0'> 
+        <mat-card class="mat">
+                <h2 class="head">Classes to take today.<h5 class="head">(Meeting Link will be shown 15 minutes before the class starts)</h5></h2>
+        
+                        <ul>
+                                <li class="card" *ngFor='let item of resp?.curntdaytke[0]'  style="width:230px; height:240px">
+                                        <div class="single_course">
+                                                <div class="course_head overlay">
+                                                        <img class="img-fluid w-100" src="assets/img/courses/spring.png" alt="">
+                                                        <div class="authr_meta">
+                                                                <img src="assets/img/butterfly1.png" alt="">
+                                                                <span>
+                                                                        {{item.name}}||
+                                                                        <img src="assets/img/f-icons/star.png" alt="">
+                                                                        <img src="assets/img/f-icons/star.png" alt="">
+                                                                        <img src="assets/img/f-icons/star.png" alt="">
+                                                                        <img src="assets/img/f-icons/star.png" alt="">
+                                                                        <img src="assets/img/f-icons/star.png" alt="">
+                                                                </span>
+                                                         </div>
+                                                </div>
+                                                <h6 class="alignb">{{item.subject}}||{{item.topic}}||Students: {{item.stdnts}}</h6>
+                                                <div class="a">	
+                                                        <h6 class="align">Time:{{item.time}}</h6>
+                                                        <!-- openlist with 1 is  paid class list -->
+                                                        <button class="left1"  mat-raised-button (click)="openlist(1,item.id)">Students</button>
+                                                        <button class="left1" *ngIf='item.meetinglink != ""' mat-raised-button (click)="open(item.meetinglink)">Start Class</button>
+
+                                                        <!-- <h6 class="align" *ngIf='item.meetinglink != ""'><a (click)='open(item.meetinglink)'>Start Class</a></h6> -->
+                                                        <!-- <h6 class="align" style="color: blue;" *ngIf='item.meetinglink == ""'>Meeting Link</h6> -->
+                                                        <!-- <h6 class="align">Email:{{item.email}}</h6>
+                                                        <h6 class="align">Password:{{item.password}}</h6> -->
+        
+        
+                                                </div>
+                                        </div>
+                                </li>
+                                <li class="card" *ngFor='let item of resp?.curntdaytke[1]'  style="width:230px; height:240px">
+                                        <div class="single_course">
+                                                <div class="course_head overlay">
+                                                        <img class="img-fluid w-100" src="assets/img/courses/spring.png" alt="">
+                                                        <div class="authr_meta">
+                                                                <img src="assets/img/butterfly1.png" alt="">
+                                                                <span>
+                                                                        {{item.name}}||
+                                                                        <img src="assets/img/f-icons/star.png" alt="">
+                                                                        <img src="assets/img/f-icons/star.png" alt="">
+                                                                        <img src="assets/img/f-icons/star.png" alt="">
+                                                                        <img src="assets/img/f-icons/star.png" alt="">
+                                                                        <img src="assets/img/f-icons/star.png" alt="">
+                                                                </span>
+                                                         </div>
+                                                </div>
+                                                <h6 class="alignb">{{item.subject}}||{{item.topic}}||Students: {{item.stdnts}}</h6>
+                                                <div class="a">	   
+                                                        <h6 class="align">Time:{{item.time}} || <a style="color: blue;" (click)="onCreateDesc(item.id,item.lvl)">Description</a></h6><br>
+                                                        <!-- <h6 class="align" style="color: blue;" *ngIf='item.meetinglink != ""'><a (click)='open(item.meetinglink)'>Start Class</a></h6> -->
+                                                        <!-- <h6 class="align" *ngIf='item.meetinglink == ""'>Meeting Link</h6> -->
+                                                         <!-- openlist with 2 is free class list -->
+                                                   
+                                                        <button *ngIf='item.lvl==0' class="left1" mat-raised-button (click)="openlist(2,item.id)">Students</button>
+                                                        <button *ngIf='item.lvl == 1' class="left1" mat-raised-button (click)="openlist(3,item.id)">Students</button>
+                                                        <button class="left1" *ngIf='item.meetinglink != ""' mat-raised-button (click)="open(item.meetinglink)">Start Class</button>
+
+                                                       <!-- <h6 class="align">Password:{{item.password}}</h6>-->
+        
+        
+                                                </div>
+                                        </div>
+                                </li>
+                </ul>
+        </mat-card>          
+</mat-tab>
+<mat-tab label="Upcoming Posted Classes" *ngIf='resp?.clastotke[0].length > 0 || resp?.clastotke[1].length > 0'> 
+        <mat-card class="mat">
+                <h2 class="head" >Classes you have to take from tomorrow.</h2>
+                 <hr>
+                        <ul>
+                                <li class="card" *ngFor='let item of resp?.clastotke[0]'  style="width:230px; height:240px">
+                                        <div class="single_course">
+                                                <div class="course_head overlay">
+                                                        <img class="img-fluid w-100" src="assets/img/courses/spring.png" alt="">
+                                                        <div class="authr_meta">
+                                                                <img src="assets/img/butterfly1.png" alt="">
+                                                                <span>
+                                                                        {{item.name}}||
+                                                                        <img src="assets/img/f-icons/star.png" alt="">
+                                                                        <img src="assets/img/f-icons/star.png" alt="">
+                                                                        <img src="assets/img/f-icons/star.png" alt="">
+                                                                        <img src="assets/img/f-icons/star.png" alt="">
+                                                                        <img src="assets/img/f-icons/star.png" alt="">
+                                                                </span>
+                                                         </div>
+                                                </div>
+                                                <h6 class="alignb">{{item.subject}}||{{item.topic}}||{{item.lang}}</h6>
+                                                <div class="a">	   
+                                                        <h6 class="align">Students:{{item.stdnts}} ||<a style="color: blue;" (click)="onCreateDesc(item.id,item.lvl)">Description</a></h6>
+                                                        <h6 class="align">Date-Time:{{item.datetime}}</h6>
+                                                </div>
+                                                <!-- <button class="left" mat-raised-button routerLink="{{item.link}}">Link</button> -->
+                                        </div>
+                                </li>
+                                <li class="card" *ngFor='let item of resp?.clastotke[1]'  style="width:230px;height:240px">
+                                        <div class="single_course">
+                                                <div class="course_head overlay">
+                                                        <img class="img-fluid w-100" src="assets/img/courses/spring.png" alt="">
+                                                        <div class="authr_meta">
+                                                                <img src="assets/img/butterfly1.png" alt="">
+                                                                <span>
+                                                                        {{item.name}}||
+                                                                        <img src="assets/img/f-icons/star.png" alt="">
+                                                                        <img src="assets/img/f-icons/star.png" alt="">
+                                                                        <img src="assets/img/f-icons/star.png" alt="">
+                                                                        <img src="assets/img/f-icons/star.png" alt="">
+                                                                        <img src="assets/img/f-icons/star.png" alt="">
+                                                                </span>
+                                                         </div>
+                                                </div>
+                                                <h6 class="alignb">{{item.subject}}||{{item.topic}}||{{item.lang}}</h6>
+                                                <div class="a">	   
+                                                        <h6 class="align">Students:{{item.stdnts}}||<a style="color: blue;" (click)="onCreateDesc(item.id,item.lvl)">Description</a></h6>
+                                                        <h6 class="align">Date-Time:{{item.datetime}}</h6>
+                                                </div>
+                                                <!-- <button class="left" mat-raised-button routerLink="{{item.link}}">Link</button> -->
+                                        </div>
+                                </li>
+                </ul>
+        </mat-card>
+</mat-tab>
+    </mat-tab-group>

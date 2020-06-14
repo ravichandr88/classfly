@@ -1,0 +1,50 @@
+
+<div class="header-cont">
+
+
+      <mat-toolbar class="header">
+    <!-- <div fxHide.gt-xs> -->
+        <div>
+        <button mat-icon-button (click)="onToggleSidenav()">
+            <mat-icon>menu</mat-icon>
+        </button>
+
+    </div>
+    <div>
+
+    <a class="navbar-brand logo_h" href=""><img src="assets/img/logomy.jpeg" width="250" height="50" alt=""></a>
+    </div>
+
+
+    <div fxFlex fxLayout fxLayoutAlign="center" fxHide.xs>
+        <ul fxLayout fxLayoutGap="15px" class="navigation-items">
+            <li class="nav-item active"><a class="nav-link" routerLink="">
+                Home</a></li>
+            <li class="nav-item active"><a class="nav-link" routerLink="/about">About Us</a></li>
+            <li class="nav-item active" *ngIf='!user'><button class="login" style="height: 50px;" mat-raised-button (click)="openNavlogin()">
+                <mat-icon>arrow_right_alt</mat-icon>SignIn</button></li>
+                <button *ngIf='!user' class="sign" mat-raised-button (click)="openNav()">
+             <mat-icon>add</mat-icon>SignUp</button>  
+             <!-- <button class="stpost" *ngIf ='user' mat-raised-button (click)="onCreatePost()">
+                <mat-icon>note_add</mat-icon>Find Trainer</button>   -->
+             <li class="nav-item active"><span class="nav-link" *ngIf='user' style="color: green; cursor: pointer; " (click)="onCreateCoin()">BUY COINS: $</span></li>
+              
+        </ul>
+    </div>
+  </mat-toolbar>
+     </div>
+
+
+
+     <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+<app-signup></app-signup>
+      </div>
+      <div id="mySidenavlogin" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNavlogin()">&times;</a>
+<app-login></app-login>
+      </div>
+
+
+     
+     

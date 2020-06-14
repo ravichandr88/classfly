@@ -1,0 +1,23 @@
+<div class="pass" fxLayout="column"  fxLayoutAlign="center center">
+    <mat-card fxLayout="column" fxLayoutAlign="center stretch" class="card">
+        <h2 class="h2">Choose a new password</h2>
+        <hr class="new1">
+        <h6 class="h6"> Create a new password that is at least 6 characters long. 
+            A strong password has a combination of letters, digits and punctuation marks. </h6> 
+        <div *ngIf='reset'>
+            <mat-form-field class="example-full-width">
+                <mat-label>Create new password...</mat-label>
+
+
+            <input matInput placeholder="New password" type="password"[(ngModel)]='passw'>
+            </mat-form-field>
+                <br>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Confirm password...</mat-label>
+            <input type='password'matInput placeholder="Confirm password" [(ngModel)]='cnfpassw'>
+            </mat-form-field>
+            <p class="p-match" *ngIf='passw!=cnfpassw'>Passwords do not match</p>
+                <button class="rec-but" mat-raised-button color="primary"  (click)='save()'>Create</button>
+        </div>
+    </mat-card>  
+</div>
