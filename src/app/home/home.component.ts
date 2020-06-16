@@ -6,6 +6,9 @@ import { DescriptionComponent } from '../description/description.component';
 import { MatDialog } from '@angular/material';
 import { LoginComponent } from 'src/app/login/login.component'
 import { SharedService } from 'src/app/shared.service';
+import { AlphaComponent } from '../alpha/alpha.component'
+declare var openNavlogin: Function;
+declare var alert: Function;
 
 @Component({
   selector: 'app-home',
@@ -23,7 +26,7 @@ export class HomeComponent implements OnInit {
  ngOnInit() {
   this.data.initialserach().subscribe(
     data => this.resp = data,
-    (err) => alert('PLease check your internet connection'),
+    (err) => this.dialog.open(AlphaComponent,{width: '250px',data:'Please check your internet connection'}),
     ()=>{
       if(this.resp[0].length==0&&this.resp[1].length==0)
       {
@@ -91,8 +94,8 @@ book(cid,typ)
 {
   if(!sessionStorage.getItem('user'))
   {
-     this.dialog.open(LoginComponent)
-     return
+    openNavlogin();
+     return 
     
   }
 
@@ -138,7 +141,7 @@ else {
 onCreateDesc(cid,typ){
   if(!sessionStorage.getItem('user'))
   {
-    this.dialog.open(LoginComponent)
+    openNavlogin()
     return
   }
   sessionStorage.setItem('cid',cid)

@@ -51,10 +51,15 @@
    <span class="nav-caption">Book Class</span>
  </a>  
 
- <a mat-list-item routerLink="/buy" *ngIf='tid' (click)="onSidenavClose()">
+ <a mat-list-item routerLink="/book_classes" *ngIf='tid' (click)="onSidenavClose()">
    <img src="assets/img/schedule.png" alt="">
     <span class="nav-caption">Schedule Class</span>
  </a>  
+
+ <a mat-list-item routerLink="/accountdetails" *ngIf='tid == 0' (click)="onSidenavClose()">
+  <img src="assets/img/schedule.png" alt="">
+   <span class="nav-caption">Account Details Pending</span>
+</a>  
 
 
  <a mat-list-item routerLink="/daily" (click)="onSidenavClose()">

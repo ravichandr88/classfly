@@ -14,12 +14,12 @@ import { NgOtpInputModule } from  'ng-otp-input';
 
 
 import { HttpClientModule } from '@angular/common/http';
-import { BlogComponent } from './blog/blog.component';
+// import { BlogComponent } from './blog/blog.component';
 import { SignupComponent } from './signup/signup.component';
-import { ArticleComponent } from './article/article.component';
-import { WorddocComponent } from './worddoc/worddoc.component';
+// import { ArticleComponent } from './article/article.component';
+// import { WorddocComponent } from './worddoc/worddoc.component';
 import { LoginComponent } from './login/login.component';
-import { BlogviewComponent } from './blogview/blogview.component';
+// import { BlogviewComponent } from './blogview/blogview.component';
 import { ProfileComponent } from './profile/profile.component';
 import { NoteComponent } from './note/note.component';
 import { AlphaComponent } from './alpha/alpha.component';
@@ -36,8 +36,8 @@ import { ComplaintComponent } from './complaint/complaint.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { ViewclassComponent } from './viewclass/viewclass.component';
 import { BuyclsrmComponent } from './buyclsrm/buyclsrm.component';
-import { NevbarComponent } from './component/nevbar/nevbar.component';
-import { SidebarComponent } from './component/sidebar/sidebar.component';
+// import { NevbarComponent } from './component/nevbar/nevbar.component';
+// import { SidebarComponent } from './component/sidebar/sidebar.component';
 import { HeaderComponent } from './navigation/header/header.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
 import { HomeComponent } from './home/home.component';
@@ -84,12 +84,12 @@ export function provideConfig() {
   declarations: [
     AppComponent,
     OdrfrmComponent,
-    BlogComponent,
+    // BlogComponent,
     SignupComponent,
-    ArticleComponent,
-    WorddocComponent,
+    // ArticleComponent,
+    // WorddocComponent,
     LoginComponent,
-    BlogviewComponent,
+    // BlogviewComponent,
     ProfileComponent,
     NoteComponent,
     AlphaComponent,
@@ -106,8 +106,8 @@ export function provideConfig() {
     FeedbackComponent,
     ViewclassComponent,
     BuyclsrmComponent,
-    NevbarComponent,
-    SidebarComponent,
+    // NevbarComponent,
+    // SidebarComponent,
     HeaderComponent,
     SidenavListComponent,
     HomeComponent,
@@ -152,7 +152,7 @@ export function provideConfig() {
     
   ],
   bootstrap: [AppComponent],
-  entryComponents:[SignupComponent,LoginComponent,PaymentComponent,DescriptionComponent,
+  entryComponents:[AlphaComponent,SignupComponent,LoginComponent,PaymentComponent,DescriptionComponent,
   ComplaintComponent,FeedbackpopupComponent,BookclasspopupComponent,TrainersignupComponent,
   BuyclassdescpopComponent,HelppopupComponent,ContactuspopupComponent ,StudentpostComponent,AccountdetailsComponent,StdntslistComponent],
 })

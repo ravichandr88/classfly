@@ -1,12 +1,12 @@
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { OdrfrmComponent } from './odrfrm/odrfrm.component';
-import { BlogComponent } from './blog/blog.component';
+// import { BlogComponent } from './blog/blog.component';
 import { SignupComponent } from './signup/signup.component';
-import { ArticleComponent } from './article/article.component';
-import { WorddocComponent } from './worddoc/worddoc.component';
+// import { ArticleComponent } from './article/article.component';
+// import { WorddocComponent } from './worddoc/worddoc.component';
 import { LoginComponent } from './login/login.component';
-import { BlogviewComponent } from './blogview/blogview.component';
+// import { BlogviewComponent } from './blogview/blogview.component';
 import { ProfileComponent } from './profile/profile.component';
 import { NoteComponent } from './note/note.component';
 import { AlphaComponent } from "./alpha/alpha.component";
@@ -121,30 +121,16 @@ const routes: Routes = [
     component:NoteComponent
   }
   ,
-  {
-    path:'blog',
-    component:BlogComponent
-  },
   // {
   //   path:'signup',
   //   component:SignupComponent
   // },
-  {
-    path:'blogs',
-    component:ArticleComponent
-  },
-  {
-    path:'article',
-    component:WorddocComponent
-  },
+  
   {
     path:'login',
     component:LoginComponent
   },
-  {
-    path:'articles',
-    component:BlogviewComponent
-  },
+  
   {
     path:'profile',
     component:ProfileComponent

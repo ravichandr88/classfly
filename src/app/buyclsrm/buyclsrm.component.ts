@@ -72,11 +72,22 @@ d={
     
     console.log(this.d)
     // return 
+    var response
     this.d['session_key']=sessionStorage.getItem('user')
     this.data.update_table(this.d).subscribe(
-      data => this.resp2 =data,
+      data => response =data,
       (err)=> console.log(err),
-      ()=>{}
+      ()=> {
+        console.log(response.code)
+        if(response.code == 400)
+        {
+          alert(response.message)
+        }
+        else
+        {
+          this.resp2 = response
+        }
+      }
     )
   }
 

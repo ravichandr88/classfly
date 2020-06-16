@@ -31,7 +31,7 @@ export class SidenavListComponent implements OnInit {
  
  laptop:boolean = true
  user:boolean = false
- tid:boolean = false
+ tid:any 
  subscription
  username=''
  followers=''
@@ -46,7 +46,7 @@ export class SidenavListComponent implements OnInit {
         this.user = true
         if(sessionStorage.getItem('tid') != null)
         {
-          this.tid = true
+          this.tid = sessionStorage.getItem('tid')
         }
         this.usrdtls()
 
@@ -127,14 +127,15 @@ export class SidenavListComponent implements OnInit {
   }
   closeNavlogin(){
     closeNavlogin();
-  }
+  } 
 
   logout()
   {
     sessionStorage.removeItem('user')
     sessionStorage.removeItem('tid')
+    sessionStorage.removeItem('username')
     this.user = false
-    this.tid=false
+    this.tid=null
     this.onSidenavClose()
     this.service.onLogoutEvent.emit(true)
   }
@@ -211,8 +212,9 @@ export class SidenavListComponent implements OnInit {
                   this.username=resp.username
                   this.followers = resp.following
                   this.coins=resp.coins
-                  sessionStorage.setItem('level',resp.level)
-                  sessionStorage.setItem('username',resp.username)
+                  // sessionStorage.setItem('level',resp.level)
+                  console.log(resp)
+                  sessionStorage.setItem('username',this.username)
                 }
                 else
                 {

@@ -121,13 +121,13 @@
 		
 			<h6 class="alignb">{{item.subject}}||{{item.topic}}||Seats:{{item.number}}</h6>
 			<div class="a" (click)="onCreateDesc(item.id,item.lvl)">	   
-					<h6 class="align">{{item.lang}}||<a style="color: blue;">Description</a></h6>
+					
 					<h6 class="align">Date:{{item.date}}||Time: {{item.time}}</h6>
 					
 		
-			</div>
-			<button *ngIf='item.price != 0' class="left" mat-raised-button (click)='book(item.id,item.lvl)'>{{item.price}} coins</button>
-			<button *ngIf='item.price == 0' class="left" mat-raised-button (click)='book(item.id,item.lvl)'>FREE</button>
+			</div> 
+			<button *ngIf='item.price != 0' class="left" mat-raised-button (click)="onCreateDesc(item.id,item.lvl)">{{item.price}} coins</button>
+			<button *ngIf='item.price == 0' class="left" mat-raised-button (click)="onCreateDesc(item.id,item.lvl)">FREE</button>
 			
 		</div>
 	</mat-card>
@@ -153,13 +153,12 @@
 		
 			<h6 class="alignb">{{item.subject}}||{{item.topic}}||Seats:{{item.number}}</h6>
 			<div class="a" style="cursor: pointer" (click)="onCreateDesc(item.id,item.lvl)">	   
-					<h6 class="align" style="cursor: pointer">{{item.lang}}||<a style="color: blue;" >Description</a></h6>
 					<h6 class="align">Date:{{item.date}}||Time: {{item.time}}</h6>
 					
 		
 			</div>
-			<button *ngIf='item.price != 0' class="left" mat-raised-button (click)='book(item.id,item.lvl)'>{{item.price}} coins</button>
-			<button *ngIf='item.price == 0' class="left" mat-raised-button (click)='book(item.id,item.lvl)'>FREE</button>
+			<button *ngIf='item.price != 0' class="left" mat-raised-button (click)="onCreateDesc(item.id,item.lvl)">Details</button>
+			<button *ngIf='item.price == 0' class="left" mat-raised-button (click)="onCreateDesc(item.id,item.lvl)">FREE</button>
 				
 		</div>
 	</mat-card>
