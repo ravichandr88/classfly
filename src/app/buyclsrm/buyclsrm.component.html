@@ -134,7 +134,11 @@
 
 
  <ul class="list-group" *ngIf='resp'>
-    
+    <li>
+        <input type="number" placeholder="price" [(ngModel)]=d.price>
+        <br>
+        <p>{{prcerr}}</p></li>
+        
     <li class="list-group-item list-group-item-success" *ngFor='let i of l'>
         MON
         <input type="time" [(ngModel)]=d.MON[i]>
