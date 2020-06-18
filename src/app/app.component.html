@@ -27,11 +27,13 @@
 </mat-sidenav> 
 
 
+
       <mat-sidenav-content> 
         <app-header (sidenavToggle)="sidenav.toggle()"></app-header>
         <main><span id="siteseal"><script async type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=JeqDIDBhMBv9fYeKdsusAsqYPAW8Ghkjae8kWblqLJzIZ2oimQtUuvQbpTaW"></script></span>
 
-          <router-outlet></router-outlet>
+          <router-outlet [style.background-image]="url('https://i.pinimg.com/originals/b1/94/0e/b1940eb27d12eadbcdaa86dca0f1037d.jpg')" ></router-outlet>
+        
         </main>
       </mat-sidenav-content>
     </mat-sidenav-container>

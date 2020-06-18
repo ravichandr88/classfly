@@ -14,7 +14,7 @@ export class EmailconfirmComponent implements OnInit {
   sess=''
   resp:Object
 
-  reset = false
+  reset = false 
   ngOnInit() {
     this.sess = this.route.params['value'].sess
     this.data.confirmemail(this.sess).subscribe(
