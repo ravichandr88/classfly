@@ -56,10 +56,29 @@
         
         document.cookie = 'key='+profile.getEmail();
         document.getElementById("go").innerHTML = "";
-        document.getElementById("gotl").innerHTML = "Logged In";
+        document.getElementById("gotl").innerHTML = "";
         
       }
     </script>
+	
+		
+		<style>
+		
+		.video-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+.video-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+		</style>
+		
 
 <script>
 
@@ -102,28 +121,24 @@
   });
       }
  //console.log($(this).attr('id'));
- var id = $(this).attr('id');
- $(this).remove();
- var i = $("iframe").attr('id');
-//console.log(i)
+ var id = $(this).attr('idi');
+ $(this).remove(); 
+ var i = $("iframe").attr('idi');
+console.log(i,id)
  
  //console.log(h[id]);
- document.getElementById("lst").innerHTML = document.getElementById("lst").innerHTML + '<div class="contri-bghy"  id="'+i+'" >'+
+ document.getElementById("lst").innerHTML = document.getElementById("lst").innerHTML + '<div class="contri-bghy"  idi="'+i+'" >'+
                             '<div class="image">'+
-                                '<img src="assets/images/classfly.png" alt="">'+
+                                '<img src="'+h[i][0]+'" alt="">'+
                             '</div>'+
                             '<div class="detail" >'+
                                ' <h6>'+ h[i][1]+'</h6>'+
-                               
-                                '<span>'+ h[i][2]+'</span>'+
                            ' </div>'+
                         '</div>'; 
 						
+console.log('changed');
 
-
-document.getElementById("v1").innerHTML= '<iframe id="'+id+'"  width="548" height="409"   src="https://drive.google.com/file/d/'+h[id][0]+'/preview" allowfullscreen></iframe> '+'<h2>'+h[id][1]+'</h2>';
-				
- 
+document.getElementById("video-responsive").innerHTML= ' <iframe width="780" height="439" idi = "'+id+'"id="ytVideo" src="https://www.youtube.com/embed/'+ h[id][2]+'"  frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' 
 });
 
 
@@ -137,19 +152,26 @@ document.getElementById("v1").innerHTML= '<iframe id="'+id+'"  width="548" heigh
   
 		var l1 = '<iframe src="https://drive.google.com/file/d/';
 		var l2 = '/preview" width="640" height="480"></iframe>';
-		var h=[["1T-muwRwzXV5q6tQu1yZ2Ob5hVNaHJGR4","Vector Integration | Part 4 | Line Integral-2","03:08"],
-
-["1SsandgzqYzc6KZR-t0Mo08XTgy7dmgT_","Vector Integration | Part 5 | Surface & Volume Integrals","04:57"],
-
-["1N1XJFagtdtfnjFuoo_S3U4EM1Uw49GLN","Vector Integration | Part 6 |Green’s Theorem","02:24"],
-
-["1yDxyYl6_8raVyu44Q8JZKVt3HnPMVqxb","Vector Integration | Part 7| Stokes and Divergence Theorems","02:17"],
-
-["14K6vz_iDlJKBAmSbDMZCxoB4oPP_5Zrk","Vector Integration | Part 1 |Meaning of integration | Light issue solved","04:07"],
-
-["1R16rYy3TcOa4-EQ4N5cB6haKboEPifx9","Vector Integration | Part 2 | Basic idea of Integration | Light issue solved","02:28"],
-
-["18WFmaPMgJh1MTH1k7a7eLhoB4XLEpzHE","Vector Integration | Part 3 | Line Integral-1 | light issue solved","06:04"]];
+		var h=[
+		['https://i.ytimg.com/vi/jHu9xCL180k/hqdefault.jpg',
+  'Elements of Mechanical Engineering   Module 1 Lecture 1  Energy Resources & Fuel',
+  'jHu9xCL180k'],
+  ['https://i.ytimg.com/vi/OxunxqpiPPE/hqdefault.jpg',
+  'Elements of Mechanical Engineering   Module 1 Lecture 2  Various Power Sources',
+  'OxunxqpiPPE'],
+  ['https://i.ytimg.com/vi/Ou5ttlzfPBU/hqdefault.jpg',
+  'Elements of Mechanical Engineering   Module 1 Lecture 3  Steam',
+  'Ou5ttlzfPBU'],
+  ['https://i.ytimg.com/vi/xalPwavwjVc/hqdefault.jpg',
+  'Elements of Mechanical Engineering   Module 1 Lecture 4  Boiler & Accessories',
+  'xalPwavwjVc'],
+  ['https://i.ytimg.com/vi/-JmdYKLqvRM/hqdefault.jpg',
+  'Elements of Mechanical Engineering   Module 1 Lecture 5  Lancashire Boiler',
+  '-JmdYKLqvRM'],
+  ['https://i.ytimg.com/vi/HAFMetA6BSY/hqdefault.jpg',
+  'Elements of Mechanical Engineering   Module 1 Lecture 6  Babcock & Wilcox Boiler',
+  'HAFMetA6BSY']
+		];
 				
 		
 				
@@ -159,20 +181,19 @@ document.getElementById("v1").innerHTML= '<iframe id="'+id+'"  width="548" heigh
 		//name="'+i+'"
 		for(var i=1;i<h.length;i++)
 				{
-				document.getElementById("lst").innerHTML = document.getElementById("lst").innerHTML + '<div class="contri-bghy"  id="'+i+'" >'+
+				document.getElementById("lst").innerHTML = document.getElementById("lst").innerHTML + '<div class="contri-bghy"  idi="'+i+'" >'+
                             '<div class="image">'+
-                                '<img src="assets/images/classfly.png" alt="">'+
+                                '<img src="'+h[i][0]+'" alt="">'+
                             '</div>'+
                             '<div class="detail" >'+
                                ' <h6>'+ h[i][1]+'</h6>'+
-                               
-                                '<span>'+ h[i][2]+'</span>'+
+                           
                            ' </div>'+
                         '</div>'; 
 				}
 				
 				
-				document.getElementById("v1").innerHTML= '<iframe id="0" width="548" height="409"  src="https://drive.google.com/file/d/'+h[0][0]+'/preview"  allowfullscreen></iframe>'+'<h2>'+h[0][1]+'</h2>';
+				document.getElementById("video-responsive").innerHTML= '<iframe idi="0" width="548" height="409"  src="https://www.youtube.com/embed/'+h[0][2]+'"  allowfullscreen></iframe>'+'<h2>'+h[0][1]+'</h2>';
 				
 				
 				
@@ -277,16 +298,21 @@ document.getElementById("v1").innerHTML= '<iframe id="'+id+'"  width="548" heigh
 			
 
       <!--####################### Video Blog Starts Here ###################-->
-    
-
+   
       <div class="container-fluid video-blog">
+	  
             <div class="container">
+			
                 <div class="row">
                     <div class="col-md-8">
-                        <div class="row no-margin video-cover">
+                        <!--<div class="row no-margin video-cover">
 				            
                           <div id="v1"></div>
-                          </div>
+                          </div> -->
+						   <div class="video-responsive" id="video-responsive">
+	<iframe width="780" height="439" id="ytVideo" src="https://www.youtube.com/embed/videoseries?list=PL2dO2AAAFsrsp2gfn6unKxXiO6AqLD5fB" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div> 
+
              
                            
   <!--                <div class="g-signin2" data-onsuccess="onSignIn"></div> -->
