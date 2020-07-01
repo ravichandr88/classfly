@@ -128,10 +128,12 @@ console.log(i,id)
  
  //console.log(h[id]);
  document.getElementById("lst").innerHTML = document.getElementById("lst").innerHTML + '<div class="contri-bghy"  idi="'+i+'" >'+
-                            '<div class="image">'+
+                            
+							'<div class="image">'+
                                 '<img src="'+h[i][0]+'" alt="">'+
                             '</div>'+
                             '<div class="detail" >'+
+							'<h3>Part '+(parseInt(i)+1)+'</h3>'+
                                ' <h6>'+ h[i][1]+'</h6>'+
                            ' </div>'+
                         '</div>'; 
@@ -186,6 +188,7 @@ document.getElementById("video-responsive").innerHTML= ' <iframe width="780" hei
                                 '<img src="'+h[i][0]+'" alt="">'+
                             '</div>'+
                             '<div class="detail" >'+
+							'<h3>Part '+(i+1)+'</h3>'+
                                ' <h6>'+ h[i][1]+'</h6>'+
                            
                            ' </div>'+

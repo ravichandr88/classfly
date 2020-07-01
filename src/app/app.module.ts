@@ -62,6 +62,8 @@ import { DailyclassComponent } from './dailyclass/dailyclass.component';
 import { StdntslistComponent } from './stdntslist/stdntslist.component';
 import { RecordvComponent } from './recordv/recordv.component';
 
+import { NgxUiLoaderModule } from 'ngx-ui-loader';
+
 
 const google_oauth_client_id:string =  '66089437958-9qai3nufijclobprh164n62hfcparv6i.apps.googleusercontent.com' 
 
@@ -134,6 +136,7 @@ export function provideConfig() {
     MatInputModule,
     BrowserAnimationsModule,
     MyModule,
+    NgxUiLoaderModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,

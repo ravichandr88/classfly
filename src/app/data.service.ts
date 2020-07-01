@@ -96,8 +96,8 @@ getpic(token)
 
 
 
-  // domain = "http://127.0.0.1:8000/api/"
-    domain ='https://datafly.herokuapp.com/api/'
+  domain = "http://127.0.0.1:8000/api/"
+    // domain ='https://datafly.herokuapp.com/api/'
   //https://medium.com/angular-in-depth/optimize-angular-bundle-size-in-4-steps-4a3b3737bf45
 //https://stackoverflow.com/questions/44758755/how-to-enable-gzip-compression-in-angular-cli-for-production-build
     postData(data)
@@ -165,7 +165,7 @@ getpic(token)
 
     changepassword(password)
     {
-      return this.http.post(this.domain+'password',password).pipe(catchError(this.handleError))
+      return this.http.post(this.domain+'password',password)
     }
 
     trainersignup(data)
@@ -336,6 +336,30 @@ getpic(token)
       return this.http.post(this.domain+'imgurl',{'session_id':sessionStorage.getItem('user'),'filename':filename}).pipe(catchError(this.handleError))
     }
 
+
+    //email otp verification
+    verify_email_otp(data)
+    {
+      return this.http.post(this.domain+'verify_otp',data)
+    }
+    //api to verify otp with username and email
+    username_email_otp(data)
+    {
+      return this.http.post(this.domain+'username_email_otp',data)
+    }
+    
+
+    resend_email_otp(data)
+    {
+      return this.http.post(this.domain+'resendmail',data)
+    }
+
+
+    //verify otp for the password forgottne user
+    verify_frgt_otp(data)
+    {
+      return this.http.post(this.domain+'verify_forgot_otp',data)
+    }
     //kii  code to signup
     
     kiisignup(phone)

@@ -96,6 +96,8 @@ declare var openNavlogin:Function;
 })
 export class SignupComponent implements OnInit {
 
+ 
+
   constructor(private _socioAuthServ: AuthService,public dialogRef: MatDialogRef<SignupComponent>,private formBuilder : FormBuilder,private data : DataService, private router : Router) { }
 
   myForm : FormGroup
@@ -155,6 +157,7 @@ export class SignupComponent implements OnInit {
     closeNav();
     this.dialogRef.close()
     this.router.navigate([''])
+    
   }
   else if(resp.code == 400)
   {
@@ -206,5 +209,24 @@ googlesignup()
     this.user = null;
     console.log('User signed out.');
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

@@ -1,5 +1,5 @@
 
-<div fxLayout="column"  fxLayout.xs="column" fxLayoutAlign="center center" >
+<div   fxLayout="column"  fxLayout.xs="column" fxLayoutAlign="center center" >
   
 
     <div class="card" fxLayout="column" fxLayoutAlign="center stretch" style="width: 800px;">
@@ -12,11 +12,6 @@
 
   
 
-
-    <!-- <mat-form-field style='width:100%' appearance="outline">
-            <mat-label>Userame</mat-label>
-             -->
-
         <mat-form-field style="width: 88%;" class='fun' appearance="outline">
                 <mat-label><span class="lnr lnr-user"></span>User Name</mat-label>
             <input matInput placeholder=" User Name" type="text" formControlName="username">
@@ -25,8 +20,7 @@
         <h6 class="fun5" *ngIf= 'submitted && f.username.errors' >User Name is required</h6>
         <h6 class="fun5" *ngIf='key =="username"  && submitted' >{{err}}</h6>
             
-        <!-- <br> -->
-        <!-- <p>{{f.username.value}}</p> -->
+    
         <br>
 
         <mat-form-field style="width:88%;" class='fun' appearance="outline">
@@ -38,9 +32,6 @@
             <h6 class="fun5" *ngIf="submitted && f.email.errors?.email">Email must be a valid email address</h6>
             <h6 class="fun5" *ngIf='key =="email"  && submitted' >{{err}}</h6>
         
-
-        
-        <!-- <br> -->
         <br>
 
         <mat-form-field style="width:88%" class='fun' appearance="outline">
@@ -72,24 +63,19 @@
 <button class= "funb" color="primary" mat-raised-button (click)='print()'>Sign Up</button><br>
 
 
-<h6 class="align5"> Already Have An Account? <a href="#" (click)='signNav()'>
+<h6 class="align5"> Already Have An Account? <a  (click)='signNav()'>
         Sign In
     </a></h6>
 
-    <!-- <button class= "funb" (click)='singIn()' mat-raised-button >Signin with Google</button><br> -->
-<hr>
-   <!-- <h6 class="sign"> Sign up with  
-    <a href="">      <img style="width: 30px; padding-left:13px"  src="assets/img/google.png" alt=""></a> 
-   <a href="">       <img style="width: 30px; padding-left:13px"  src="assets/img/instagram.png" alt=""></a> 
-   <a href="">       <img style="width: 30px; padding-left:13px"  src="assets/img/linked.png" alt=""></a>
-</h6> -->
-
+   
 <br>
 </div>
 
 
 
 </div>
+
+
 
 
 

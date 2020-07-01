@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit {
     if (this.lform.invalid) {  return;  }
 
 
-
+    sessionStorage.setItem('username',this.lform.getRawValue()['username'])
     this.data.login(this.lform.getRawValue()).subscribe(
       data => this.response = data,
       (err) => console.log(err.status),
@@ -86,7 +86,7 @@ closenav(){
         console.log(resp.message)
       }
       else if (resp.code == 203)
-      {
+      { 
         this.confirm = true
         this.usrerr = false
         this.psswderr = false
@@ -115,5 +115,13 @@ closenav(){
     this.service.onLoginEvent.emit(onMain);
     console.log(onMain) 
   }
+
+  //for reseting password 
+  reset()
+  {
+    sessionStorage.setItem('reset','true')
+    closeNavlogin()
+  }
+
 
 }
