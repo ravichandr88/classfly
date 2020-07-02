@@ -17,7 +17,6 @@
  -->
 
  
- <div style="position: relative">
     <mat-sidenav-container *ngIf='!laptop'>
             
            
@@ -32,8 +31,9 @@
         <app-header (sidenavToggle)="sidenav.toggle()"></app-header>
         <main><span id="siteseal"><script async type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=JeqDIDBhMBv9fYeKdsusAsqYPAW8Ghkjae8kWblqLJzIZ2oimQtUuvQbpTaW"></script></span>
 
+          <div  ngxUiLoaderBlurred blur="10">
           <router-outlet  ></router-outlet>
-        
+        </div>
         </main>
       </mat-sidenav-content>
     </mat-sidenav-container>
@@ -50,11 +50,13 @@
         <app-header (sidenavToggle)="sidenav.toggle()"></app-header>
         <main class="outlet">
        
+ <div  ngxUiLoaderBlurred blur="10">
           <router-outlet></router-outlet>
+          </div>
         </main>
       </mat-sidenav-content>
     </mat-sidenav-container>
-  </div>
+  
 
 
 

@@ -158,7 +158,9 @@ document.getElementById("video-responsive").innerHTML= ' <iframe width="780" hei
   
 		var l1 = '<iframe src="https://drive.google.com/file/d/';
 		var l2 = '/preview" width="640" height="480"></iframe>';
-		var h=[
+        var h = []
+        if(readCookie('list')==undefined || readCookie('list')==null || readCookie('list')=='mech')
+       { h=[
 		['https://i.ytimg.com/vi/jHu9xCL180k/hqdefault.jpg',
   'Elements of Mechanical Engineering   Module 1 Lecture 1  Energy Resources & Fuel',
   'jHu9xCL180k'],
@@ -178,7 +180,64 @@ document.getElementById("video-responsive").innerHTML= ' <iframe width="780" hei
   'Elements of Mechanical Engineering   Module 1 Lecture 6  Babcock & Wilcox Boiler',
   'HAFMetA6BSY']
 		];
-				
+       }
+
+        //if list has value = m2, then the list will be mathematics 2
+    if(readCookie('list')=='m2')
+    {
+
+h =[
+        ['https://i.ytimg.com/vi/fAs31KYWBKM/hqdefault.jpg',
+        "Module 1 Vector Integration Green's Theorem Problem 10 B S GREWAL Exersice 8 8 4"
+        ,'fAs31KYWBKM'],
+        ["https://i.ytimg.com/vi/4XPH-whz1Fk/hqdefault.jpg" ,
+        "Engineering Mathematics 2 - B S GREWAL   Exersice 8 4 3",
+        '4XPH-whz1Fk'],
+        ['https://i.ytimg.com/vi/39kjgexWxYw/hqdefault.jpg',
+  'VTU Engineering mathematics 2 B S GREWAL   Exercise 8 4 1',
+  '39kjgexWxYw'],
+ ['https://i.ytimg.com/vi/8HvO57AV2WU/hqdefault.jpg',
+  "Module 1 Vector Integration Green's Theorem Problem 11 B S GREWAL Exercise 8 8 5",
+  '8HvO57AV2WU'],
+ ['https://i.ytimg.com/vi/8foEf41MuoE/hqdefault.jpg',
+  'Engineering Mathematics 2 B S GREWAL   Exercise 8 5 2',
+  '8foEf41MuoE'],
+ ['https://i.ytimg.com/vi/BW8clAtC_ks/hqdefault.jpg',
+  'Engineering Mathematics 2 B S GREWAL   Exercise  8 8 2',
+  'BW8clAtC_ks'],
+ ['https://i.ytimg.com/vi/CsJ0LVqI4vI/hqdefault.jpg',
+  "Module 1 Vector Integration Green's theorem Problem 1",
+  'CsJ0LVqI4vI'],
+ ['https://i.ytimg.com/vi/G8u-dawbCSQ/hqdefault.jpg',
+  'Engineering Mathematics 2 B S GREWAL   Exercise 8 6 2',
+  'G8u-dawbCSQ'],
+ ['https://i.ytimg.com/vi/Hc-Iaxm-f7k/hqdefault.jpg',
+  'Module 1 Vector Integration Line Integrals Problem 3 B S GREWAL   Exercise 8 6 1',
+  'Hc-Iaxm-f7k'],
+ ['https://i.ytimg.com/vi/PcC1xF5oo0o/hqdefault.jpg',
+  "Module 1 Vector Integration Green's Theorem Problem 12 B S GREWAL Exercise 8 8 6",
+  'PcC1xF5oo0o'],
+ ['https://i.ytimg.com/vi/RwC13z96fLg/hqdefault.jpg',
+  "Module 1 Vector Integration Green's Theorem Problem 9 B S GREWAL Exercise 8 8 3",
+  'RwC13z96fLg'],
+ ['https://i.ytimg.com/vi/ikAaiw9B30o/hqdefault.jpg',
+  'Engineering Mathematics 2 B S GREWAL   Exercise 8 5 1',
+  'ikAaiw9B30o'],
+ ['https://i.ytimg.com/vi/kg_QSNY9xgg/hqdefault.jpg',
+  'Engineering Mathematics 2, B S GREWAL   Exersice 8 4 2',
+  'kg_QSNY9xgg'],
+ ['https://i.ytimg.com/vi/sSMRtQODWKs/hqdefault.jpg',
+  'Engineering Mathematics 2 B S GREWAL   Exercise 8 6 4',
+  'sSMRtQODWKs'],
+ ['https://i.ytimg.com/vi/uVIRTDz3ZJs/hqdefault.jpg',
+  'Engineering Mathematics 2 B S GREWAL   Exercise 8 8 1',
+  'uVIRTDz3ZJs']
+        ]
+		
+    }
+
+    
+	     		
 		
 				
 		
@@ -210,39 +269,19 @@ document.getElementById("video-responsive").innerHTML= ' <iframe width="780" hei
 				
 				
 });
-	/*	var l1 = '<iframe src="https://drive.google.com/file/d/';
-		var l2 = '/preview" width="640" height="480"></iframe>';
-		var h=[['1HPYsH6-Sr_kJN0IO3DaPm8hDJ_JKKk1g','Vector Integration | Part 1 | Meaning of Integration','03:00'],
-				['1mx26_hN61Z7e2S3teZRzqfQ-xa4QcQsj','Vecor Integration | Part 2 | Idea of Integration','02:40'],
-				['14ccAuSG1W4isEmoPPFNYzbxHDznr3-xp','Vector Integration | Part 3 | Line Integral 1','05:22'],
-				['1T-muwRwzXV5q6tQu1yZ2Ob5hVNaHJGR4','Vector Integration | Part 4 | Line Integral 2','03:18'],
-				]
-				
-		
-				
-		var change=function(){
-		console.log(h.length);
-		
-		document.getElementById("lst").innerHTML = "<p>Good to go</p>"; 
-		for(var i=1;i<h.length;i++)
-				{
-				document.getElementById("lst").innerHTML = document.getElementById("lst").innerHTML + '<div class="contri-bghy">'+
-                            '<div class="image">'+
-                                '<img src="assets/images/video/b1.jpg" alt="">'+
-                            '</div>'+
-                            '<div class="detail" >'+
-                               ' <h6>'+ h[i][1]+'</h6>'+
-                               
-                                '<span>'+ h[i][2]+'</span>'+
-                           ' </div>'+
-                        '</div>'; 
-				}
-				
-				}*/
-		</script>
+
+
+   	</script>
 		
 	
-		
+		<script>
+            function changelist(name)
+    {
+        console.log(name);
+        document.cookie = 'list='+name;
+        location.reload();
+    }	
+            </script>
 
 </head>
 
@@ -309,7 +348,9 @@ document.getElementById("video-responsive").innerHTML= ' <iframe width="780" hei
       <div class="container-fluid video-blog">
 	  
             <div class="container">
-			
+            
+                <button onclick="changelist('m2')">Maths2</button>
+                <button onclick="changelist('mech')">Mechanical</button>
                 <div class="row">
                     <div class="col-md-8">
                         <!--<div class="row no-margin video-cover">
