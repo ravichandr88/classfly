@@ -57,7 +57,7 @@ resp:Object
     this.ngxService.start();
     setTimeout(() => {
       this.ngxService.stop(); // stop foreground spinner of the master loader with 'default' taskId
-    }, 5000);
+    }, 10000);
 
     //api call
     this.data.reset_paasword(this.email).subscribe(
@@ -65,6 +65,7 @@ resp:Object
       (err) => console.log(err),
       () => {
         this.response(this.resp)
+        this.ngxService.stop();
       }
     )
   }

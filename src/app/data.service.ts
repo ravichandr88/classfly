@@ -96,8 +96,8 @@ getpic(token)
 
 
 
-  domain = "http://127.0.0.1:8000/api/"
-    // domain ='https://datafly.herokuapp.com/api/'
+  // domain = "http://127.0.0.1:8000/api/"
+    domain ='https://datafly.herokuapp.com/api/'
   //https://medium.com/angular-in-depth/optimize-angular-bundle-size-in-4-steps-4a3b3737bf45
 //https://stackoverflow.com/questions/44758755/how-to-enable-gzip-compression-in-angular-cli-for-production-build
     postData(data)

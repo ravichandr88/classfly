@@ -17,7 +17,7 @@
  -->
 
  
- 
+ <div style="position: relative">
     <mat-sidenav-container *ngIf='!laptop'>
             
            
@@ -39,9 +39,6 @@
     </mat-sidenav-container>
 
 
-
-
-
     <mat-sidenav-container *ngIf='laptop'>
             
             <mat-sidenav  #sidenav mode="side"  opened="true" >
@@ -57,9 +54,12 @@
         </main>
       </mat-sidenav-content>
     </mat-sidenav-container>
+  </div>
 
 
 
+
+  <ngx-ui-loader></ngx-ui-loader>
 
 
 
