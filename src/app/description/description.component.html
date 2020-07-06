@@ -1,3 +1,4 @@
+<button (click)='refresh()'>refresh</button>
 <div fxLayout="column"  fxLayoutAlign="center center">
 	<div class="card" fxLayout="column" fxLayoutAlign="center stretch" style="width: 500px;">
 	  
@@ -10,50 +11,64 @@
             <hr>
             <!-- <a href="/profile"><h6 class="details">Verified trainer profile</h6></a> -->
 
-                    <div class="grid-container" *ngIf='resp'>
+                    <div class="grid-container" *ngIf='resp'> 
                         <mat-card style="left: 13px;">
                             <div class="grid-item2">
                                     <!-- <a href="/profile"> -->
-                                        <img  src="{{resp.trnr.imgurl}}" width="60" height="60">
+                                         <img  src="{{resp.imgurl}}" width="60" height="60">
                                      <!-- </a> -->
                             </div>
         
                             <div class="grid-item3">
-                                <div class="grid-item4"><small >{{resp.trnr.name}}</small></div>
+                                <div class="grid-item4"><small >{{resp.username}}</small></div>
                                 <!-- <div class="grid-item4"><small>Infoysys</small></div> -->
                                 <!-- <div class="grid-item4"><small>Developer</small></div> -->
                             </div>
                         </mat-card>
                             <mat-card style="left:13px" class="grid-item2">
                                     <div class="desc">
-                                            <h6 style="margin-top: 16px; ">Language :{{resp.clss.lang}}</h6>
-                                               <h6> No of followers :{{resp.trnr.nofoll}}</h6>
+                                            <h6 style="margin-top: 16px; ">Language :{{resp.lang}}</h6>
+                                               <h6> No of followers :{{resp.nofoll}}</h6>
                                                 <!-- <h6>Rank : 7th</h6> -->
-                                                <h6>Rating : {{resp.trnr.rating}}</h6>
-                                                <h6>Price : {{resp.clss.price}} coins</h6>
-                                                <h6>Skills :{{resp.trnr.skills}}</h6>
+                                                <h6>Rating : {{resp.rating}}</h6>
+                                                <h6>Price : {{resp.price}} coins</h6>
+                                                <h6>Skills :{{resp.skills}}</h6>
                                                 <h6>Follow:           
                                                     <a  class="link">       
-                                                    <img  src="assets/img/linktxt.png" (click)='openlink(resp.trnr.link)' alt="">
+                                                    <img  src="assets/img/linktxt.png" (click)='openlink(resp.link)' alt="">
                                                     Click here
                                                    </a></h6>
                                                 </div>
+                                                
 
                             </mat-card>
-                    </div>
+                            <mat-card>
+                                <h4>Working at {{resp.company}} as {{resp.designation}}</h4>
+                                <h4>Description:</h4>
+                                <p>{{resp.dscp}}</p></mat-card>
+                                <mat-card>
+                                <h4>Graduted from {{resp.college}} with {{resp.stream}} {{resp.degree}}</h4>
+                            </mat-card>
+                            <br>
+                            <h5>Number of reviews:{{resp.review_count}}</h5>
+                            <br>
+                            <h5  *ngIf='resp.review_count != 0'>Reviews</h5>
+                            <br>
+                            <mat-card >
+                                <h6 *ngFor="let item of resp.feedback">{{item.user}} : {{item.feedback}}</h6>
+                            </mat-card>
+                            </div>
                     <hr>
-                    <h6 class="details">Details about Class</h6>
-                    <div class="ex1">
-                        <h6>
-                            {{resp?.clss.dscp}}
-                            <!-- Variables can hold values of different data types. Python is a dynamically typed language hence we need not define the type of the variable while declaring it. The interpreter implicitly binds the value with its type.
-
-                             Python enables us to check the type of the variable used in the program. Python provides us the type() function which returns the type of the variable passed.
-                            
-                            Consider the following example to define the values of different data types and checking its type. -->
-                        </h6>
-                        <button (click)='buy'>Book Class</button>
+                    <!-- <div>
+                        <h6>{{resp.dscp}}</h6>
+                        <h3>Reviews </h3>
+                        <p *ngIf="resp.review_count == 0" >{{resp.review_count}} No Reviews Yet</p>
+                       <div *ngIf="resp.review_count != 0">
+                        <div *ngFor="let item of  resp.feedback">
+                            <p>{{item.user}}: {{item.feedback}}</p>
+                        </div>
                     </div>
+                    </div> -->
                     <br>
 
 	</div>

@@ -54,16 +54,16 @@
 		
 	
 		<mat-form-field appearance="outline">
-			<mat-label>Subject</mat-label> 
-	<input matInput placeholder="Subject" style="margin-left: 10px" [(ngModel)]='sub'>
+			<mat-label>Compnay</mat-label> 
+	<input matInput placeholder="Subject" style="margin-left: 10px" [(ngModel)]='company'>
 	</mat-form-field>
 	<mat-form-field appearance="outline">
-			<mat-label>Topic</mat-label>
-	<input matInput placeholder="Topic" style="margin-left: 10px" [(ngModel)]='tpc'>
+			<mat-label>Designation</mat-label>
+	<input matInput placeholder="Topic" style="margin-left: 10px" [(ngModel)]='designation'>
 	</mat-form-field>
 	<mat-form-field  appearance="outline">
-			<mat-label>Language</mat-label>
-	<input class="input" matInput placeholder="Language" style="margin-left: 10px" [(ngModel)]='lang'>
+			<mat-label>City</mat-label>
+	<input class="input" matInput placeholder="Language" style="margin-left: 10px" [(ngModel)]='city'>
 	</mat-form-field>
 	<div class="example-button-row" >
 	<button  color="primary" class="btn" mat-raised-button (click)='search()'>Search</button>
@@ -98,17 +98,17 @@
 			Working Professionals
 		</h2> -->
 		 <hr>
-	<div *ngIf='resp'>
-		<h4>{{mssg}}</h4>
+	<div *ngIf='searchresp'>
+		<h2>{{mssg}}</h2>
 	<div class="scrollmenu" >
-		<mat-card class="card" *ngFor='let item of resp[1]'  style="width:230px;">
+		<mat-card class="card" *ngFor='let item of searchresp.data'  style="width:230px;">
 			<div class="single_course">
 			<div class="course_head overlay">
-			<img class="img-fluid w-100" src="assets/img/courses/spring.png" alt="">
+			<img class="img-fluid w-100"  src="{{item.imgurl}}" onerror="this.src='assets/img/courses/spring.png';"  alt="">
 			<div class="authr_meta">
-				<img src="assets/img/butterfly1.png" style='border-radius: 50%;' alt="">
+				<img src="assets/img/classfly.png" style='border-radius: 50%; border: 1px solid white;' alt="" width="50px" height="50px">
 				<span>
-					{{item.name}}||
+					{{item.username}}||
 					<img src="assets/img/f-icons/star.png" alt="">
 					<img src="assets/img/f-icons/star.png" alt="">
 					<img src="assets/img/f-icons/star.png" alt="">
@@ -119,49 +119,22 @@
 			
 			</div>
 		
-			<h6 class="alignb">{{item.subject}}||{{item.topic}}||Seats:{{item.number}}</h6>
-			<div class="a" (click)="onCreateDesc(item.id,item.lvl)">	   
-					
-					<h6 class="align">Date:{{item.date}}||Time: {{item.time}}</h6>
+			<h6 class="alignb">{{item.company}}  ||  {{item.designation}}</h6>
+			<br>
+			<h6 class="alignb">{{item.state}} || {{item.city}}||</h6>
+			<div class="a" (click)="onCreateDesc(item.id)">	   
+				
+					<h6 class="align">Rating:{{item.rating}}</h6>
+					<h6 class='align'>Experience:{{item.experience}}</h6>
 					
 		
 			</div> 
-			<button *ngIf='item.price != 0' class="left" mat-raised-button (click)="onCreateDesc(item.id,item.lvl)">{{item.price}} coins</button>
-			<button *ngIf='item.price == 0' class="left" mat-raised-button (click)="onCreateDesc(item.id,item.lvl)">FREE</button>
+			<button  class="left" mat-raised-button (click)="onCreateDesc(item.username)">Details</button>
+			<!-- <button *ngIf='item.price == 0' class="left" mat-raised-button (click)="onCreateDesc(item.id,item.lvl)">FREE</button> -->
 			
 		</div>
 	</mat-card>
 		<br>
-		<mat-card class="card" *ngFor='let item of resp[0]'  style="width:230px;">
-			<div class="single_course">
-			<div class="course_head overlay">
-			<img class="img-fluid w-100" src="assets/img/courses/hiber.png" alt="">
-			<div class="authr_meta">
-				<img src="assets/img/butterfly1.png" style='border-radius: 50%;'alt="">
-				<span>
-					{{item.name}}||
-					<img src="assets/img/f-icons/star.png" alt="">
-					<img src="assets/img/f-icons/star.png" alt="">
-					<img src="assets/img/f-icons/star.png" alt="">
-					<img src="assets/img/f-icons/star.png" alt="">
-					<img src="assets/img/f-icons/star.png" alt="">
-				</span>
-				
-			</div>
-			
-			</div>
-		
-			<h6 class="alignb">{{item.subject}}||{{item.topic}}||Seats:{{item.number}}</h6>
-			<div class="a" style="cursor: pointer" (click)="onCreateDesc(item.id,item.lvl)">	   
-					<h6 class="align">Date:{{item.date}}||Time: {{item.time}}</h6>
-					
-		
-			</div>
-			<button *ngIf='item.price != 0' class="left" mat-raised-button (click)="onCreateDesc(item.id,item.lvl)">Details</button>
-			<button *ngIf='item.price == 0' class="left" mat-raised-button (click)="onCreateDesc(item.id,item.lvl)">FREE</button>
-				
-		</div>
-	</mat-card>
 	</div>
 	
 

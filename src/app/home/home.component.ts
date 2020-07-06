@@ -21,27 +21,44 @@ export class HomeComponent implements OnInit {
  
  typo:string[]=['Paid','Free']
  typn:string[]=['Free','Paid']
+
+  company:string=''
+  designation:string=''
+  city:string=''
+
+ searchresp:Object
   
  
  ngOnInit() {
-  this.data.initialserach().subscribe(
-    data => this.resp = data,
-    (err) => this.dialog.open(AlphaComponent,{width: '250px',data:'Please check your internet connection'}),
-    ()=>{
-      if(this.resp[0].length==0&&this.resp[1].length==0)
-      {
-        this.mssg='No classes found'
-      }
-      else
-      {
-        this.mssg=''
-      }
-    }
-  )
+  // this.data.initialserach().subscribe(
+  //   data => this.resp = data,
+  //   (err) => this.dialog.open(AlphaComponent,{width: '250px',data:'Please check your internet connection'}),
+  //   ()=>{
+  //     if(this.resp[0].length==0&&this.resp[1].length==0)
+  //     {
+  //       this.mssg='No classes found'
+  //     }
+  //     else
+  //     {
+  //       this.mssg=''
+  //     }
+  //   }
+  // )
+
   // this.sub = this.route.snapshot.params.val
   // if(this.sub != ''){
   // this.search()
   // }
+
+
+  //call for new search algo
+  this.data.searchp({city:this.city,company:this.company,designation:this.designation}).subscribe(
+    data => this.searchresp = data,
+    (err) =>  this.mssg =  'please check your connection',
+    () => {
+
+    }
+  )
   }
   
   typ = 0
@@ -50,42 +67,13 @@ export class HomeComponent implements OnInit {
   lang:string=''
 mssg=''
   resp:any=[[],[]]
-
-  type()
-  {
-    if (this.typ == 0)
-    {
-      this.typ = 1
-     
-    }
-    else{
-      this.typ = 0
-    }
-    this.search()
-  }
-
   search()
   {
-    if(this.sub=='')
-    {
-      alert('Please input the subject')
-      console.log('subject is empty')
-      return
-    }
-    this.data.searchall(this.typ,this.sub,this.tpc,this.lang).subscribe(
-      data => this.resp = data,
-      (err) => console.log(err),
-      ()=>{
-        if(this.resp[0].length==0&&this.resp[1].length==0)
-        {
-          this.mssg='No classes found'
-        }
-        else
-      {
-        this.mssg=''
-      }
-      }
-    )
+    this.data.searchp({city:this.city,company:this.company,designation:this.designation}).subscribe(
+      data => this.searchresp = data,
+      (err) => this.mssg =  'please check your connection',
+      () => {}
+    ) 
   }
 
 
@@ -138,14 +126,17 @@ else {
 }
 }
 
-onCreateDesc(cid,typ){
+
+onCreateDesc(cid){
   if(!sessionStorage.getItem('user'))
   {
     openNavlogin()
     return
   }
   sessionStorage.setItem('cid',cid)
-  sessionStorage.setItem('typ',typ)
-  this.dialog.open(DescriptionComponent);
+  this.dialog.open(DescriptionComponent)
 }
+
+
+
 }

@@ -15,16 +15,20 @@ export class DescriptionComponent implements OnInit {
   cid:any 
   typ:any
 
-resp:any
+  resp:Object
+  respBoolean:boolean = false
 
   ngOnInit() {
+
+    var resp
+
     this.data.classdetails({'session_key':sessionStorage.getItem('user'),
                              'cid':sessionStorage.getItem('cid'),
                               'typ':sessionStorage.getItem('typ')             
-  }).subscribe(
-    data => this.resp = data,
+  }).subscribe( 
+    data => resp = data,
     (err) => console.log(err),
-    () => this.succ(this.resp)
+    () => this.succ(resp)
   )
   }
 
@@ -33,14 +37,17 @@ resp:any
     this.cid = sessionStorage.getItem('cid')
     
     this.typ = sessionStorage.getItem('typ')
-
     sessionStorage.removeItem('cid')
     sessionStorage.removeItem('typ')
     if(resp.code != 200)
     {
 alert(resp.message)
     }
+    this.respBoolean = true
+      resp.body['review_count'] = Object.keys(resp.body.feedback).length;
+      console.log(resp.body)
     this.resp = resp.body
+ 
   }
 
 
@@ -73,4 +80,21 @@ else {
   {
     window.open(link)
   }
+
+
+
+  refresh()
+  {
+    var resp
+
+    this.data.classdetails({'session_key':sessionStorage.getItem('user'),
+                             'cid':sessionStorage.getItem('cid'),
+                              'typ':sessionStorage.getItem('typ')             
+  }).subscribe( 
+    data => resp = data,
+    (err) => console.log(err),
+    () => this.succ(resp)
+  )
+  }
 }
+
