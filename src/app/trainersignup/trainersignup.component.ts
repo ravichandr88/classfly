@@ -220,6 +220,7 @@ remove(fruit:string): void {
    // }
     this.user = true
     this.myForm = this.formBuilder.group({
+      fullname:['',Validators.required],
       linkurl:['', [Validators.required,this.linkvalidate]],
       company:['',Validators.required],
       designation:['',Validators.required],

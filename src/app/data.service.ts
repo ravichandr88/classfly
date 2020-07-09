@@ -96,8 +96,8 @@ getpic(token)
 
 
 
-  // domain = "http://127.0.0.1:8000/api/"
-    domain ='https://datafly.herokuapp.com/api/'
+  domain = "http://127.0.0.1:8000/api/"
+    // domain ='https://datafly.herokuapp.com/api/'
   //https://medium.com/angular-in-depth/optimize-angular-bundle-size-in-4-steps-4a3b3737bf45
 //https://stackoverflow.com/questions/44758755/how-to-enable-gzip-compression-in-angular-cli-for-production-build
     postData(data)
@@ -325,6 +325,11 @@ getpic(token)
       return this.http.post(this.domain+'weektable',{'session_key':sessionStorage.getItem('user')}).pipe(catchError(this.handleError))
     }
 
+    user_weektable(data)
+    {
+      return this.http.post(this.domain+'weektable',data).pipe(catchError(this.handleError))
+    }
+
     update_table(data)
     {
       return this.http.post(this.domain+'updatetable',data).pipe(catchError(this.handleError))
@@ -367,6 +372,20 @@ getpic(token)
     {
       return this.http.post(this.domain+'searchp',data)
     }
+
+
+    get_trnr_dtls(trnr_name)
+    {
+      return this.http.post(this.domain+'get_trnr_details',{'session_key':sessionStorage.getItem('user'),'trainer':trnr_name})
+    }
+
+    //api to book meeting for students
+    host_meeting(data)
+    {
+    return this.http.post(this.domain+'host_meeting',data)  
+    }
+
+
     kiisignup(phone)
     {
       let headers = new HttpHeaders({

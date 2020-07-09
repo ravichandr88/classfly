@@ -87,6 +87,14 @@
   <form class="example-form" [formGroup]='myForm'>
           <br>
           <h2 class="h2">Become a trainer</h2>
+          <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Full Name</mat-label>
+            <input matInput placeholder="Url..." formControlName='fullname'>
+            <mat-hint *ngIf="!(myForm.controls['fullname'].invalid && (myForm.controls['fullname'].dirty || myForm.controls['fullname'].touched))">Enter your FullName please</mat-hint><br>
+            <mat-hint class="err-color" *ngIf="(myForm.controls['fullname'].invalid && (myForm.controls['fullname'].dirty || myForm.controls['fullname'].touched)) && (myForm.controls['fullname'].errors.required)">Enter your FullName please</mat-hint><br>
+            
+          </mat-form-field>
+
           <hr>
              <mat-form-field appearance="outline" class="example-half-width">
               <mat-label>Company Name</mat-label>

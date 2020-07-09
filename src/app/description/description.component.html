@@ -1,18 +1,21 @@
-<button (click)='refresh()'>refresh</button>
-<div fxLayout="column"  fxLayoutAlign="center center" style="overflow: auto">
+
+<div fxLayout="column"  fxLayoutAlign="center center" style="  
+overflow-y:scroll; 
+position:relative;
+height: 500px;" *ngIf='bookclasslist'>
 	<div class="card" fxLayout="column" fxLayoutAlign="center stretch" style="width: 500px;">
 	  
 
 			<br>
 			<h2 class="h2">About Class</h2>
 			<h6 class="h6"> ClassFly lets you buy the classes and helps to customize the classes right away!
-
+ 
 			</h6>
             <hr>
             <!-- <a href="/profile"><h6 class="details">Verified trainer profile</h6></a> -->
 
                     <div class="grid-container" *ngIf='resp'> 
-                        <mat-card style="left: 13px;">
+                        <mat-card style="left: 13px;" >
                             <div class="grid-item2">
                                     <!-- <a href="/profile"> -->
                                          <img  src="{{resp.imgurl}}" width="60" height="60">
@@ -57,6 +60,7 @@
                             <mat-card >
                                 <h6 *ngFor="let item of resp.feedback">{{item.user}} : {{item.feedback}}</h6>
                             </mat-card>
+                            <button (click)='get_class_hours()'>Book Meeting</button>
                             </div>
                     <hr>
                     <!-- <div>
@@ -74,3 +78,60 @@
 	</div>
     </div>
   
+
+    <div fxLayout="column"  fxLayoutAlign="center center" style="overflow: auto" *ngIf='bookclass'>
+        <div class="card" fxLayout="column" fxLayoutAlign="center stretch" style="width: 500px;">
+            <h2 class="h2">About Class</h2>
+                <mat-card style="  
+                overflow-y:scroll; 
+                position:relative;
+                height: 500px;">
+                    <h3>Monday</h3>
+                   <mat-card *ngFor="let item of class_timings.MON">
+                        <p>{{tConvert(item) }}</p> 
+                        <button mat-card (click)='book("MON",item)'>Book</button>
+                   </mat-card>
+                   <h3>Tuesday</h3>
+                   <mat-card *ngFor="let item of class_timings.TUE">
+                        <p>{{tConvert(item)}}</p>
+                        <button mat-card (click)='book("TUE",item)'>Book</button>
+                  </mat-card>
+                  <h3>Wednesday</h3>
+                    <mat-card *ngFor="let item of class_timings.WED">
+                        <p>{{tConvert(item)}}</p>
+                        <button mat-card (click)='book("WED",item)'>Book</button>
+                    </mat-card>
+                    <h3>Thursday</h3>
+                    <mat-card *ngFor="let item of class_timings.THU">
+                            <p>{{tConvert(item)}}</p>
+                            <button mat-card (click)='book("THU",item)'>Book</button>
+                        </mat-card>
+                    <h3>Friday</h3>
+                    <mat-card *ngFor="let item of class_timings.FRI">
+                            <p>{{tConvert(item)}}</p>
+                            <button mat-card (click)='book("FRI",item)'>Book</button>
+                    </mat-card>
+                    <h3>Saturday</h3>
+                    <mat-card *ngFor="let item of class_timings.SAT">
+                            <p>{{tConvert(item)}}</p>
+                            <button mat-card (click)='book("SAT",item)'>Book</button>
+                        </mat-card>
+                </mat-card>
+            </div>
+        </div>
+
+
+    <div fxLayout="column"  fxLayoutAlign="center center" style="overflow: auto" *ngIf='bookclassdetail'>
+        <div class="card" fxLayout="column" fxLayoutAlign="center stretch" style="width: 500px;">
+      <h3>
+          Person:<p>{{trnr_dtls.first_name}}  {{trnr_dtls.last_name}}</p>
+          <p>Company: {{trnr_dtls.company}} </p>
+          <p>Designation: {{trnr_dtls.designation}} </p>
+          <p>Date:{{book_data.day}} {{book_data.date}} </p>
+          <p>Time: </p>
+          Price:
+          <button mat-raised-button (click)="host_meeting()">Confirm Meeting</button>
+      </h3>
+        </div>
+      </div>
+      
