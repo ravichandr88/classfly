@@ -203,7 +203,7 @@ else {
     console.log(k,n)
   if(k<n)
   {
-  n =new Date( myDate.setDate(myDate.getDate() + ((k+7)-n)));
+  n = new Date( myDate.setDate(myDate.getDate() + ((k+7)-n)));
   }
   else if(k>n)
   {
