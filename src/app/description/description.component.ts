@@ -199,22 +199,23 @@ else {
     
     var myDate = new Date()
     var n = myDate.getDay()
+    var d = myDate
     console.log('day'+day+'k='+k+'mydate='+myDate)
     console.log(k,n)
   if(k<n)
   {
-  n = new Date( myDate.setDate(myDate.getDate() + ((k+7)-n)));
+  d = new Date( myDate.setDate(myDate.getDate() + ((k+7)-n)));
   }
   else if(k>n)
   {
-  n = new Date( myDate.setDate(myDate.getDate() + (k-n)));
+  d = new Date( myDate.setDate(myDate.getDate() + (k-n)));
   }
   else 
   {
-  n = myDate
+  d = myDate
   }
   
-  return n
+  return d
   }
 
 }
