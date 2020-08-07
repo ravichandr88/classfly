@@ -1,0 +1,146 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% if title %}
+        <title>ClassFly - {{ title }}</title>
+    {% else %}
+        <title>ClassFly - Community</title>
+    {% endif %} 
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fontawsom-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'signup/style.css' %}"/>
+   <script>
+$(document).ready(function(){
+
+$('form').submit(function() {
+
+
+ 
+ 
+  var jsonArray ={};
+
+   var splittedFormData = $("form").serialize().split('&');
+
+            $.each(splittedFormData, function (key, value) {
+
+                item = {};
+                var splittedValue = value.split('=');               
+                jsonArray[splittedValue[0]]=splittedValue[1];
+               
+            });
+
+   console.log(jsonArray)
+   hh(jsonArray)
+   return false
+ 
+  });
+  
+  
+  
+  
+  
+  var hh = function(data){
+    $.post("https://datafly.herokuapp.com/good",
+  data
+    ,
+    function(data,status){
+     // alert("Data: " + data + "\nStatus: " + status);
+   
+   if(data['code']==400)
+   { $('#error').html(data['message'][0]);
+   }
+   else if(data['code']==200)
+   {
+   $('#error').html('');
+   $('#good').html('Successfully signed up');
+   window.location.href = "http://classfly.in/mat-2";
+   }
+    });
+  };
+  
+});
+
+
+
+</script>
+</head>
+<body>
+  
+  <!--####################### Header Starts Here ###################-->
+      <header class="continer-fluid ">
+
+          <div id="menu-jk" class="header-bottom">
+              <div class="container">
+                  <div class="row nav-row">
+                      <div class="col-md-3 logo">
+                         <img src="static/images/classfly.jpg" alt="">
+                      </div>
+                      <div class="col-md-9 nav-col">
+                        <nav class="navbar navbar-expand-lg navbar-light">
+                            
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                              <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarNav">
+                              <ul class="navbar-nav">
+                                <li class="nav-item active">
+                                  <a class="nav-link" href="{% url 'home'%}">Home </a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="{% url 'about-us'%}">About Us</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="{% url 'signup' %}">SignUp</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'community' %}">Videos</a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a class="nav-link" href="#">ClassFly</a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a class="nav-link" href="#">Contact US</a>
+                                  </li>
+                              </ul>
+                            </div>
+                          </nav>   
+                    </div>
+                  </div>
+              </div>
+          </div>
+      </header>
+
+  <!--####################### Body Starts Here ###################-->
+
+
+        {% block content %}{% endblock %}
+
+  <!--####################### Body close Here ###################-->
+
+
+         <!--####################### Footer Starts Here ###################-->
+    <div class="copy">
+        <div class="container">
+      <a href="https://www.smarteyeapps.com/">2020 &copy; All Rights Reserved | Designed and Developed by Classfly</a>
+                <span>
+                <a href=""><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/groups/10411920/"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://in.pinterest.com/prabnr/pins/"><i class="fab fa-pinterest-p"></i></a>
+                <a href="https://twitter.com/prabinraja89"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.facebook.com/freewebtemplatesbysmarteye"><i class="fab fa-facebook-f"></i></a>
+        </span>
+        </div>
+
+    </div>
+</body>
+<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'plugins/scroll-fixed/jquery-scrolltofixed-min.js' %}"></script>
+<script src="{% static 'js/script.js' %}"></script>
+</html>
