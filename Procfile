@@ -1,4 +1,4 @@
-web: gunicorn classflycomm.wsgi --log-file - 
+web: gunicorn classflycommunity.wsgi --log-file - 
 
 
 
