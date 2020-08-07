@@ -15,6 +15,11 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+import dj_database_url
+
+
+
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
@@ -25,7 +30,7 @@ SECRET_KEY = 'dyuo!=9@xvo8*s+lf#t)xw6a7_dn%)wucex^0uccu#+9=u1b$^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'classflycommunity.herokuapp.com']
 
 
 # Application definition
@@ -73,14 +78,10 @@ WSGI_APPLICATION = 'ClassFlyComm.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+DATABASES = {}
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+
 
 
 # Password validation
