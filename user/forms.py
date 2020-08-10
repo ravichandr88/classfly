@@ -37,4 +37,15 @@ class UserRegisterForm(UserCreationForm):
  
         if password1 and password2 and password1 != password2:
             raise ValidationError("Password don't match")
+
+
+class VideoUploadForm(forms.Form):
+    title = forms.CharField(max_length=200)
+    video_link = forms.CharField(max_length=1000)
+    thumbnail_link = forms.CharField(max_length=1000)
+    descripion = forms.TextInput()
+    dept_head = forms.CharField(max_length=100)
+
+    class Meta:
+        fields = ['title', 'video_link','thumbnail_link','dept_head','descripion']
  
